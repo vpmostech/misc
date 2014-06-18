@@ -1,0 +1,19 @@
+{$imgDir="{$wa_theme_url}graphics"}
+<!DOCTYPE html>
+<html>
+<head>
+	{include file="head.html"}
+</head>
+<body>
+	{include file="header.html"}
+	<div id="main">
+		{include file="sidebar.html"}
+		{if $wa->currentUrl() eq '/'}
+			{include file="home.html"}
+		{else}
+			{$content}
+		{/if}
+	</div>
+	{include file="footer.html"}
+</body>
+</html>

@@ -1,0 +1,278 @@
+#slider {
+	float: left;
+	width: 770px;
+	height: 485px;
+	margin-top: 10px;
+	padding-right: 20px;
+	background: white;
+	box-sizing: border-box;
+}
+
+.icons {
+	_width: 960px;
+	margin: 0 18px;
+	height: 53px;
+	margin-left: 13px;
+	background: url('graphics/grad_gray2.png') repeat-x #e6e9ea;
+}
+
+.icon {
+	float: left;
+	margin-left: 130px;
+	padding-top: 12px;
+	height: 30px;
+}
+
+.icon:first-child {
+	margin-left: 20px;
+}
+
+.icon img {
+	float: left;
+}
+
+.icon .icontext {
+	float: left;
+	margin-left: 5px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #60646a;
+}
+
+.hits, .news {
+	margin: 0px 18px;
+	background: white;
+}
+
+.hits {
+	height: 262px;
+}
+
+.hits h3, .news h3 {
+	float: left;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #c88eaf;
+}
+
+.news h3, .hits h3 {
+	width: 173px;
+	text-align: center;
+	margin-top: 0;
+}
+
+.hit {
+	float: left;
+	width: 145px;
+	height: 232px;
+	margin-left: 17px;
+	margin-top: 5px;
+}
+
+.hit:first-child {
+	margin-left: 0;
+	clear: left;
+}
+
+.hit a {
+	text-decoration: none;
+}
+
+.hit a .image {
+	width: 145px;
+	height: 193px;
+}
+
+.hit .name {
+	margin-top: 9px;
+	font-family: 'Myriad-Pro';
+	font-size: 12px;
+	color: black;
+}
+
+.hit .price {
+	font-family: 'Myriad-Pro';
+	font-size: 14px;
+	font-weight: bold;
+	color: #712e78;
+}
+
+.features {
+	height: 160px;
+	background: #f6f7f7;
+}
+
+.feature {
+	float: left;
+	width: 310px;
+	height: 137px;
+	margin-left: 17px;
+	margin-top: 12px;
+	padding-top: 12px;
+	background: url('graphics/grad_white.png') repeat-x white;
+	box-sizing: border-box;
+    border: 1px solid #d5d6d6;
+    border-radius: 4px;
+}
+
+.feature:first-child {
+	margin-left: 16px;
+}
+
+.feature img {
+	float: left;
+	margin-top: 5px;
+}
+
+.feature h3 {
+	height: 50px;
+	margin: 0;
+	margin-left: 15px;
+	float: left;
+	font-family: 'DINPro-Bold';
+	font-size: 15px;
+	font-weight: 400;
+	color: #9f60aa;
+	text-transform: uppercase;
+}
+
+.feature .text {
+	float: left;
+	max-width: 135px;
+	margin-left: 15px;
+	font-size: 13px;
+	color: #5e5f61;
+}
+
+.feature .link {
+	float: left;
+	width: 130px;
+	height: 28px;
+	margin-left: 15px;
+	margin-top: 10px;
+	font-family: 'DINPro-Bold';
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	border-radius: 2px;
+	background: url('graphics/grad_pink1.png') repeat-x #dfbfd6;
+}
+
+.feature .link:hover {
+	background: url('graphics/grad_pink1_hover.png') repeat-x #e2bde3;
+}
+
+.news {
+	height: 190px;
+}
+
+.new {
+	float: left;
+	width: 479px;
+	height: 147px;
+	margin-top: 20px;
+}
+
+.new .date, .new .title, .new .text {
+	float: left;
+	width: 350px;
+	margin-left: 18px;
+
+}
+
+.new .image {
+	float: left;
+	width: 106px;
+	height: 146px;
+	background: #c2c2c2;
+}
+
+.new .date {
+	height: 10px;
+	margin-top: 3px;
+	font-size: 12px;
+	color: #abadb0;
+}
+
+.new .title {
+	height: 10px;
+	margin-top: 7px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #231f20;
+}
+
+.new .text {
+	height: 97px;
+	margin-top: 15px;
+	font-size: 12px;
+	color: #4d4d4f;
+}
+
+.contactsline {
+	width: 930px;
+	height: 30px;
+	margin-left: 13px;
+	padding: 15px 15px 10px;
+	background: url('graphics/grad_gray2.png') repeat-x #e6e9ea;
+}
+
+.contactsline > div {
+	float: left;
+}
+
+.contactsline .phone {
+	font-size: 20px;
+}
+
+.contactsline .callback {
+	float: left;
+	margin-left: 12px;
+	margin-top: 10px;
+}
+
+.contactsline .social {
+	float: right;
+}
+
+.contactsline .social > div {
+	float: left;
+	margin-right: 12px;
+}
+
+.contactsline .social .text {
+	margin-top: 9px;
+	font-size: 13px;
+	color: #86888a;
+}
+
+.social .social_icon {
+	width: 27px
+	height: 27px;
+}
+
+.infos {
+	height: auto;
+}
+
+.info {
+	margin: 25px 15px 0;
+	font-size: 13px;
+}
+
+.info:first-child {
+	margin-top: 0;
+}
+
+.info h3, .info p {
+	margin: 0;
+}
+
+.info h3 {
+	font-weight: bold;
+}
+
+.info p {
+	text-align: justify;
+}

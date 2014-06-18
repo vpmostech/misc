@@ -1,0 +1,139 @@
+<!-- products thumbnail list view -->
+
+{if !empty($sorting)}
+    <!-- sorting -->
+    {$sort_fields = [
+        'total_sales' => 'популярности',
+        'rating' => 'рейтингу',
+        'price' => 'цене'        
+	]}
+    {if !isset($active_sort)}
+        {$active_sort = $wa->get('sort', 'total_sales')}
+    {/if}
+    <ul class="sorting">
+        <li>Сортировать по:</li>
+        {if !empty($category) && !$category.sort_products}
+            <li{if !$active_sort} class="selected"{/if}><a href="{$wa->currentUrl(0, 1)}">[`New & Popular`]</a></li>
+        {/if}
+        {foreach $sort_fields as $sort => $name}
+            <li{if $active_sort == $sort} class="selected"{/if}>{$wa->shop->sortUrl($sort, $name)}</li>
+            {if $wa->get('sort') == $sort}{$wa->title( $wa->title()|cat:' — '|cat:$name)}{/if}
+        {/foreach}
+    </ul>
+	<div class="clearfix"></div>
+{/if}
+
+{$imgDir="{$wa_theme_url}graphics"}
+{*if isset($pages_count) && $pages_count > 1*}
+{if isset($pages_count)}
+<div class="block {*lazyloading-paging*} goods_pagination">
+    <div class="goods_count">Товаров: <span style="color: black;">{$category.count}</span></div>
+	{$img_tag_start='<img src="'}
+	{$img_tag_end='" />'}
+	{wa_pagination total=$pages_count attrs=['class' => "menu-h"] prev="{$img_tag_start}{$imgDir}{'/product_page_prev.png'}{$img_tag_end}" next="{$img_tag_start}{$imgDir}{'/product_page_next.png'}{$img_tag_end}"}
+	<ul class="goods-per-page">
+		<li>Показывать по</li>
+		{$gpps = ['5', '100', '200']}
+		{if isset($smarty.cookies.products_per_page)}
+			{$gpp_sel = $smarty.cookies.products_per_page}
+		{else}
+			{$gpp_sel = $gpps[0]}
+		{/if}
+		{foreach $gpps as $gpp}
+		<li {if $gpp == $gpp_sel}class="selected"{/if}>
+			<a href="{$wa->currentUrl()}">{$gpp}</a>
+		</li>
+		{/foreach}
+	</ul>
+</div>
+<div class="clearfix"></div>
+{/if}
+
+<ul class="thumbs product-list">
+{foreach $products as $p}
+    {$available = $wa->shop->settings('ignore_stock_count') || $p.count === null || $p.count > 0}
+	{if $available}
+		<li itemscope itemtype ="http://schema.org/Product">
+			<a href="{$p.frontend_url}" title="{$p.name}" class="product-quickview-link">
+				<div class="product-quickview">
+					<div class="image_paths" style="display: none;">
+						{* Это для перещёлкивания картинок, сохраняем в теле документа пути к ним, чтобы потом подгрузить *}
+						{$pr=$wa->shop->product($p.id)}
+						{foreach $pr.images as $image}
+							<span data-url="{$wa->shop->productImgUrl(['id'=> $pr.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '180x285', ['alt' => $image.description|escape])}">
+							</span>
+						{/foreach}
+					</div>
+					<div class="image-left"></div>
+					<div class="image-right"></div>
+					<div class="ventlight"></div>
+					<div class="sizes">
+						{$sizes = ["42", "44", "46", "48", "50", "52", "54"]}
+						{foreach $sizes as $size}
+						<div class="size">{$size}</div>
+						{/foreach}
+					</div>
+				</div>
+			</a>
+			<a href="{$p.frontend_url}" title="{$p.name}">
+				<div class="image">
+					<div class="badge-wrapper">
+						{$badge_html = $wa->shop->badgeHtml($p.badge)} {* "Новинка" и всё такое *}
+						{if $badge_html}
+							<div class="corner top right">{$badge_html}</div>
+						{/if}
+						{$wa->shop->productImgHtml($p, '180x285', ['itemprop' => 'image', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}
+					</div>
+				</div>
+				<div class="fullname">
+					<div class="name" itemprop="name">
+						{$p.name}
+					</div>
+					<div class="color">
+						Коралл
+					</div>
+					<div class="clearfix"></div>
+					<div class="cat1">
+						Платье
+					</div>
+				</div>
+				{if $p.rating > 0}
+						<span class="rating nowrap">{$wa->shop->ratingHtml($p.rating)}</span>
+				{/if}
+				{if $p.summary}{*<span itemprop="description" class="summary">*}{$p.summary|escape|truncate:100}{*</span>*}{/if}                
+			</a>
+			<div class="price" itemprop="price">{$p.price} руб.</div>
+			{* Здесь была ещё какая-то цена, возможно, та, что "без скидки", $p.compare_price, форма добавления в корзину и предзаказа *}
+			<div class="rating">
+				{foreach [1,2,3,4,5] as $num}
+				<div class="star {if $p.rating >= $num}shine{/if}"></div>
+				{/foreach}
+			</div>
+		</li>
+	{/if}
+{/foreach}
+</ul>
+<div class="clearfix"></div>
+{if isset($pages_count)}
+	<div class="block goods_pagination">
+		<div class="goods_count">Товаров: <span style="color: black;">{$category.count}</span></div>
+		{$img_tag_start='<img src="'}
+		{$img_tag_end='" />'}
+		{wa_pagination total=$pages_count attrs=['class' => "menu-h"] prev="{$img_tag_start}{$imgDir}{'/product_page_prev.png'}{$img_tag_end}" next="{$img_tag_start}{$imgDir}{'/product_page_next.png'}{$img_tag_end}"}
+		<ul class="goods-per-page">
+			<li>Показывать по</li>
+			{$gpps = ['5', '100', '200']}
+			{if isset($smarty.cookies.products_per_page)}
+				{$gpp_sel = $smarty.cookies.products_per_page}
+			{else}
+				{$gpp_sel = $gpps[0]}
+			{/if}
+			{foreach $gpps as $gpp}
+			<li {if $gpp == $gpp_sel}class="selected"{/if}>
+				<a href="{$wa->currentUrl()}">{$gpp}</a>
+			</li>
+			{/foreach}
+		</ul>
+	</div>
+{/if}
+<!--<div class="clearfix"></div>-->

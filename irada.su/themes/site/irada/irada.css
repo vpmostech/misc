@@ -1,0 +1,727 @@
+div {
+	position: relative;
+}
+
+body {
+	margin: 0;
+	font-family: 'Arial';
+	font-size: 13px;
+	background: url('graphics/Fon-1.jpg') no-repeat;
+}
+
+table.centerer {
+	width: 100%;
+	height: 100%;
+}
+
+table.centerer td {
+	text-align: center;
+}
+
+.spacer {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	background: white;
+}
+
+.line {
+	width: 393px;
+	height: 1px;
+	margin-top: 10px;
+	float: left;
+	background: url('graphics/line.png') repeat-x;
+}
+
+.fullwidth, .spacer, #header, #main, #footer {
+	width: 995px;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.blur {
+	opacity: 0.5; !important
+}
+
+h1 {
+	font-family: 'Arial';
+	font-size: 22px;
+	font-weight: bold;
+	color: #712e78;
+}
+
+h2 {
+	font-family: 'Arial';
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+}
+
+h3 {
+	
+}
+
+a.button,
+input[type="submit"] {
+	padding: 0 6px 0;
+	border: none;
+	background: url('graphics/grad_pink1.png') repeat-x #dfbed7;
+	color: white;
+	font-family: 'DINPro-Bold';
+	font-size: 18px;
+	font-weight: 400;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a.button:hover,
+input[type="submit"]:hover {
+	background: url('graphics/grad_pink1_hover.png') repeat-x #ead0d6;
+}
+
+input.formsize,
+a.button {
+	height: 27px;
+	display: inline-block;
+}
+
+input[type="text"] {
+	float: left;
+	box-sizing: border-box;
+}
+
+
+.ui-spinner {
+	margin-top: -4px;
+}
+
+@font-face {
+    font-family: 'DINPro-Bold';
+    src: url('graphics/DINPro-Bold.eot');
+}
+
+@font-face {
+    font-family: 'DINPro-Regular';
+    src: url('graphics/DINPro-Regular.eot');
+}
+
+/* Отстой какой-то */
+/*
+@font-face {
+    font-family: 'Myriad-Pro';
+    src: url('graphics/Myriad-Pro.eot');
+	
+}
+*/
+
+@font-face {
+    font-family: 'DINPro-Bold';
+    src: url('graphics/DINPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DINPro-Regular';
+    src: url('graphics/DINPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Myriad-Pro';
+    src: url('graphics/Myriad-Pro.ttf') format('truetype');
+}
+
+#header, #main, #footer {
+	margin: 0px auto;
+	position: relative;
+	clear: left;
+}
+
+.iradaline {
+	height: 9px;
+	background: white;
+}
+
+.iradaline img {
+	display: block;
+	margin: 0 1px 0;
+}
+
+#upperArea {
+	height: 105px;
+	background: white;
+	padding: 1px 0 1px;
+}
+
+#header, #header a {
+	color: #aab1b6;
+}
+
+#header .logo {
+	float: left;
+	width: 215px;
+	margin-left: 1px;
+	height: 100%;
+}
+
+#header .logo img {
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
+#header .center {
+	float: left;
+	width: 567px;
+	height: 100%;
+}
+
+#header .center .upper {
+	height: 40px;
+	background: #f7f8f8;
+}
+
+#header .center .upper .addToFav {
+	float: left;
+	margin-left: 16px;
+	margin-top: 15px;
+	font-family: 'Arial';
+	font-style: italic;
+	font-size: 11px;
+	text-decoration: inderline;
+}
+
+#header form.search {
+	position: relative;
+	float: right;
+	margin-top: 10px;
+	margin-right: 31px;
+	height: 20px;
+}
+
+#header form.search #search {
+	width: 270px;
+	height: 15px;
+	position: relative;
+	font-size: 11px;
+}
+
+#header form.search button {
+	width: 21px;
+	height: 20px;
+	position: absolute;
+	margin-top: 1px;
+	background: url('graphics/search_button.png') no-repeat;
+	border: none;
+	cursor: pointer;
+}
+
+#header .center .leader {
+	float: left;
+	width: 46%;
+	height: 65px;
+	font-family: 'Arial';
+	font-size: 12px;
+}
+
+#header .center .contacts {
+	float: left;
+	width: 54%;
+	height: 65px;
+}
+
+#header .center .leader table, #header .center .contacts table {
+	height: 100%;
+}
+
+#header .center .contacts table td {
+	vertical-align: top;
+}
+
+#header .center .contacts .time {
+	font-family: 'DINPro-Bold';
+	font-size: 17px;
+}
+
+.phone {
+	font-family: 'DINPro-Regular';
+	font-size: 23px;
+	color: #111111;
+}
+
+.callback {
+	font-family: 'Arial';
+	font-size: 11px;
+	font-style: italic;
+	color: #bac0c4;
+}
+
+#header .center .contacts .phone .callback {
+	float: right;
+}
+
+#header .myAccount {
+	float: left;
+	width: 189px;
+	height: 100%;
+	margin-left: 22px;
+}
+
+#header .myAccount .login, #header .myAccount .register {
+	height: 40px;
+}
+
+#header .myAccount .login a, #header .myAccount .register a {
+	color: white;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+#header .myAccount .login {
+	float: left;
+	width: 40%;
+	background: url('graphics/grad_pink1.png') repeat-x #dfbed7;
+}
+
+#header .myAccount .login:hover {
+	background: url('graphics/grad_pink1_hover.png') repeat-x #ead0d6;
+}
+
+#header .myAccount .register {
+	float: left;
+	width: 60%;
+	background: url('graphics/grad_gray.png') repeat-x #bcc2c5;
+}
+
+#header .myAccount .register:hover {
+	background: url('graphics/grad_gray_hover.png') repeat-x #b4bac0;
+}
+
+#header .myAccount .cart {
+	float: left;
+	width: 100%;
+	height: 65px;
+	background: #f7f8f8;
+}
+
+#header .myAccount .cart .cart_img {
+	float: left;
+	width: 48px;
+}
+
+#header .myAccount .cart_img img {
+	margin-left: 10px;
+	margin-top: 3px;
+}
+
+#header .myAccount .cart_info {
+	float: left;
+	width: 141px;
+}
+
+#header .myAccount .cart_title {
+	float: left;
+	margin-top: 5px;
+	font-family: 'DINPro-Bold';
+	font-size: 13px;
+	text-transform: uppercase;
+	color: #656668;
+}
+
+#header .myAccount .cart_count {
+	float: left;
+	font-style: 'Myriad-Pro';
+	font-size: 12px;
+	color: #636466;
+}
+
+#header .myAccount .cart_checkout {
+	float: left;
+	margin-top: 6px;
+	font-style: 'Arial';
+	font-size: 11px;
+}
+
+#header .myAccount .cart_checkout a {
+	color: #712e78;
+	text-decoration: underline;
+}
+
+#upperMenu {
+	height: 49px;
+	background: url('graphics/grad_violet.png') repeat-x #6e3075;
+}
+
+#upperMenu .menuItem {
+	float: left;
+	height: 35px;
+	padding: 14px 8px 0;
+	font-family: 'DINPro-Bold';
+	font-size: 14px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+#upperMenu a .menuItem {
+	color: #d6a8c7;
+	text-decoration: none;
+}
+
+#upperMenu a:first-child .menuItem {
+	margin-left: 15px;
+}
+
+#upperMenu .menuItem:hover {
+	background: url('graphics/grad_pink2.png') repeat-x #d6b1d7;
+}
+
+#upperMenu a .menuItem:hover {
+	color: white;
+}
+
+#upperMenu .clientCard {
+	float: left;
+	margin-top: 12px;
+	margin-left: 14px;
+	width: 178px;
+	height: 25px;
+	background: url('graphics/grad_pink4.png') center repeat-x #c48cba;
+	font-family: 'DINPro-Bold';
+	font-size: 13px;
+	font-weight: 400;
+}
+
+#upperMenu .clientCard:hover {
+	background: url('graphics/grad_pink4_hover.png') center repeat-x #c48cba;
+}
+
+#upperMenu .clientCard a {
+	color: white;
+	text-decoration: none;
+}
+
+#main {
+	background: white;
+	border: none; /* FIXME: тени */
+	display: table;
+}
+
+#sidebar {
+	float: left;
+	width: 205px;
+	margin-right: 20px;
+	background: white;
+}
+
+#sidebar .sidegroup {
+	width: 100%;
+	padding-left: 25px;
+	padding-top: 10px;
+}
+
+#sidebar .sidegroup h3 {
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+#sidebar .sidegroup h3 a {
+	color: black;
+	text-decoration: none;
+}
+
+#sidebar .sidegroup h4 {
+	font-size: 13px;
+	font-weight: normal;
+	margin-top: 3px;
+	margin-bottom: 0;
+}
+
+#sidebar .sidegroup h4 a {
+	color: black;
+	text-decoration: none;
+}
+
+#footer {
+	display: table;
+	_margin-top: 40px;
+	background: url('graphics/grad_pink3.png') repeat-x #f2e6f1;
+	background-position: 0 9px;
+	color: #634963;
+}
+
+#footer .linksarea {
+	float: left;
+}
+
+#footer .linksarea .linkscol {
+	float: left;
+}
+
+#footer /*.linksarea .linkscol*/ h3 {
+	margin-left: 20px;
+	margin-bottom: 6px;
+	text-transform: uppercase;
+	color: #9f60aa;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#footer ul.links {
+	list-style: none outside none;
+	float: left;
+	width: 143px;
+	margin-left: 15px;
+	margin-top: 0;
+	margin-bottom: 6px;
+	padding-left: 5px;
+	padding-top: 10px;
+	border-top: 1px solid #b79eb6;
+}
+
+#footer ul.links > li {
+	font-size: 12px;
+}
+
+#footer ul.links > li > a {
+	font-family: 'Myriad-Pro';
+	color: #634963;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+#footer .paydelivery {
+	float: left;
+	width: 965px;
+	height: 50px;
+	margin: 5px 15px 0;
+	border-top:  1px solid #b79eb6;
+	border-bottom:  1px solid #b79eb6;
+}
+
+#footer .paydelivery h3 {
+	float: left;
+	margin-left: 0;
+	margin-top: 9px;
+}
+
+#footer .paydelivery .method {
+	float: left;
+	font-family: 'Myriad-Pro';
+	font-size: 12px;
+}
+
+#footer .payment {
+	float: left;
+}
+
+#footer .payment .pays {
+	float: left;
+	margin-top: 6px;
+	margin-left: 20px;
+}
+
+#footer .payment .method {
+	margin-left: 17px;
+}
+
+#footer .delivery {
+	float: right;
+	height: 50px;
+}
+
+#footer .delivery .dels {
+	float: left;
+	margin-top: 7px;
+	margin-left: 10px;
+	margin-right: 15px;
+}
+
+#footer .delivery h3 {
+	margin-right: 15px;
+}
+
+#footer .delivery .method {
+	margin-right: 20px;
+}
+
+
+#footer .delivery .method:last-child {
+	margin-right: 15px;
+}
+
+#footer .bottom {
+	display: table;
+	height: 135px;
+	font-family: 'Myriad-Pro';
+	font-size: 12px;
+}
+
+#footer .copyright {
+	float: left;
+	max-width: 390px;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+#footer .counter {
+	width: 89px;
+	height: 31px;
+	margin-left: 15px;
+	top: 10px;
+}
+
+#footer .social {
+	float: right;
+	width: 350px;
+	margin-right: 20px;
+}
+
+#footer .social .text {
+	float: left;
+}
+
+#footer .social_icon {
+	float: left;
+	margin-left: 15px;
+}
+
+#footer .signup {
+	float: right;
+	clear: right;
+	width: 350px;
+	margin-right: 20px;
+	margin-top: 15px;
+}
+
+#footer .signup form {
+	float: left;
+	margin-top: 3px;
+}
+
+#footer .signup input {
+	float: left;
+}
+
+#footer .signup input[type="text"] {
+	width: 190px;
+	height: 20px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: 'Myriad-Pro';
+	font-size: 16px;
+}
+
+#footer .signup input[type="button"] {
+	width: 25px;
+	height: 20px;
+	margin-left: 5px;
+	border: none;
+	font-family: 'DINPro-Regular';
+	font-size: 11px;
+	color: white;
+	background: url('graphics/grad_violet2.png') repeat-x #612767;
+	cursor: pointer;
+}
+
+/*
+TODO:
+	- заменить счётчик на реальный
+*/
+
+.ad_banner {
+	position: relative;
+	clear: left;
+	width: 190px;
+	height: 120px;
+	margin-top: 30px;
+	margin-left: 7px;
+	background: url('graphics/banner.png') center no-repeat;
+}
+
+.wa-form {
+	float: left;
+}
+
+.wa-field {
+	float: left;
+	clear: left;
+	margin-top: 10px;
+}
+
+.wa-field .wa-name {
+	float: left;
+	width: 155px;
+}
+
+.wa-field .wa-value {
+	float: left;
+}
+
+.wa-field .wa-value > p {
+	margin: 0; 
+}
+
+.wa-field-address .wa-value .field {
+	float: left;
+	clear: left;
+	margin-bottom: 10px;
+}
+
+.wa-field-address .wa-value .field > span,
+.wa-field-address .wa-value .field > input {
+	float: left;
+}
+
+.wa-field-address .wa-value .field > span {
+	width: 200px;
+}
+
+h2 a {
+	font-size: 22px;
+	font-weight: bold;
+	color: #712e78;
+	text-decoration: none;	
+}
+
+h2 a.hint {
+	padding: 0 10px 0;
+	font-size: 11px;
+	background: #c0c0c0;
+	border-radius: 5px;
+	color: black;
+	text-decoration: none;
+}
+
+.makeeditable {
+	float: left;
+	padding: 3px 5px;
+	font-style: italic;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	background: #f5ebf0;
+	text-decoration: underline;
+}
+
+.makeeditable:hover {
+	cursor: pointer;
+}
+
+.page-static {
+	float: left;
+	width: 770px;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+.wa-captcha .wa-captcha-img,
+.wa-captcha strong {
+	float: left;
+	margin-right: 11px;
+}
+
+.wa-captcha p {
+	clear: left;
+}

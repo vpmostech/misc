@@ -1,0 +1,23 @@
+<div class="slider">
+	{$slides = ["slide1.png", "slide2.png", "slide3.png"]}
+	<div class="nav_left"></div>
+	<div class="nav_right"></div>
+	<div class="bottom_line">
+		<div class="pages">
+			{foreach $slides as $slide}
+			<div class="page {if $slide@key eq 0} active {/if}" rel="{$slide@key}"></div>
+			{/foreach}
+		</div>
+	</div>
+	{foreach $slides as $slide}
+	<div class="slide {if $slide@key eq 0} active {/if}" style="background: url({$imgDir}/slider/{$slide}) center no-repeat;">
+		<div class="title">
+			<span class="line1">Новая</span><br /><span class="line2">коллекция</span>
+		</div>
+		<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor...</div>
+		<div class="more">
+			<a href="#">Смотреть коллекцию <img src="{$imgDir}/slider/more_arr.png" /></a>
+		</div>
+	</div>
+	{/foreach}
+</div>

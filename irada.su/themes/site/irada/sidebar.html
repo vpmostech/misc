@@ -1,0 +1,86 @@
+<div id="sidebar">
+	{* Боковое меню *}
+	<div class="sidegroup">
+		<h3>
+			<a href="#">Одежда</a>
+		</h3>
+		{$cats = [
+			"Платья" => "/shop/category/plate/",
+			"Костюмы" => "#",
+			"Сарафаны" => "#",
+			"Туники" => "#",
+			"Жакеты" => "#",
+			"Юбки" => "#",
+			"Одежда для намаза" => "#",
+			"Мусульманские купальники" => "#"
+		]}
+		{foreach $cats as $cat}
+		<h4>
+			<a href="{$cat}">{$cat@key}</a>
+		</h4>
+		{/foreach}
+	</div>
+	<div class="sidegroup">
+		<h3>
+			<a href="{$cat}">Аксессуары</a>
+		</h3>
+		{$cats = [
+			"Платки" => "#",
+			"Шапочки" => "#",
+			"Нарукавники" => "#",
+			"Сумки" => "#"
+		]}
+		{foreach $cats as $cat}
+		<h4>
+			<a href="{$cat}">{$cat@key}</a>
+		</h4>
+		{/foreach}
+	</div>
+	<div class="sidegroup">
+		<h3>
+			<a href="#">Детям</a>
+		</h3>
+		{$cats = [
+			"Кукла-мусульманка" => "#",
+			"Одежда для детей" => "#"
+		]}
+		{foreach $cats as $cat}
+		<h4>
+			<a href="{$cat}">{$cat@key}</a>
+		</h4>		
+		{/foreach}
+	</div>
+	<div class="sidegroup">
+		<h3>
+			<a href="#">Сувениры</a>
+		</h3>
+	</div>
+	<div class="sidegroup">
+		<h3>
+			<a href="#" style="color: #73337a;">Распродажа, акции</a>
+		</h3>
+	</div>
+
+	{* Рекламный баннер *}
+	{if !empty($category) || !empty($product)}
+		<a href="#" alt="">
+			<div class="ad_banner"></div>
+		</a>
+	{/if}
+	{* Товарные фильтры *}
+	{if !empty($category)}
+		<div class="filter-price">
+			<h4>Цена</h4>
+			<div>Варианты</div>
+		</div>
+		<div class="filter-size">
+			<h4>Размер</h4>
+			<div>Варианты</div>
+		</div>
+		<div class="filter-style">
+			<h4>Стиль</h4>
+			<div>Варианты</div>
+		</div>
+	{/if}
+
+</div>

@@ -1,0 +1,131 @@
+{$wa->myNav('menu-h bottom-padded my-menu')}
+
+{if !empty($pin_required)}
+    <h1>
+        [`Order`] {$encoded_order_id}
+    </h1>
+
+    <form action="" method="post">
+        {if $wrong_pin}
+            <p style="color:red">[`PIN is not valid`]</p>
+        {/if}
+        <p>[`Please enter a 4-digit PIN that you received with your order receipt by email.`]</p>
+        <div>
+            <input type="text" name="pin">
+        </div>
+        <div>
+            <input type="submit" value="[`View order`]">
+        </div>
+    </form>
+{else}
+    <h1>
+        [`Order`] {$order.id_str}
+        <span class="order-status" style="{$order.state->getStyle(1)}">
+            {$order.state->getName()}
+        </span>
+    </h1>
+    <p class="gray">{$order.create_datetime|wa_date:'humandatetime'}</p>
+
+    <!-- shipping -->
+    <h3>[`Shipping`]
+        {if $order.shipping_name}
+            &mdash; <strong>{$order.shipping_name}</strong>
+        {/if}
+    </h3>
+
+    <!-- shipping plugin output -->
+    {if !empty($order.params.tracking_number)}
+        [`Shipment tracking number`]: {$order.params.tracking_number}
+        <br />
+    {/if}
+    {if !empty($tracking) && $order.state->getId() != 'completed'}
+        <div class="plugin">
+            {$tracking}
+        </div>
+    {/if}
+
+    <p>
+        {$contact.name|escape}<br>
+        {if $shipping_address}
+            {$shipping_address}
+        {/if}
+    </p>
+
+    <!-- billing -->
+    <h3>[`Payment`]
+        {if $order.payment_name}
+            &mdash; <strong>{$order.payment_name}</strong>
+        {/if}
+    </h3>
+    
+    <!-- payment plugin output -->
+    {if !empty($payment)}
+        <div class="plugin">
+            {$payment}
+        </div>
+    {/if}
+    
+    <p>
+        {$contact.name|escape}<br>
+        {if $billing_address}
+            {$billing_address}
+        {/if}
+    </p>
+
+    {if !empty($order.comment)}
+        <h3>[`Comment`]</h3>
+        <p>
+            {$order.comment|escape}<br>
+        </p>
+    {/if}
+
+    <!-- order content and total -->
+    <table class="table order">
+        <tr>
+            <th>Позиция</th>
+			<th>Цена за единицу</th>
+            <th>Количество</th>
+            <th>Итого</th>
+        </tr>
+        {foreach $order.items as $item}
+			{$pr = $wa->shop->product($item.product_id)}{*$pr.url*}
+			{*$col = $wa->shop->products("id/12")*}
+            <tr class="orderline{if $item.type == 'service'} service{/if}">
+                <td>{if $item.type == 'service'}+ {/if}<a href="#" target="">{$item.name}</a>
+                    {if $item.type == 'product' && !empty($item.download_link)}<a href="{$item.download_link}"><strong>[`Download`]</strong></a>{/if}</td>
+                <td><span class="gray">{wa_currency_html($item.price, $order.currency)}</span> </td>
+				<td>{$item.quantity}</td>
+                <td>{wa_currency_html($item.price * $item.quantity, $order.currency)}</td>
+            </tr>
+        {/foreach}
+        <tr class="summary-start">
+            <td colspan="3">[`Subtotal`]</td>
+            <td>{wa_currency_html($subtotal, $order.currency)}</td>
+        </tr>
+        <tr>
+            <td colspan="3">[`Discount`]</td>
+            <td >&minus; {wa_currency_html($order.discount, $order.currency)}</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                [`Shipping`]
+                {if !empty($order.params.shipping_name)}
+                    (<strong>{$order.params.shipping_name}</strong>)
+                {/if}
+            </td>
+            <td class="align-right">{wa_currency_html($order.shipping, $order.currency)}</td>
+        </tr>
+        {if $order.tax > 0}
+            <tr class="no-border thin">
+                <td colspan="3">[`Tax`]</td>
+                <td>{wa_currency_html($order.tax, $order.currency)}</td>
+            </tr>
+        {/if}
+        <tr class="no-border thin large">
+            <td colspan="3"><b>[`Total`]</b></td>
+            <td>{wa_currency_html($order.total, $order.currency)}</td>
+        </tr>
+    </table>
+{/if}
+
+{$wa->globals('isMyAccount', true)}

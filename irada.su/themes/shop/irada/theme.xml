@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd" >
+<theme id="irada" system="0" vendor="mostech" author="mostech" app="shop" parent_theme_id="site:irada" version="0.7.0">
+	<name locale="ru_RU">Тема irada для магазина</name>
+	<files>
+		<file path="index.html" parent="1">
+		</file>
+		<file path="error.html" parent="1">
+		</file>
+		<file path="head.html" parent="1">
+		</file>
+		<file path="head.shop.html">
+			<description locale="ru_RU">Содержимое html-блока head, нужное для магазина</description>
+		</file>
+		<file path="home.html">
+			<description locale="ru_RU">Основная страница магазина - каталог товаров</description>
+		</file>
+		<file path="irada.shop.css">
+			<description locale="ru_RU">Стили для страниц магазина</description>
+		</file>
+		<file path="default.shop.part.css">
+			<description locale="ru_RU">Стандартные стили для страниц магазина</description>
+		</file>
+		<file path="irada.shop.js">
+			<description locale="ru_RU">Скрипты для страниц магазина</description>
+		</file>
+		<file path="product.part.js">
+			<description locale="ru_RU">Стандартные скрипты для страниц магазина</description>
+		</file>
+		<file path="cart.html">
+			<description locale="ru_RU">Корзина покупателя</description>
+		</file>
+		<file path="cart.js">
+			<description locale="ru_RU">Скрипты корзины покупателя</description>
+		</file>
+		<file path="category.html">
+			<description locale="ru_RU">Категория (набор) товара</description>
+		</file>
+		<file path="list-thumbs.html">
+			<description locale="ru_RU">Список товара (крупный)</description>
+		</file>
+		<file path="list-thumbs-mini.html">
+			<description locale="ru_RU">Список товара (мелкий)</description>
+		</file>
+		<file path="product.html">
+			<description locale="ru_RU">Карточка товара</description>
+		</file>
+		<file path="checkout.html">
+			<description locale="ru_RU">Оформление заказа (общее для всех шагов)</description>
+		</file>
+		<file path="checkout.contactinfo.html">
+			<description locale="ru_RU">Оформление заказа - данные клиента</description>
+		</file>
+		<file path="checkout.confirmation.html">
+			<description locale="ru_RU">Оформление заказа - подтверждение</description>
+		</file>
+		<file path="checkout.success.html">
+			<description locale="ru_RU">Оформление заказа - успех</description>
+		</file>
+		<file path="checkout.error.html">
+			<description locale="ru_RU">Оформление заказа - неудача</description>
+		</file>
+		<file path="signup.html">
+			<description locale="ru_RU">Форма регистрации</description>
+		</file>
+		<file path="my.nav.html">
+			<description locale="ru_RU">Личный кабинет - навигация</description>
+		</file>
+		<file path="my.profile.html">
+			<description locale="ru_RU">Личный кабинет - учётная запись</description>
+		</file>
+		<file path="my.orders.html">
+			<description locale="ru_RU">Личный кабинет - история заказов</description>
+		</file>
+		<file path="my.order.html">
+			<description locale="ru_RU">Личный кабинет - подробности о заказе</description>
+		</file>	
+	</files>
+</theme>

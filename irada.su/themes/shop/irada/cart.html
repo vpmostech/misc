@@ -1,0 +1,92 @@
+<script type="text/javascript" src="{$wa_theme_url}cart.js"></script>
+
+{if !$cart.count}
+
+    <h1>[`Shopping cart`]</h1>
+    <p>[`Your shopping cart is empty.`]</p>
+
+{else}
+
+    <form method="post">
+        
+        <h1>[`Shopping cart`]</h1>
+    
+        <!-- sixteen-column cart layout -->
+        <div class="cart cart-summary-page">
+            
+            {foreach $cart.items as $item}
+            
+                <!-- cart item -->
+                <div class="row cart-item" data-id="{$item.id}">                  
+                    <div class="col w1 item-thumb"><a href="{$wa->shop->productUrl($item.product)}" title="{$item.product.name|escape}">{$wa->shop->productImgHtml($item.product, '100', ['default' => "`$wa_theme_url`img/dummy48.png"])}</a>&nbsp;</div>
+                    <div class="col w9 item-name">
+                        <a href="{$wa->shop->productUrl($item.product)}" class="bold">{$item.product.name|escape}</a>
+                        {if $item.sku_name && $item.sku_name != $item.product.name}{$item.sku_name|escape}{/if}
+                    </div>
+                    <div class="col w2 item-qty align-center nowrap">
+						<span class="gray">&times;</span>
+						<!--<input type="text" name="quantity[{$item.id}]" value="{$item.quantity}" class="qty{if !empty($item.error)} error{/if}">-->
+						<input id="qty" name="quantity[{$item.id}]" value="{$item.quantity}" class="qty{if !empty($item.error)} error{/if}">
+					</div>
+					<div class="col w3 align-center item-total nowrap">{shop_currency_html($item.full_price, true)}</div>
+					<div class="col w1 item-remove"><a class="delete" href="#" title="[`Remove from cart`]"><i class="icon16 remove"></i></a></div>
+
+                    {if !empty($item.services)}
+                    <!-- services -->
+                    {/if}
+
+                    <!-- cross-selling -->
+                </div>
+                {if !empty($item.error)}<script>alert({json_encode($item.error)});</script>{/if}
+            {/foreach}
+            
+            <!-- discount coupon -->
+            <div class="row no-border" {if !shopDiscounts::isEnabled('coupons') && !$discount}style="display:none"{/if}>
+                <div class="col w10 cart-coupon no-border">
+                    {if shopDiscounts::isEnabled('coupons')}
+                    <div style="margin-bottom: 5px;">Если у Вас есть промо-код, Вы можете ввести его:</div>
+                    <input class="formsize" type="text" name="coupon_code" value="{$coupon_code|escape}" style="margin-right: 5px;"> <input type="submit"  value="[`Apply`]">
+                    {/if}
+                </div>
+                <div class="col w2 align-center" style="clear: left; margin-top: 10px;"><b>Итоговая скидка:</b></div>
+                <div class="col w3 align-center cart-discount nowrap" style="margin-top: 10px;">&minus; {shop_currency_html($discount, true)}</div>
+                <div class="col w1"></div>
+            </div>
+
+            {if shopAffiliate::isEnabled() && $affiliate_bonus > 0}
+            <!-- affiliate bonus -->
+            {/if}
+            
+            <!-- TOTAL -->
+            <div class="row large no-border">
+                <div class="col w12 no-border non-mobile-only">Итого:</div>
+                <div class="col w3 cart-total align-center total bold nowrap">{shop_currency_html($cart.total, true)}</div>
+                <div class="col w1">&nbsp;</div>
+            </div>
+            
+            <!-- checkout -->
+            <div class="row no-border">
+                <div class="col w12 no-border non-mobile-only">
+                    <a href="{$wa_app_url}" class="gray button">&larr;Вернуться в магазин</a>
+                    {if shopAffiliate::isEnabled() && !empty($add_affiliate_bonus)}
+                    {*<em class="float-right affiliate">{sprintf("[`This order will add +%s points to your affiliate bonus.`]", $add_affiliate_bonus)}</em>*}
+                    {/if}
+                </div>
+				<!--<input type="submit"  value="Обновить корзину">-->
+                <div class="col w3 align-center bold cart-checkout">
+                    <input name="checkout" type="submit" value="[`Proceed to checkout`] &rarr;" class="button large">
+                </div>
+                <div class="col w1">&nbsp;</div>
+            </div>
+            
+            
+            
+        </div>
+
+        <!-- plugin hook: 'frontend_cart' -->
+        {* @event frontend_cart.%plugin_id% *}
+        {foreach $frontend_cart as $_}{$_}{/foreach}                    
+
+    </form>
+
+{/if}

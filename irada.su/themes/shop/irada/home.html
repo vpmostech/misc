@@ -1,0 +1,25 @@
+<h1>Каталог товаров</h1>
+{* Здесь действительно каталог товаров, и его можно куда-нибудь отсюда перенести *}
+
+{$page=$wa->get('page')}
+{if !isset($page)}
+	{$page=null}
+{/if}
+
+{if isset($smarty.cookies.products_per_page)}
+	{$gpp = $smarty.cookies.products_per_page}
+{else}
+	{$gpp = $wa->shop->config("products_per_page")}
+{/if}
+
+{$allProducts = $wa->shop->products("all", $page, $gpp)}
+{$prCount = $wa->shop->productsCount("all")}
+{$pagesCount = ceil($prCount / $gpp) }
+
+{if $allProducts}
+	<div id="product-list">
+		{include file="list-thumbs.html" products=$allProducts sorting=true pages_count=$pagesCount }
+	</div>
+{else}
+	<p>Пока у нас нет товаров.</p>
+{/if}

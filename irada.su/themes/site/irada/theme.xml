@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd" >
+<theme id="irada" system="0" vendor="mostech" author="mostech" app="site" version="0.7.0">
+	<name locale="ru_RU">Тема irada</name>
+	<files>
+		<file path="index.html">
+			<description locale="ru_RU">Основной шаблон</description>
+		</file>
+		<file path="head.html">
+			<description locale="ru_RU">Содержимое html-блока head</description>
+		</file>
+		<file path="home.html">
+			<description locale="ru_RU">Домашняя страница</description>
+		</file>
+		<file path="page.html">
+			<description locale="ru_RU">Содержимое статической страницы</description>
+		</file>
+		<file path="error.html">
+			<description locale="ru_RU">Сообщения об ошибках на сайте</description>
+		</file>
+		<file path="header.html">
+			<description locale="ru_RU">Шапка сайта</description>
+		</file>
+		<file path="footer.html">
+			<description locale="ru_RU">Подвал сайта</description>
+		</file>
+		<file path="footer_links.html">
+			<description locale="ru_RU">Подвал сайта - ссылки</description>
+		</file>
+		<file path="login.html">
+			<description locale="ru_RU">Вход на сайт</description>
+		</file>
+		<file path="irada.css">
+			<description locale="ru_RU">Основные стили</description>
+		</file>
+		<file path="default.part.css">
+			<description locale="ru_RU">Стандартные стили</description>
+		</file>
+		<file path="irada.js">
+			<description locale="ru_RU">Основные скрипты</description>
+		</file>
+		<file path="home.css">
+			<description locale="ru_RU">Стили домашней страницы</description>
+		</file>
+		<file path="slider.html">
+			<description locale="ru_RU">Слайдер</description>
+		</file>
+		<file path="slider.css">
+			<description locale="ru_RU">Стили слайдера</description>
+		</file>
+		<file path="slider.js">
+			<description locale="ru_RU">Скрипты для слайдера</description>
+		</file>
+		<file path="sidebar.html">
+			<description locale="ru_RU">Слайдер</description>
+		</file>
+	</files>
+</theme>

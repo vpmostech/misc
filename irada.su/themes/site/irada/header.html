@@ -1,0 +1,114 @@
+<div id="header">
+	<div class="iradaline fullwidth">
+		<img src="{$imgDir}/topline.png" alt="" />
+	</div>
+	<div id="upperArea" class="fullwidth">
+		<div class="logo" onclick="swapBG(); return false;">
+			<img src="{$imgDir}/logo.png" alt="irada_logo">
+		</div>
+		<div class="center">
+			<div class="upper">
+				<div class="addToFav">
+					<a href="#" title="Irada - мусульманская одежда" rel="sidebar" onclick="addToFavourites(this)">Добавить сайт в закладки</a>
+				</div>
+				<form method="get" action="{$wa->getUrl('shop/frontend/search')}" class="search">
+					<input type="search" name="query" {if !empty($query)}value="{$query}"{/if} id="search" placeholder="Поиск">
+					<button type="submit"></button>
+				</form>
+			</div>
+			<div class="leader">
+				<table>
+					<tr>
+						<td style="width: 38px;"><img src="{$imgDir}/irada_head.png" alt="Ирада"></td>
+						<td>Лидер в области производства одежды конфессионального стиля</td>
+					</tr>
+				</table>	
+			</div>
+			<div class="contacts">
+				<table>
+					<tr>
+						<td class="time" style="padding-top: 8px; padding-left: 15px;">
+							<img src="{$imgDir}/clock.png" />
+						</td>
+						<td class="time" style="padding-top: 7px;">10-20</td>
+						<td class="phone" style="padding-left: 14px; padding-top: 8px;">
+							<img src="{$imgDir}/phone.png" alt="" />
+						</td>
+						<td class="phone" style="padding-top: 6px;">
+							<div>+7 968 968 93 55</div>
+							<a class="callback" href="#">Заказать обратный звонок</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="myAccount">
+			{if $wa->user()->isAuth()}
+				<div class="login">
+					<a href="?logout">
+						<table class="centerer"><tr><td>Выход</td></tr></table>
+					</a>
+				</div>
+				<div class="register">
+					<a href="{$wa->getUrl('shop/frontend/my')}">
+						<table class="centerer"><tr><td><span style="font-size: 90%; font-style: italic;">{$wa->user('email', 'default')}</i></td></tr></table>
+					</a>
+				</div>
+			{else}
+				<div class="login">
+					<a href="{$wa->getUrl('shop/frontend/my')}">
+						<table class="centerer"><tr><td>Вход</td></tr></table>
+					</a>
+				</div>
+				<div class="register">
+					<a href="{$wa->getUrl('shop/signup')}">
+						<table class="centerer"><tr><td>Регистрация</td></tr></table>
+					</a>
+				</div>
+			{/if}
+			{$cart=$wa->shop->cart()}
+			<div class="cart">
+				<div class="cart_img">
+					<a href="{$wa->getUrl('shop/frontend/cart')}">
+						<img src="{$imgDir}/bag.png">
+					</a>
+				</div>
+				<div class="cart_info">
+					<a href="{$wa->getUrl('shop/frontend/cart')}">
+						<div class="cart_title">Моя корзина</div>
+					</a>
+					<div class="cart_count">{$cart->count()} товаров | {$cart->total()} руб.</div>
+					<div class="cart_checkout">
+						<a href="{$wa->getUrl('shop/frontend/cart')}">Оформить</a>
+					</div>
+				</div>
+			</div>
+		</div> <!-- myAccount -->
+	</div> <!-- upperArea -->
+	<div id="upperMenu" class="fullwidth">
+		<a href="{$wa_url}">
+			<div class="menuItem">
+				<img src="{$imgDir}/house.png" alt="Д">
+			</div>
+		</a>
+		{$upperMenuItems=[
+				"Каталог товаров" => $wa->getUrl('shop/frontend'),
+				"Новинки" => "#",
+				"Скидки" => "#",
+				"Магазины" => "#",
+				"Оплата" => "#",
+				"Доставка" => "/dostavka/",
+				"Партнёрам" => "#",
+				"Контакты" => "#"
+			]
+		}
+		{foreach $upperMenuItems as $upperMenuItem}
+		<a href="{$upperMenuItem}">
+			<div class="menuItem">{$upperMenuItem@key}</div>
+		</a>
+		{/foreach}
+		<div class="clientCard">
+			<a href="#"><table class="centerer"><tr><td>Карта покупателя</td></tr></table></a>
+		</div>
+	</div>
+</div>

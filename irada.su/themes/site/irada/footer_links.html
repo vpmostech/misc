@@ -1,0 +1,108 @@
+<div class="linksarea fullwidth">
+	<div class="linkscol linkscol2">
+		<h3>Каталог товаров</h3>
+		<ul class="links" style="width: 158px;">
+		{$flinks = [
+			"ОДЕЖДА" => "#",
+			"Платья" => "#",
+			"Костюмы" => "#",
+			"Сарафаны" => "#",
+			"Туники" => "#",
+			"Жакеты" => "#",
+			"Юбки" => "#",
+			"Одежда для намаза" => "#",
+			"Мусульманские купальники" => "#"
+		]}
+		{foreach $flinks as $flink}
+			<li><a href="{$flink}">{$flink@key}</a></li>
+		{/foreach}
+		</ul>
+		<ul class="links" style="margin-left: 0;">
+		{$flinks = [
+			"АКСЕССУАРЫ" => "#",
+			"Платки" => "#",
+			"Шапочки" => "#",
+			"Нарукавники" => "#",
+			"Сумки" => "#",
+			"ДЕТЯМ" => "#",
+			"Кукла-мусульманка" => "#",
+			"Одежда детям" => "#",
+			"СУВЕНИРЫ" => "#",
+			"РАСПРОДАЖА, АКЦИИ" => "#"
+		]}
+		{foreach $flinks as $flink}
+			<li><a href="{$flink}">{$flink@key}</a></li>
+		{/foreach}
+		</ul>
+	</div>
+	<div class="linkscol">
+		<h3>Личный кабинет</h3>
+		<ul class="links">
+		{$flinks = [
+			"Мои данные" => $wa->getUrl('/frontend/myProfile'),
+			"Моя корзина" => $wa->getUrl('shop/frontend/cart'),
+			"Архив заказов" => $wa->getUrl('/frontend/myOrders'),
+			"Управление подпиской" => "#",
+			"Подписаться на новости" => "#"
+		]}
+		{foreach $flinks as $flink}
+			<li><a href="{$flink}">{$flink@key}</a></li>
+		{/foreach}
+		</ul>
+	</div>
+	<div class="linkscol">
+		<h3>О компании</h3>
+		<ul class="links">
+		{$flinks = [
+			"Галерея" => "#",
+			"Партнеры" => "#",
+			"Наша команда" => "#",
+			"Договор оферты" => "#",
+			"Франчайзинг" => "#",
+			"Пресса о нас" => "#",
+			"История компании" => "#",
+			"Партнерам" => "#",
+			"Вакансии" => "#",
+			"Контакты" => "#",
+			"Видео" => "#",
+			"Блог" => "#"
+		]}
+		{foreach $flinks as $flink}
+			<li><a href="{$flink}">{$flink@key}</a></li>
+		{/foreach}
+		</ul>
+	</div>
+	<div class="linkscol">
+		<h3>Где купить</h3>
+		<ul class="links">
+		{$flinks = [
+			"Интернет-магазин" => $wa->getUrl('shop/frontend'),
+			"Москва" => "#",
+			"Казань" => "#",
+			"Ульяновск" => "#",
+			"Тюмень" => "#",
+			"Набережные Челны" => "#"
+		]}
+		{foreach $flinks as $flink}
+			<li><a href="{$flink}">{$flink@key}</a></li>
+		{/foreach}
+		</ul>
+	</div>
+	<div class="linkscol">
+		<h3>Информация</h3>
+		<ul class="links">
+		{$flinks = [
+			"Карта сайта" => "#",
+			"Таблица размеров" => "#",
+			"Как купить" => "#",
+			"Оплата" => "#",
+			"Доставка" => "/dostavka/",
+			"Возврат и обмен" => "#",
+			"Вопросы и ответы" => "#"
+		]}
+		{foreach $flinks as $flink}
+			<li><a href="{$flink}">{$flink@key}</a></li>
+		{/foreach}
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,91 @@
+<div id="footer">
+	<div class="spacer" style="height: 40px;"></div>
+	<div class="iradaline fullwidth">
+		<img src="{$imgDir}/topline.png" alt="" />
+	</div>
+	{include file="footer_links.html"}
+	<div class="paydelivery">
+		<div class="payment">
+			<h3>Способы<br />оплаты</h3>
+			<!--<div class="methods">-->
+				{$methods=[
+					"visa" => "visa.png",
+					"mastercard" => "mastercard.png",
+					"sberbank" => "sberbank.png",
+					"svyaznoi_bank" => "svyaznoi_bank.png",
+					"yandex_money" => "yandex_money.png",
+					"gold_crown" => "gold_crown.png",
+					"western_union" => "western_union.png"
+				]}
+				{foreach $methods as $method}
+				{*
+				<div class="method">
+					<img src="{$imgDir}/payment/{$method}" alt="{$method@key}">
+				</div>
+				*}
+				{/foreach}
+				<div class="pays">
+					<img src="{$imgDir}/payment_all.png" />
+				</div>
+			<!--</div>-->
+		</div>
+		<div class="delivery" style="">
+			<h3>Способы<br />доставки</h3>
+			<!--<div class="methods">-->
+			{*
+				<div class="method">
+					Курьером
+				</div>
+				<div class="method">
+					<img src="{$imgDir}/delivery/ruspost.png" alt="ruspost">
+				</div>
+				<div class="method">
+					<img src="{$imgDir}/delivery/ems.png" alt="ems">
+				</div>
+			*}
+			<div class="dels">
+					<img src="{$imgDir}/delivery_all.png" />
+				</div>
+			<!--</div>-->
+		</div>
+	</div>
+	<div class="bottom fullwidth">
+		<div class="copyright">
+			Copyright © 2014<br />
+			Конфессиональная одежда Мусульманская одежда Длинные платья IRADA<br />
+			Весь товар сертифицирован<br />
+			+7 926 139 2949
+		</div>
+		<div class="counter">
+			<img src="{$imgDir}/temp/counter.png" alt="">
+		</div>
+		<div class="social">
+			<div class="text">Присоединяйтесь:</div>
+			<div class="social_icon">
+				<a href="http://vk.com/iradasu" target="_blank"><img src="{$imgDir}/social/vk.png" alt="vk" /></a>
+			</div>
+			<div class="social_icon">
+				<a href="#"><img src="{$imgDir}/social/lj.png" alt="lj" /></a>
+			</div>
+			<div class="social_icon">
+				<a href="https://www.facebook.com/pages/IRADA-Confession-Fashion-Confection/145185655669772" target="_blank"><img src="{$imgDir}/social/facebook.png" alt="fb" /></a>
+			</div>
+			<div class="social_icon">
+				<a href="#"><img src="{$imgDir}/social/insta.png" alt="insta" /></a>
+			</div>
+			<div class="social_icon">
+				<a href="#"><img src="{$imgDir}/social/twitter.png" alt="tw" /></a>
+			</div>
+			<div class="social_icon">
+				<a href="http://www.odnoklassniki.ru/group/50739860865032" target="_blank"><img src="{$imgDir}/social/odno.png" alt="odno" /></a>
+			</div>
+		</div>
+		<div class="signup">
+			<div class="text">Подпишитесь на рассылку</div>
+			<form>
+				<input type="text" placeholder="Ваш e-mail" id="signup_email" />
+				<input type="button" id="signup_ok" value="OK"/>
+			</form>
+		</div>
+	</div>
+</div>

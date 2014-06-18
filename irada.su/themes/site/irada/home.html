@@ -1,0 +1,138 @@
+{$imgDir="{$wa_theme_url}graphics"}
+<div id="slider">
+	<!--<img src="{$imgDir}/slider_placeholder.png" alt="слайдер" />-->
+	{include file="slider.html"}
+</div>
+<div class="spacer" style="height: 6px;"></div>
+<div class="icons">
+	{$icons=[
+		'hanger.png' => 'Примерка<br>перед покупкой',
+		'refund.png' => 'Гарантия<br>возврата',
+		'country_pink.png' => 'Доставка<br>по всей России',
+		'online_order.png' => 'Онлайн<br>заказ'
+	]}
+	{foreach $icons as $iconimg => $icontext}
+	<div class="icon">
+		<img src="{$imgDir}/{$iconimg}" />
+		<div class="icontext">
+			{$icontext}
+		</div>
+	</div>
+	{/foreach}
+</div>
+<div class="spacer" style="height: 40px;"></div>
+<div class="hits">
+	<div class="line"></div>
+	<h3>Хит продаж</h3>
+	<div class="line"></div>
+	<div> {* Чтобы first-child правильно работал *}
+		{$hits = $wa->shop->productSet("promo")}
+		{foreach $hits|array_slice:0:6 as $hit}		
+			<div class="hit">
+				<a href="{$hit.frontend_url}" title="Посмотреть этот товар" >
+					<div class="image">
+						<!--<img src="{$imgDir}/dress.png" alt="Платье &quot;Ниагара&quot;" />-->
+						{$wa->shop->productImgHtml($hit, '145x193', ['itemprop' => 'image', 'alt' => $hit.name])} {* Есть ещё productImgUrl(...)*}
+					</div>
+					<div class="name">{$hit.name}</div>
+					<div class="price">{$hit.price} руб.</div>
+				</a>
+			</div>
+		{/foreach}
+	</div>
+</div>
+<div class="features fullwidth">
+	<div class="feature">
+		<img src="{$imgDir}/gift_cert.png" style="margin-left: 10px;" />
+		<h3>Карта постоянного<br />покупателя</h3>
+		<div class="text">Скидки на покупку</div>
+		<a href="#">
+			<div class="link">
+				Приобрести
+			</div>
+		</a>
+	</div>
+	<div class="feature">
+		<img src="{$imgDir}/country_gray.png" style="margin-left: 10px;" />
+		<h3>Адреса<br />магазинов</h3>
+		<div class="text">Москва, Казань, Ульяновск, Тюмень, Набережные Челны</div>
+	</div>
+	<div class="feature">
+		<img src="{$imgDir}/gift_cert2.png" style="margin-top: -8px; margin-left: -5px;" />
+		<h3>Подарочные<br />сертификаты</h3>
+		<div class="text">С доставкой на e-mail</div>
+		<a href="#">
+			<div class="link">
+				Подарить
+			</div>
+		</a>
+	</div>
+</div>
+<div class="spacer" style="height: 30px;"></div>
+<div class="news">
+	<div class="line"></div>
+	<h3>Новости</h3>
+	<div class="line"></div>
+	<div> {* Чтобы first-child правильно работал *}
+		{$news=["1","2"]}
+		{* Здесь надо выбирать новости *}
+		{foreach $news as $new}
+		<div class="new">
+			<div class="image">
+				<img src="{$imgDir}/new.png" alt="" />
+			</div>
+			<div class="date">20.04.2014</div>
+			<div class="title">Название новости из 3-5 слов</div>
+			<div class="text">
+				Небольшое описание. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor. Небольшое описание. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiuer.
+			</div>
+		</div>
+		{/foreach}
+	</div>
+</div>
+<div class="spacer" style="height: 60px;"></div>
+<div class="contactsline">
+	<div class="phone_img">
+		<img src="{$imgDir}/phone.png" />
+	</div>
+	<div class="phone">+7 926 139 2949,&nbsp;</div>
+	<div class="phone">+7 968 968 9355</div>
+	<a class="callback" href="#">Заказать обратный звонок</a>
+	<div class="social">
+		<div class="text">Присоединяйтесь:</div>
+		<div class="social_icon">
+			<a href="http://vk.com/iradasu" target="_blank"><img src="{$imgDir}/social/vk.png" alt="vk" /></a>
+		</div>
+		<div class="social_icon">
+			<a href="#"><img src="{$imgDir}/social/lj.png" alt="lj" /></a>
+		</div>
+		<div class="social_icon">
+			<a href="https://www.facebook.com/pages/IRADA-Confession-Fashion-Confection/145185655669772" target="_blank"><img src="{$imgDir}/social/facebook.png" alt="fb" /></a>
+		</div>
+		<div class="social_icon">
+			<a href="#"><img src="{$imgDir}/social/insta.png" alt="insta" /></a>
+		</div>
+		<div class="social_icon">
+			<a href="#"><img src="{$imgDir}/social/twitter.png" alt="tw" /></a>
+		</div>
+		<div class="social_icon">
+			<a href="http://www.odnoklassniki.ru/group/50739860865032" target="_blank"><img src="{$imgDir}/social/odno.png" alt="odno" /></a>
+		</div>
+	</div>
+</div>
+<div class="spacer" style="height: 25px;"></div>
+<div class="infos fullwidth">
+	<div class="info">
+		<h3>Irada - интернет-магазин конфессиальной одежды.</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor. Небольшое описание. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiuer.</p>
+	</div>
+	<div class="info">
+		<h3>Как купить товар.</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor. Небольшое описание. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiuer.</p>
+	</div>
+	<div class="info">
+		<h3>Если товар не подошел.</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor. Небольшое описание. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiuer.</p>
+	</div>
+</div>
+<div class="spacer" style="height: 25px;"></div>

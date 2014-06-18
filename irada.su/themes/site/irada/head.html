@@ -1,0 +1,40 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{$wa->title()|escape}</title>
+<meta name="Keywords" content="{$wa->meta('keywords')|escape}" />
+<meta name="Description" content="{$wa->meta('description')|escape}" />
+<!--<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
+
+
+<!-- css -->
+<link href="{$wa_theme_url}jquery-ui-1.10.4/jquery-ui-1.10.4.custom.min.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+<link href="{$wa_theme_url}default.part.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+<link href="{$wa_theme_url}irada.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+<link href="{$wa_theme_url}home.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+<link href="{$wa_theme_url}slider.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+{* <link href="{$wa_theme_url}mobile.css?v{$wa_theme_version}"{if !$wa->isMobile()} media="screen and (max-width: 760px)"{/if} rel="stylesheet" type="text/css"> *}
+{if $wa->isMobile()}
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+{/if}
+{$wa->css()} {* links active plugins CSS *}
+
+<!-- js -->
+<script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="{$wa_url}wa-content/js/jquery-plugins/jquery.cookie.js"></script>
+<!--<script type="text/javascript" src="{$wa_theme_url}jquery-1.10.4/jquery-ui-1.10.4.custom.min.js"></script>--> {* Слишком толсто *}
+<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.effect.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.accordion.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.button.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.spinner.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.effect-fade.min.js"></script>
+<!--<script type="text/javascript" src="{$wa_url}wa-content/js/jquery-wa/wa.core.js?v{$wa->version(true)}"></script>-->
+<script type="text/javascript" src="{$wa_theme_url}irada.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}slider.js"></script>
+{$wa->js()} {* links active plugins JS *}
+
+{$wa->headJs()} {* links Google Analytics tracking code and current site's custom JS (Site app) *}
+
+{if $wa_theme_url ne $wa_active_theme_url}
+	{include file="{$wa_active_theme_path}/head.shop.html" inline}
+{/if}
