@@ -52,13 +52,13 @@
 <ul class="thumbs product-list">
 {foreach $products as $p}
     {$available = $wa->shop->settings('ignore_stock_count') || $p.count === null || $p.count > 0}
+	{$pr=$wa->shop->product($p.id)} {* Более кошерный объект товара *}
 	{if $available}
 		<li itemscope itemtype ="http://schema.org/Product">
 			<a href="{$p.frontend_url}" title="{$p.name}" class="product-quickview-link">
 				<div class="product-quickview">
 					<div class="image_paths" style="display: none;">
 						{* Это для перещёлкивания картинок, сохраняем в теле документа пути к ним, чтобы потом подгрузить *}
-						{$pr=$wa->shop->product($p.id)}
 						{foreach $pr.images as $image}
 							<span data-url="{$wa->shop->productImgUrl(['id'=> $pr.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '180x285', ['alt' => $image.description|escape])}">
 							</span>
@@ -68,9 +68,13 @@
 					<div class="image-right"></div>
 					<div class="ventlight"></div>
 					<div class="sizes">
-						{$sizes = ["42", "44", "46", "48", "50", "52", "54"]}
+						{foreach $pr.features_selectable as $f}
+							{if $f.code == "razmer"}
+								{$sizes = $f.values}
+							{/if}
+						{/foreach}
 						{foreach $sizes as $size}
-						<div class="size">{$size}</div>
+							<div class="size">{$size}</div>
 						{/foreach}
 					</div>
 				</div>

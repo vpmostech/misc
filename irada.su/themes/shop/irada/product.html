@@ -52,7 +52,11 @@
 
 		{$pr=$wa->shop->product($product.id)}
 		<div class="product-data">
-			{$sku = $product.skus[$product.sku_id]}
+			{if $product.sku_type}
+				{$sku = reset($product.skus)}
+			{else}
+				{$sku = $product.skus[$product.sku_id]}
+			{/if}
 			<div class="sku"><b>Артикул: </b>{if $sku.sku}{$sku.sku|escape}{/if}</div>
 			<div class="price"><b>Цена: </b>{$sku.price} руб.</div>
 			<form id="cart-form{if $wa->get('cart')}-dialog{/if}" action="{$wa->getUrl('/frontendCart/add')}" method="post">
@@ -76,7 +80,7 @@
 								{else}
 									<select data-feature-id="{$f.id}" class="sku-feature" name="features[{$f.id}]">
 										{foreach $f.values as $v_id => $v}
-										<option value="{$v_id}" {if $v_id == ifset($default_sku_features[$f.id])}selected{/if}>{$v}</option>
+											<option value="{$v_id}" {if $v_id == ifset($default_sku_features[$f.id])}selected{/if}>{$v}</option>
 										{/foreach}
 									</select>
 								{/if}
