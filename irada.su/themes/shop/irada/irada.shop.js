@@ -79,12 +79,50 @@ $(document).ready(function () {
 				//$(this).removeClass('blur');
 			});
 			if ($img.get(0).complete) {
-				$(this).trigger("load");
+				$(this).trigger("load"); // Опере без этого непонятно
 			}
 			*/
 		}
 	});
 
 	// Чтобы в корзине по клику на позицию (в любое место строки) происходил переход в карточку товара
+	// TODO
+		
+});
 
+// Всё, что связано, с выбором размера товара
+$(document).ready(function () {
+
+	// Выбор размера в карточке товара
+	$('.size-var').on('click', function (event) {
+		$this = $(this);
+		$('.size-var').removeClass('size-var-active');
+		$this.addClass('size-var-active');
+		hideHint();
+		$('#sizeparam').val($this.attr('data-value'));
+	});
+
+	// Чтобы нельзя было добавить в корзину размерный товар, не указав размер
+	$('#add-to-cart').on('click', function (event) {
+		if ($('.size-var-active').length != 1) {
+			showHint();
+			return false;
+		}
+	});
+
+	function showHint()
+	{
+		$hint = $('.form-fill-hint');
+		if ($hint.filter(':hidden').length) {
+			$hint.show('clip', {}, 1000);
+		} else {
+			$hint.effect('highlight', {color: '#dfbed7'}, 1000);
+		}
+	}
+
+	function hideHint()
+	{
+		$('.form-fill-hint').hide('clip', {}, 1000);
+	}
+	
 });

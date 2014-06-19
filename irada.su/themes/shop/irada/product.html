@@ -56,9 +56,41 @@
 			<div class="sku"><b>Артикул: </b>{if $sku.sku}{$sku.sku|escape}{/if}</div>
 			<div class="price"><b>Цена: </b>{$sku.price} руб.</div>
 			<form id="cart-form{if $wa->get('cart')}-dialog{/if}" action="{$wa->getUrl('/frontendCart/add')}" method="post">
-				<input type="hidden" value="{$product.sku_id}" name="sku_id"></input>
-				<div style="float: left; margin-right: 10px;">Количество:</div> <input type="text" value="1" name="quantity" size="2" /><br />
-				<input type="submit" value="В корзину"></input>
+				<input type="hidden" name="product_id" value="{$product.id}">
+				{if $product.sku_type}
+					<!-- SELECTABLE FEATURES selling mode -->
+					{$default_sku_features = $product.sku_features}
+					<div class="options">
+						{foreach $features_selectable as $f}
+							<div class="option">
+								<div class="param-name">{$f.name}:</div>
+								{if $f.code == "razmer" or $f.code == "size"}
+									<div class="size-vars" data-target-input="features[{$f.id}]">
+										{foreach $f.values as $v_id => $v}
+											{*{if $v_id == ifset($default_sku_features[$f.id])}size-var-active{/if}*}
+											<div class="size-var" data-value="{$v_id}">{$v}</div>
+										{/foreach}
+									</div>
+									<div class="form-fill-hint">Выберите размер</div>
+									<input id="sizeparam" type="hidden" name="features[{$f.id}]" value="">
+								{else}
+									<select data-feature-id="{$f.id}" class="sku-feature" name="features[{$f.id}]">
+										{foreach $f.values as $v_id => $v}
+										<option value="{$v_id}" {if $v_id == ifset($default_sku_features[$f.id])}selected{/if}>{$v}</option>
+										{/foreach}
+									</select>
+								{/if}
+							</div>
+							<div class="clearfix"></div>
+						{/foreach}
+					</div>
+				{else}
+					<input type="hidden" value="{$product.sku_id}" name="sku_id"></input>
+				{/if} {* Вообще там дальше тоже есть варианты, но пока это не нужно *}
+				<div class="options">
+					<div class="param-name">Количество:</div> <input class="param-value" type="text" value="1" name="quantity" size="2" /><br />
+				</div>
+				<input id="add-to-cart" type="submit" value="В корзину" />
 			</form>
 		</div>
 		<div class="description" itemprop="description"><b>Описание: </b>{if $product.description}{$product.description}{/if}</div>

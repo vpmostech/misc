@@ -38,6 +38,8 @@ table.centerer td {
 }
 
 .clearfix {
+	width: 0;
+	height: 0;
 	clear: both;
 }
 
@@ -329,7 +331,7 @@ input[type="text"] {
 
 #header .myAccount .cart_count {
 	float: left;
-	font-style: 'Myriad-Pro';
+	font-family: 'Myriad-Pro', 'Tahoma';
 	font-size: 12px;
 	color: #636466;
 }
@@ -484,7 +486,7 @@ input[type="text"] {
 }
 
 #footer ul.links > li > a {
-	font-family: 'Myriad-Pro';
+	font-family: 'Myriad-Pro', 'Tahoma';
 	color: #634963;
 	margin: 0;
 	padding: 0;
@@ -508,7 +510,7 @@ input[type="text"] {
 
 #footer .paydelivery .method {
 	float: left;
-	font-family: 'Myriad-Pro';
+	font-family: 'Myriad-Pro', 'Tahoma';
 	font-size: 12px;
 }
 
@@ -554,7 +556,7 @@ input[type="text"] {
 #footer .bottom {
 	display: table;
 	height: 135px;
-	font-family: 'Myriad-Pro';
+	font-family: 'Myriad-Pro', 'Tahoma';
 	font-size: 12px;
 }
 
@@ -610,7 +612,7 @@ input[type="text"] {
 	margin: 0;
 	padding: 0;
 	border: none;
-	font-family: 'Myriad-Pro';
+	font-family: 'Myriad-Pro', 'Tahoma';
 	font-size: 16px;
 }
 

@@ -273,6 +273,53 @@ article #product-core-image {
 	margin-top: 20px;
 }
 
+.product-data #cart-form .option {
+	float: left;
+	margin-bottom: 10px;
+}
+
+.product-data #cart-form .param-name {
+	float: left;
+	width: 75px;
+	margin-right: 10px;
+}
+
+.product-data #cart-form .param-value {
+	_margin-bottom: 10px;
+}
+
+.product-data #cart-form .size-vars {
+	float: left;
+	max-width: 180px;
+}
+
+.product-data #cart-form .size-var {
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding-top: 7px;
+	border: 1px solid black;
+	text-align: center;
+	box-sizing: border-box;
+	font-family: "DINPro-Bold";
+	color: black;
+	cursor: pointer;
+}
+
+.product-data #cart-form .form-fill-hint {
+	display: none;
+	clear: left;
+	margin-left: 85px;
+}
+
+.product-data #cart-form .size-var:hover,
+.product-data #cart-form .size-var-active {
+	color: white;
+	background: #c48cba;
+}
+
 .product-data #cart-form input[type="submit"] {
 	margin-top: 15px;
 }
