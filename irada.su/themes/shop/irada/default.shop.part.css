@@ -79,10 +79,10 @@ i.sort-asc { height: 0; width: 0; border: 4px solid transparent; border-top-colo
 .compare-at-price { text-decoration: line-through; color: #c66; margin: 0 3px; }
 .out-of-stock strong { color: #aaa; font-size: 0.9em; }
 .disabled { color: #777; }
-.description { margin-bottom: 20px; }
+/*.description { margin-bottom: 20px; }*/
 .error { color: red; }
-.rating { white-space: nowrap; }
-.rating i.icon16 { margin-right: 0.13em; }
+/*.rating { white-space: nowrap; }*/
+/*.rating i.icon16 { margin-right: 0.13em; }*/
 h1 .rating i.icon16 { margin-top: 0.37em; }
 
 ul.compare-diff-all { float: right; list-style: none; }

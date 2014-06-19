@@ -242,6 +242,7 @@ $(function () {
 
     if ($("#product-core-image a").length) {
         $('.swipebox').swipebox({useSVG : false});
+		/*
         $("#product-core-image a").click(function (e) {
             e.preventDefault();
             var images = [];
@@ -259,6 +260,7 @@ $(function () {
             $.swipebox(images, {useSVG : false});
             return false;
         });
+		*/
     }
 
     // product images

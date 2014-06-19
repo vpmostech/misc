@@ -253,6 +253,8 @@ article #product-gallery .thumb-image {
 
 article #product-core-image {
 	float: left;
+	width: 300px;
+	_height: 700px;
 }
 
 .product-info {
@@ -261,7 +263,8 @@ article #product-core-image {
 
 .product-data {
 	float: left;
-	margin-left: 30px;
+	width: 370px;
+	margin-left: 10px;
 }
 
 .product-data .sku {
@@ -331,6 +334,9 @@ article #product-core-image {
 .description {
 	clear: left;
 	margin-top: 20px;
+	padding-right: 10px;
+	text-align: justify;
+	box-sizing: border-box;
 }
 
 .cart-summary-page {

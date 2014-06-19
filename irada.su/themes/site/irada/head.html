@@ -6,11 +6,14 @@
 
 
 <!-- css -->
-<link href="{$wa_theme_url}jquery-ui-1.10.4/jquery-ui-1.10.4.custom.min.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+<link href="{$wa_theme_url}js/jquery-ui-1.10.4/jquery-ui-1.10.4.custom.min.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+<link href="{$wa_theme_url}js/jqzoom_ev-2.3/css/jquery.jqzoom.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+<link href="{$wa_theme_url}js/magnific-popup/magnific-popup.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
 <link href="{$wa_theme_url}default.part.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
 <link href="{$wa_theme_url}irada.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
 <link href="{$wa_theme_url}home.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
 <link href="{$wa_theme_url}slider.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+
 {* <link href="{$wa_theme_url}mobile.css?v{$wa_theme_version}"{if !$wa->isMobile()} media="screen and (max-width: 760px)"{/if} rel="stylesheet" type="text/css"> *}
 {if $wa->isMobile()}
 	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
@@ -21,15 +24,18 @@
 <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-plugins/jquery.cookie.js"></script>
 <!--<script type="text/javascript" src="{$wa_theme_url}jquery-1.10.4/jquery-ui-1.10.4.custom.min.js"></script>--> {* Слишком толсто *}
-<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.core.min.js"></script>
-<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.widget.min.js"></script>
-<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.effect.min.js"></script>
-<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.accordion.min.js"></script>
-<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.button.min.js"></script>
-<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.spinner.min.js"></script>
-<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.effect-fade.min.js"></script>
-<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.effect-clip.min.js"></script>
-<script type="text/javascript" src="{$wa_theme_url}jquery-ui-1.10.4/jquery.ui.effect-highlight.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jquery-ui-1.10.4/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jquery-ui-1.10.4/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jquery-ui-1.10.4/jquery.ui.effect.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jquery-ui-1.10.4/jquery.ui.accordion.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jquery-ui-1.10.4/jquery.ui.button.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jquery-ui-1.10.4/jquery.ui.spinner.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jquery-ui-1.10.4/jquery.ui.effect-fade.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jquery-ui-1.10.4/jquery.ui.effect-clip.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jquery-ui-1.10.4/jquery.ui.effect-highlight.min.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/jqzoom_ev-2.3/jquery.jqzoom-core-pack.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}js/magnific-popup/jquery.magnific-popup.min.js"></script>
+
 <!--<script type="text/javascript" src="{$wa_url}wa-content/js/jquery-wa/wa.core.js?v{$wa->version(true)}"></script>-->
 <script type="text/javascript" src="{$wa_theme_url}irada.js"></script>
 <script type="text/javascript" src="{$wa_theme_url}slider.js"></script>

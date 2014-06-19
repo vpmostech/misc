@@ -39,8 +39,8 @@
                     <div class="corner top right">
                         {$wa->shop->badgeHtml($product.badge)}
                     </div>
-                    <a href="{$wa->shop->productImgUrl($product, '970')}">
-                        {$wa->shop->productImgHtml($product, '750', [ 'itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape ])}
+                    <a class="image-main" href="{$wa->shop->productImgUrl($product, '970')}">
+                        {$wa->shop->productImgHtml($product, '750', ['itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape, 'title' => $product.name|escape])}
                     </a>
                     <div id="switching-image" style="display: none;"></div>
                 </div>
@@ -96,8 +96,9 @@
 				</div>
 				<input id="add-to-cart" type="submit" value="В корзину" />
 			</form>
+			<div class="description" itemprop="description"><b>Описание: </b>{if $product.description}{$product.description}{/if}</div>
 		</div>
-		<div class="description" itemprop="description"><b>Описание: </b>{if $product.description}{$product.description}{/if}</div>
+		
 
         <!-- plugin hook: 'frontend_product.block' -->
         {* @event frontend_product.%plugin_id%.block *}

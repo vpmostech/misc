@@ -84,10 +84,19 @@ $(document).ready(function () {
 			*/
 		}
 	});
-
-	// Чтобы в корзине по клику на позицию (в любое место строки) происходил переход в карточку товара
-	// TODO
 		
+});
+
+
+// Лупа на основном изображении товара
+$(document).ready(function () {
+	
+	$('.image-main').jqzoom({
+		zoomWidth: 300,
+		preloadText: 'Загрузка изображения...',	
+		title: false,
+	});
+	
 });
 
 // Всё, что связано, с выбором размера товара
@@ -126,3 +135,48 @@ $(document).ready(function () {
 	}
 	
 });
+
+// Галерея при клике на изображение товара
+$(document).ready(function () {
+
+	var hrefs = [];
+	$('#product-gallery .thumb-image a').each(function () {
+		hrefs.push({src: this.href });
+	});
+
+	$("#product-core-image a").magnificPopup({
+		items: hrefs,
+		type: 'image',
+		gallery: {
+		  enabled: true
+		},
+
+		zoom: {
+			//enabled: true,
+
+			duration: 300, // duration of the effect, in milliseconds
+			easing: 'ease-in-out', // CSS transition easing function 
+			opener: function(openerElement) {
+				return $('#product-image');
+			}
+		},
+
+		callbacks: {
+			open: function () {
+				// Чтобы галерея открывалась на нужном изображении
+				var num = 0;
+				$('#product-gallery .thumb-image').each(function(index) {
+					console.log(index);
+					if ($(this).hasClass('selected')) {
+						num = index;
+						return false;
+					}
+				});
+				this.goTo(num);
+			},
+		},
+	});
+
+});
+// Чтобы в корзине по клику на позицию (в любое место строки) происходил переход в карточку товара
+// TODO
