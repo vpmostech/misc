@@ -255,6 +255,10 @@ article #product-core-image {
 	float: left;
 }
 
+.product-info {
+	margin: 0;
+}
+
 .product-data {
 	float: left;
 	margin-left: 30px;
