@@ -84,6 +84,11 @@
 	height: 193px;
 }
 
+.hit a .image img {
+	width: 145px;
+	height: 193px;
+}
+
 .hit .name {
 	margin-top: 9px;
 	font-family: 'Myriad-Pro';

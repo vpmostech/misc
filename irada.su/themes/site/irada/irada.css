@@ -48,6 +48,8 @@ table.centerer td {
 }
 
 h1 {
+	float: left;
+	margin-left: 10px;
 	font-family: 'Arial';
 	font-size: 22px;
 	font-weight: bold;
@@ -726,4 +728,10 @@ h2 a.hint {
 
 .wa-captcha p {
 	clear: left;
+}
+
+#yamap {
+	width: 400px;
+	height: 400px;
+	margin-top: 15px;
 }

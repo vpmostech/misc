@@ -44,6 +44,13 @@
 		</div>
 		<div class="myAccount">
 			{if $wa->user()->isAuth()}
+				{if strlen($wa->user('name', 'default')) > 0}
+					{$shownUsername = {$wa->user('name', 'default')}}
+				{elseif strlen($wa->user('email', 'default')) > 0}
+					{$shownUsername = {$wa->user('email', 'default')}}
+				{else}
+					{$shownUsername = 'Аноним'}
+				{/if}
 				<div class="login">
 					<a href="?logout">
 						<table class="centerer"><tr><td>Выход</td></tr></table>
@@ -51,7 +58,7 @@
 				</div>
 				<div class="register">
 					<a href="{$wa->getUrl('shop/frontend/my')}">
-						<table class="centerer"><tr><td><span style="font-size: 90%; font-style: italic;">{$wa->user('email', 'default')}</i></td></tr></table>
+						<table class="centerer"><tr><td><span style="font-size: 90%; font-style: italic;">{$shownUsername}</span></td></tr></table>
 					</a>
 				</div>
 			{else}
@@ -93,13 +100,13 @@
 		</a>
 		{$upperMenuItems=[
 				"Каталог товаров" => $wa->getUrl('shop/frontend'),
-				"Новинки" => "#",
-				"Скидки" => "#",
-				"Магазины" => "#",
-				"Оплата" => "#",
+				"Новинки" => $wa->getUrl('shop/frontend')|cat:"?sort=create_datetime&order=desc",
+				"Скидки" => "/skidki/",
+				"Магазины" => "/magaziny/",
+				"Оплата" => "/oplata/",
 				"Доставка" => "/dostavka/",
-				"Партнёрам" => "#",
-				"Контакты" => "#"
+				"Партнерам" => "/partneram/",
+				"Контакты" => "/kontakty/"
 			]
 		}
 		{foreach $upperMenuItems as $upperMenuItem}
