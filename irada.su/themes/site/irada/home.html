@@ -31,7 +31,6 @@
 			<div class="hit">
 				<a href="{$hit.frontend_url}" title="Посмотреть этот товар" >
 					<div class="image">
-						<!--<img src="{$imgDir}/dress.png" alt="Платье &quot;Ниагара&quot;" />-->
 						{$wa->shop->productImgHtml($hit, '145x193', ['itemprop' => 'image', 'alt' => $hit.name])} {* Есть ещё productImgUrl(...)*}
 					</div>
 					<div class="name">{$hit.name}</div>
@@ -80,20 +79,30 @@
 	<h3>Новости</h3>
 	<div class="line"></div>
 	<div> {* Чтобы first-child правильно работал *}
-		{$news=["1","2"]}
 		{* Здесь надо выбирать новости *}
-		{foreach $news as $new}
 		<div class="new">
 			<div class="image">
-				<img src="{$imgDir}/new.png" alt="" />
+				<img src="{$imgDir}/186.jpg" alt="" width="106" height="146" />
 			</div>
-			<div class="date">20.04.2014</div>
-			<div class="title">Название новости из 3-5 слов</div>
+			<div class="date">06.06.2014</div>
+			<div class="title">ШКОЛА ФРАНЧАЙЗИНГА IRADA.</div>
 			<div class="text">
-				Небольшое описание. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor. Небольшое описание. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.  Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiuer.
+				7 июня. Москва, ВВЦ, 75 пав-н, Business meeting - главный зал. От выбора франшизы до управления собственным магазином: основы бизнес-планирования, управление персоналом, технологии продаж, визуальный мерчандайзинг, управление ассортиментном, коммуникации и реклама, этика бизнеса...
+				{*
+				7 июня. Москва, ВВЦ, 75 пав-н, Business meeting - главный зал. От выбора франшизы до управления собственным магазином: основы бизнес-планирования, управление персоналом, технологии продаж, визуальный мерчандайзинг, управление ассортиментном, коммуникации и реклама, этика бизнеса. • В чем отличие рынка конфессиональной одежды от светской моды? • Как правильно выбрать франшизу на рынке одежды? • Как рассчитать бюджет на открытие магазина одежды? • Основы бюджета закупок, ассортиментного планирования, плана продаж. • KPI. Управление эффективностью в розничных продажах. • Информационные технологии on-line управления торговлей в сегменте fashion: от одного магазина к франчайзинговой сети. • Как продвигать магазин конфессиональной одежды на локальном рынке? На поставленные вопросы отвечают: Владимир Курач, профи в области продаж и организации эффективного бизнеса, эксперт в области франчайзинга с 15-летним опытом построения розницы в SELA, TOM FARR, MASCOTTE, основатель компании «Пилотаж в хаосе». http://pilothaos.com/. Мария Сморчкова, директор по стратегии бренда IRADA. Confession Fashion Confection, маркетолог, эксперт рынка одежды, основатель Ассоциации предприятий индустрии моды (АПРИМ). Амина Шабанова, основатель компании IRADA www.irada.su. Школа франчайзинга IRADA проходит в рамках первого Moscow Islamic Fashion Forum. Посещение форума - бесплатно по регистрации. Подробная программа форума и регистрация здесь: http://www.halalexpo.org/ru/doc/program/fashion_forum...
+				*}
 			</div>
 		</div>
-		{/foreach}
+		<div class="new">
+			<div class="image" style="background: none;">
+				<img src="{$imgDir}/187.jpg" alt="" width="106" />
+			</div>
+			<div class="date">05.06.2014</div>
+			<div class="title">Moscow Halal Expo. ВВЦ. 75 пав-н.</div>
+			<div class="text">
+				5 июня 2014. Первый день пятой юбилейной выставки Moscow Halal Expo! Прекрасный день! Полный радости неожиданных встреч и легкости общения...
+			</div>
+		</div>
 	</div>
 </div>
 <div class="spacer" style="height: 60px;"></div>

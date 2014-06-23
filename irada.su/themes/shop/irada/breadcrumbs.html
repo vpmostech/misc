@@ -1,8 +1,13 @@
 <div class="breadcrumbs">
 	{* Главная - обязательно *}
 	<div class="crumb">
-		<a href="#">Главная</a>
+		<a href="{$wa_url}">Главная</a>
 	</div>
+	{if isset($frontend_homepage)}
+		<div class="crumb">
+			Каталог товаров
+		</div>
+	{/if}
 	{* Если это связано с каталогом - ссылку на сам каталог *}
 	{if isset($category) or isset($product)}
 		<div class="crumb">
