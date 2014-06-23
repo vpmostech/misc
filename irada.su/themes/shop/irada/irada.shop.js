@@ -43,8 +43,11 @@ $(document).ready(function () {
             //ensure image load is fired. Fixes opera loading bug
             if (this.complete) { $(this).trigger("load"); }
         });
-        var size = $("#product-image").parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
-        var href = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
+        //var size = $("#product-image").parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
+		// Перепилено (добавлен parent()) для совместимости с magnific popup, так как он создаёт свои элементы
+		var size = $("#product-image").parent().parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
+		var href = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
+
         $("#product-image").parent().attr('href', href);
         return false;
     });
@@ -140,6 +143,8 @@ $(document).ready(function () {
 $(document).ready(function () {
 
 	var hrefs = [];
+
+	// Подготовим изображения для галереи
 	$('#product-gallery .thumb-image a').each(function () {
 		hrefs.push({src: this.href });
 	});
@@ -153,7 +158,6 @@ $(document).ready(function () {
 
 		zoom: {
 			//enabled: true,
-
 			duration: 300, // duration of the effect, in milliseconds
 			easing: 'ease-in-out', // CSS transition easing function 
 			opener: function(openerElement) {
@@ -166,7 +170,6 @@ $(document).ready(function () {
 				// Чтобы галерея открывалась на нужном изображении
 				var num = 0;
 				$('#product-gallery .thumb-image').each(function(index) {
-					console.log(index);
 					if ($(this).hasClass('selected')) {
 						num = index;
 						return false;
@@ -178,5 +181,6 @@ $(document).ready(function () {
 	});
 
 });
+
 // Чтобы в корзине по клику на позицию (в любое место строки) происходил переход в карточку товара
 // TODO

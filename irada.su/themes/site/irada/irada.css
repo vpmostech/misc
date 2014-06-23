@@ -49,7 +49,7 @@ table.centerer td {
 
 h1 {
 	float: left;
-	margin-left: 10px;
+	margin-top: 0;
 	font-family: 'Arial';
 	font-size: 22px;
 	font-weight: bold;
@@ -57,6 +57,7 @@ h1 {
 }
 
 h2 {
+	margin-top: 0;
 	font-family: 'Arial';
 	font-size: 16px;
 	font-weight: bold;
@@ -64,7 +65,33 @@ h2 {
 }
 
 h3 {
-	
+	margin-top: 0;
+}
+
+.breadcrumbs {
+	float: left;
+	width: 755px;
+	height: 15px;
+	margin-bottom: 5px;
+	font-size: 11px;
+	color: #7d7d7d;
+}
+
+.breadcrumbs .crumb {
+	float: left;
+	margin-right: 5px;
+}
+
+.breadcrumbs .crumb a {
+	color: #7d7d7d;
+}
+
+.breadcrumbs .crumb:after {
+	content: " >>";
+}
+
+.breadcrumbs .crumb:last-child:after {
+	content: "";
 }
 
 a.button,
@@ -404,9 +431,11 @@ input[type="text"] {
 }
 
 #main {
+	padding-top: 20px;
 	background: white;
 	border: none; /* FIXME: тени */
 	display: table;
+	box-sizing: border-box;
 }
 
 #sidebar {
@@ -419,7 +448,7 @@ input[type="text"] {
 #sidebar .sidegroup {
 	width: 100%;
 	padding-left: 25px;
-	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 #sidebar .sidegroup h3 {

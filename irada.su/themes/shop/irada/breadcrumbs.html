@@ -1,0 +1,31 @@
+<div class="breadcrumbs">
+	{* Главная - обязательно *}
+	<div class="crumb">
+		<a href="#">Главная</a>
+	</div>
+	{* Если это связано с каталогом - ссылку на сам каталог *}
+	{if isset($category) or isset($product)}
+		<div class="crumb">
+			<a href="{$wa->getUrl('shop/frontend')}">Каталог товаров</a>
+		</div>
+	{/if}
+	{* Теперь вставим встроенные *}
+	{if isset($breadcrumbs)}
+		{foreach $breadcrumbs as $breadcrumb}
+		<div class="crumb">
+			<a href="{$breadcrumb['url']}">{$breadcrumb['name']}</a>
+		</div>	
+		{/foreach}
+	{/if}
+	{* И последнюю, о текущей странице, без ссылки *}
+	{if isset($category)}
+		{$last_bread=$category.name|escape}
+	{elseif isset($product)}
+		{$last_bread=$product.name|escape}
+	{/if}
+	{if isset($last_bread)}
+		<div class="crumb">
+			{$last_bread}
+		</div>
+	{/if}
+</div>
