@@ -43,6 +43,15 @@ table.centerer td {
 	clear: both;
 }
 
+#sizetable-popup {
+	width: 500px;
+	min-height: 300px;  /* temp */
+    margin: 50px auto 0;
+    padding: 5px 10px;
+    box-sizing: border-box;
+	background: #f2e6f1;
+}
+
 .blur {
 	opacity: 0.5; !important
 }

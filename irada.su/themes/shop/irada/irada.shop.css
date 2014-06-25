@@ -21,6 +21,11 @@
 	box-sizing: border-box;
 }
 
+.show-sizetable {
+	margin-left: 10px;
+	color: blue;
+}
+
 .category-name {
 	margin-bottom: 10px;
 }
