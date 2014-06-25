@@ -5,7 +5,7 @@
 
 {$page=$wa->get('page')}
 {if !isset($page)}
-	{$page=null}
+	{$page=1}
 {/if}
 
 {if isset($smarty.cookies.products_per_page)}
@@ -14,7 +14,7 @@
 	{$gpp = $wa->shop->config("products_per_page")}
 {/if}
 
-{$allProducts = $wa->shop->products("all", $page, $gpp)}
+{$allProducts = $wa->shop->products("all", ($page-1)*$gpp, $gpp)}
 {$prCount = $wa->shop->productsCount("all")}
 {$pagesCount = ceil($prCount / $gpp) }
 
