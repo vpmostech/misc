@@ -107,6 +107,7 @@ ymaps.ready(function () {
 		},
 	};
 	$('#mapCity').on('change', function (event) {
+		myMap.balloon.close();
 		city = $(this).val();
 		if (shops[city]) {
 			myMap.setCenter([shops[city].coordX, shops[city].coordY], 15);
