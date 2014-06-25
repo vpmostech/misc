@@ -162,6 +162,7 @@ ul.product-list li {
 ul.product-list li .image {
 	width: 180px;
 	height: 289px;
+	text-align: center;
 }
 
 ul.product-list li .image img {

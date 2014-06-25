@@ -44,7 +44,7 @@
 }
 
 .hits {
-	height: 262px;
+	height: 280px;
 }
 
 .hits h3, .news h3 {
@@ -104,6 +104,7 @@
 
 .features {
 	height: 160px;
+    margin-top: 10px;
 	background: #f6f7f7;
 }
 
