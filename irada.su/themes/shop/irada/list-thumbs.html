@@ -27,7 +27,9 @@
 {*if isset($pages_count) && $pages_count > 1*}
 {if isset($pages_count)}
 <div class="block {*lazyloading-paging*} goods_pagination">
-    <div class="goods_count">Товаров: <span style="color: black;">{$category.count}</span></div>
+	{if isset($goods_count) }
+	    <div class="goods_count">Товаров: <span style="color: black;">{$goods_count}</span></div>
+	{/if}
 	{$img_tag_start='<img src="'}
 	{$img_tag_end='" />'}
 	{wa_pagination total=$pages_count attrs=['class' => "menu-h"] prev="{$img_tag_start}{$imgDir}{'/product_page_prev.png'}{$img_tag_end}" next="{$img_tag_start}{$imgDir}{'/product_page_next.png'}{$img_tag_end}"}
@@ -120,7 +122,9 @@
 <div class="clearfix"></div>
 {if isset($pages_count)}
 	<div class="block goods_pagination">
-		<div class="goods_count">Товаров: <span style="color: black;">{$category.count}</span></div>
+		{if isset($goods_count) }
+			<div class="goods_count">Товаров: <span style="color: black;">{$goods_count}</span></div>
+		{/if}
 		{$img_tag_start='<img src="'}
 		{$img_tag_end='" />'}
 		{wa_pagination total=$pages_count attrs=['class' => "menu-h"] prev="{$img_tag_start}{$imgDir}{'/product_page_prev.png'}{$img_tag_end}" next="{$img_tag_start}{$imgDir}{'/product_page_next.png'}{$img_tag_end}"}

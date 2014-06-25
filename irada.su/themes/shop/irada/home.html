@@ -20,7 +20,7 @@
 
 {if $allProducts}
 	<div id="product-list">
-		{include file="list-thumbs.html" products=$allProducts sorting=true pages_count=$pagesCount }
+		{include file="list-thumbs.html" products=$allProducts sorting=true pages_count=$pagesCount goods_count=$prCount}
 	</div>
 {else}
 	<p>Пока у нас нет товаров.</p>
