@@ -44,5 +44,5 @@
 {$wa->headJs()} {* links Google Analytics tracking code and current site's custom JS (Site app) *}
 
 {if $wa_theme_url ne $wa_active_theme_url}
-	{include file="{$wa_active_theme_path}/head.shop.html" inline}
+	{include file="{$wa_active_theme_path}/head.{$wa_app}.html" inline}
 {/if}
