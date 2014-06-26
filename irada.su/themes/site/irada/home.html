@@ -29,7 +29,7 @@
 		{$hits = $wa->shop->productSet("promo")}
 		{foreach $hits|array_slice:0:6 as $hit}		
 			<div class="hit">
-				<a href="{$hit.frontend_url}" title="Посмотреть этот товар" >
+				<a href="{if (isset($demosite))}http://irada.su/razdel/{else}{$hit.frontend_url}{/if}" title="Посмотреть этот товар" >
 					<div class="image">
 						{$wa->shop->productImgHtml($hit, '145x193', ['itemprop' => 'image', 'alt' => $hit.name])} {* Есть ещё productImgUrl(...)*}
 					</div>
@@ -41,12 +41,12 @@
 	</div>
 </div>
 <div class="features fullwidth">
-	<a href="/skidki/">
+	<a href="{if (isset($demosite))}http://irada.su/razdel/rasprodaja/{else}/skidki/{/if}">
 		<div class="feature">
 			<img src="{$imgDir}/gift_cert.png" style="margin-left: 10px;" />
 			<h3>Карта постоянного<br />покупателя</h3>
 			<div class="text">Скидки на покупку</div>
-			<a href="/skidki/">
+			<a href="{if (isset($demosite))}http://irada.su/razdel/rasprodaja/{else}/skidki/{/if}">
 				<div class="link">
 					Приобрести
 				</div>
@@ -60,12 +60,12 @@
 			<div class="text">Москва, Казань, Ульяновск, Тюмень, Набережные Челны</div>
 		</div>
 	</a>
-	<a href="/skidki/">
+	<a href="{if (isset($demosite))}http://irada.su/razdel/rasprodaja/{else}/skidki/{/if}">
 		<div class="feature">
 			<img src="{$imgDir}/gift_cert2.png" style="margin-top: -8px; margin-left: -5px;" />
 			<h3>Подарочные<br />сертификаты</h3>
 			<div class="text">С доставкой на e-mail</div>
-			<a href="/skidki/">
+			<a href="{if (isset($demosite))}http://irada.su/razdel/rasprodaja/{else}/skidki/{/if}">
 				<div class="link">
 					Подарить
 				</div>
@@ -110,7 +110,6 @@
 	<div class="phone_img">
 		<img src="{$imgDir}/phone.png" />
 	</div>
-	<div class="phone">+7 926 139 2949,&nbsp;</div>
 	<div class="phone">+7 968 968 9355</div>
 	<a class="callback" href="#">Заказать обратный звонок</a>
 	<div class="social">

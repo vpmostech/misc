@@ -68,7 +68,7 @@
 					</a>
 				</div>
 				<div class="register">
-					<a href="{$wa->getUrl('shop/signup')}">
+					<a href="{if (isset($demosite))}http://irada.su/register/{else}{$wa->getUrl('shop/signup')}{/if}">
 						<table class="centerer"><tr><td>Регистрация</td></tr></table>
 					</a>
 				</div>
@@ -81,12 +81,12 @@
 					</a>
 				</div>
 				<div class="cart_info">
-					<a href="{$wa->getUrl('shop/frontend/cart')}">
+					<a href="{if isset($demosite)}http://irada.su/cart/{else}{$wa->getUrl('shop/frontend/cart')}{/if}">
 						<div class="cart_title">Моя корзина</div>
 					</a>
 					<div class="cart_count">{$cart->count()} товаров | {$cart->total()} руб.</div>
 					<div class="cart_checkout">
-						<a href="{$wa->getUrl('shop/frontend/cart')}">Оформить</a>
+						<a href="{if isset($demosite)}http://irada.su/cart/{else}{$wa->getUrl('shop/frontend/cart')}{/if}">Оформить</a>
 					</div>
 				</div>
 			</div>
@@ -109,6 +109,19 @@
 				"Контакты" => "/kontakty/"
 			]
 		}
+		{if isset($demosite)}
+			{$upperMenuItems=[
+					"Каталог товаров" => "http://irada.su/razdel/",
+					"Новинки" => "http://irada.su/razdel/",
+					"Скидки" => "http://irada.su/razdel/rasprodaja/",
+					"Магазины" => "/magaziny/",
+					"Оплата" => "http://irada.su/how/",
+					"Доставка" => "http://irada.su/dostavka/",
+					"Партнерам" => "http://irada.su/partneram/",
+					"Контакты" => "http://irada.su/contacts/"
+				]
+			}	
+		{/if}
 		{foreach $upperMenuItems as $upperMenuItem}
 		<a href="{$upperMenuItem}">
 			<div class="menuItem">{$upperMenuItem@key}</div>

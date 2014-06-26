@@ -1,4 +1,7 @@
 {$imgDir="{$wa_theme_url}graphics"}
+{if !$wa->user()->isAuth() or $wa->user('name', 'default') != 'admin'}
+	{$demosite = true}
+{/if}
 <!DOCTYPE html>
 <html>
 <head>

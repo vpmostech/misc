@@ -14,6 +14,18 @@
 			"Одежда для намаза" => "#",
 			"Мусульманские купальники" => "#"
 		]}
+		{if (isset($demosite))}
+			{$cats = [
+				"Платья" => "http://irada.su/razdel/platiya/",
+				"Костюмы" => "http://irada.su/razdel/platiya/",
+				"Сарафаны" => "http://irada.su/razdel/sarafany/",
+				"Туники" => "http://irada.su/razdel/tuniki/",
+				"Жакеты" => "http://irada.su/razdel/tuniki/",
+				"Юбки" => "http://irada.su/razdel/ubki/",
+				"Одежда для намаза" => "http://irada.su/razdel/dlyadoma/",
+				"Мусульманские купальники" => "http://irada.su/razdel/m2/"
+			]}	
+		{/if}
 		{foreach $cats as $cat}
 		<h4>
 			<a href="{$cat}">{$cat@key}</a>
@@ -22,7 +34,7 @@
 	</div>
 	<div class="sidegroup">
 		<h3>
-			<a href="{$cat}">Аксессуары</a>
+			<a href="#">Аксессуары</a>
 		</h3>
 		{$cats = [
 			"Платки" => "#",
@@ -30,6 +42,14 @@
 			"Нарукавники" => "#",
 			"Сумки" => "#"
 		]}
+		{if (isset($demosite))}
+			{$cats = [
+				"Платки" => "http://irada.su/razdel/aksessuary/",
+				"Шапочки" => "http://irada.su/razdel/aksessuary/",
+				"Нарукавники" => "http://irada.su/razdel/naruk/",
+				"Сумки" => "http://irada.su/razdel/"
+			]}
+		{/if}
 		{foreach $cats as $cat}
 		<h4>
 			<a href="{$cat}">{$cat@key}</a>
@@ -44,6 +64,13 @@
 			"Кукла-мусульманка" => "#",
 			"Одежда для детей" => "#"
 		]}
+		{if (isset($demosite))}
+			{$cats = [
+				"Кукла-мусульманка" => "http://irada.su/razdel/pl31/",
+				"Одежда для детей" => "http://irada.su/razdel/pl31/"
+			]}
+		{/if}
+
 		{foreach $cats as $cat}
 		<h4>
 			<a href="{$cat}">{$cat@key}</a>
@@ -57,13 +84,13 @@
 	</div>
 	<div class="sidegroup">
 		<h3>
-			<a href="#" style="color: #73337a;">Распродажа, акции</a>
+			<a href="{if isset($demosite)}http://irada.su/razdel/rasprodaja/{else}#{/if}" style="color: #73337a;">Распродажа, акции</a>
 		</h3>
 	</div>
 
 	{* Рекламный баннер *}
 	{if !empty($category) || !empty($product)}
-		<a href="#" alt="">
+		<a href="{if isset($demosite)}http://irada.su/{else}#{/if}" alt="">
 			<div class="ad_banner"></div>
 		</a>
 	{/if}
