@@ -1,5 +1,35 @@
 <div class="slider">
-	{$slides = ["slide1.png", "slide2.png", "slide3.png"]}
+	{*$slides = ["slide1.png", "slide2.png", "slide3.png"]*}
+	{$slides = [
+		[
+			"img" => "Irada_Ramadan синяя.jpg",
+			"title" => '<div class="title" style="margin-top: 270px; font-size: 20px;">Скидка 10%</div>',
+			"text" => '<div class="text" style="margin-top: 300px; background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.2);">Весь июль во всех фирменных магазинах IRADA действует скидка 10% на весь ассортимент, включая одежду, аксессуары и все сопутствующие товары.</div>',
+			"link" => $wa->getUrl('shop/frontend'),
+			"linkText" => 'Смотреть коллекцию'
+		],
+		[
+			"img" => 'slide1.png',
+			"title" => '<div class="title"><span class="line1">Новая</span><br /><span class="line2">коллекция</span></div>',
+			"text" => '<div class="text">Весь июль во всех фирменных магазинах IRADA действует скидка 10% на весь ассортимент, включая одежду, аксессуары и все сопутствующие товары.</div>',
+			"link" => $wa->getUrl('shop/frontend'),
+			"linkText" => 'Смотреть коллекцию'
+		],
+		[
+			"img" => "slide2.png",
+			"title" => '<div class="title"><span class="line1">Новая</span><br /><span class="line2">коллекция</span></div>',
+			"text" => '<div class="text">Весь июль во всех фирменных магазинах IRADA действует скидка 10% на весь ассортимент, включая одежду, аксессуары и все сопутствующие товары.</div>',
+			"link" => $wa->getUrl('shop/frontend'),
+			"linkText" => 'Смотреть коллекцию'
+		],
+		[
+			"img" => "slide3.png",
+			"title" => '',
+			"text" => '<div class="text" style="color: #321635; background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.4); font-size: 14px; text-align: left;">Только в июле скидка на все модели юбок и комплекты ГОТОВЫХ СТИЛЕВЫХ РЕШЕНИЙ в IRADA – 10%.</div>',
+			"link" => $wa->getUrl('shop/frontend'),
+			"linkText" => 'Смотреть коллекцию'
+		]
+	]}
 	<div class="nav_left"></div>
 	<div class="nav_right"></div>
 	<div class="bottom_line">
@@ -10,14 +40,14 @@
 		</div>
 	</div>
 	{foreach $slides as $slide}
-	<div class="slide {if $slide@key eq 0} active {/if}" style="background: url({$imgDir}/slider/{$slide}) center no-repeat;">
-		<div class="title">
-			<span class="line1">Новая</span><br /><span class="line2">коллекция</span>
-		</div>
-		<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Vivamus laoreet pretiueros diam in tortor...</div>
-		<div class="more">
-			<a href="{if isset($demosite)}http://irada.su/razdel/{else}{$wa->getUrl('shop/frontend')}{/if}">Смотреть коллекцию <img src="{$imgDir}/slider/more_arr.png" /></a>
-		</div>
+	<div class="slide {if $slide@key eq 0} active {/if}" style="background: url('{$imgDir}/slider/{$slide.img}') top center no-repeat;">
+		{$slide.title}
+		{$slide.text}
+		{if $slide.link != ""}
+			<div class="more">
+				<a href="{if isset($demosite)}http://irada.su/razdel/{else}{$slide.link}{/if}">{$slide.linkText} <img src="{$imgDir}/slider/more_arr.png" /></a>
+			</div>
+		{/if}
 	</div>
 	{/foreach}
 </div>

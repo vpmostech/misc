@@ -6,7 +6,7 @@ body {
 	margin: 0;
 	font-family: 'Arial';
 	font-size: 13px;
-	background: url('graphics/Fon-1.jpg') no-repeat;
+	background: url('graphics/Fon-2.jpg') no-repeat;
 }
 
 table.centerer {
@@ -768,7 +768,7 @@ h2 a.hint {
 }
 
 #yamap {
-	width: 700px;
-	height: 700px;
+	width: 745px;
+	height: 550px;
 	margin-top: 15px;
 }

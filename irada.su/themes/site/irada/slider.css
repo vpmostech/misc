@@ -48,10 +48,13 @@
 }
 
 .slider .slide .text {
-	width: 280px;
+	width: 268px;
 	margin-left: 40px;
 	margin-top: 265px;
+	padding: 8px;
 	font-size: 12px;
+	text-align: justify;
+	box-sizing: border-box;
 }
 
 .slider .slide .more {
@@ -65,7 +68,7 @@
 	font-family: 'DINPro-Bold';
 	font-size: 13px;
 	text-transform: uppercase;
-	background: url('graphics/grad_violet.png') repeat-x;
+	background: url('graphics/grad_violet.png') repeat-x #6e3075;
 }
 
 .slider .slide .more a {

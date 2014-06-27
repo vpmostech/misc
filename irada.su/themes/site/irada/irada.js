@@ -22,7 +22,7 @@ function addToFavourites(a)
 function swapBG()
 {
 	if ( typeof swapBG.flag == 'undefined' ) {
-        swapBG.flag = 2;
+        swapBG.flag = 1;
     } else {
 		swapBG.flag = (swapBG.flag == 2) ? 1 : 2;
 	}
