@@ -1,2 +1,12 @@
-{*foreach $posts as $post*}
-<p>Найдено {count($posts)} новостей. </p>
+<div class="posts">
+	{foreach $posts as $post}
+		<div class="post-thumb">
+			{if $post.status == "published"}
+				<div class="post-date">{$post.datetime}</div>
+				<h3>
+					<a href="{$post.link}">{$post.title}</a>
+				</h3>
+			{/if}
+		</div>
+	{/foreach}
+</div>

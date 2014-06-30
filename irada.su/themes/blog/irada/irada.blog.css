@@ -1,0 +1,15 @@
+.post {
+	float: left;
+	width: 755px;
+}
+
+.post-thumb .post-date {
+	font-size: 10px;
+	color: #AAB1B6;
+}
+
+.post .post-text {
+	text-align: justify;
+	padding-right: 40px;
+	box-sizing: border-box;
+}

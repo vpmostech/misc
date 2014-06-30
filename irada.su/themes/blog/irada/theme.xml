@@ -3,6 +3,8 @@
 <theme id="irada" system="0" vendor="mostech" author="mostech" app="blog" parent_theme_id="site:irada" version="0.7.0">
 	<name locale="ru_RU">Тема irada для блога</name>
 	<files>
+		<file path="index.html" parent="1">
+		</file>
 		<file path="error.html" parent="1">
 		</file>
 		<file path="head.blog.html">
