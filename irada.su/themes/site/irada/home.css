@@ -169,7 +169,8 @@
 }
 
 .news {
-	height: 190px;
+	_height: 190px;
+	height: 470px;
 }
 
 .new {
@@ -180,7 +181,7 @@
 }
 
 .new .date, .new .title, .new .text {
-	float: left;
+	_float: left;
 	width: 350px;
 	margin-left: 18px;
 
@@ -213,6 +214,7 @@
 	margin-top: 15px;
 	font-size: 12px;
 	color: #4d4d4f;
+	text-align: justify;
 }
 
 .contactsline {
