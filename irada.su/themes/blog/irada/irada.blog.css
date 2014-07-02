@@ -1,6 +1,11 @@
-.post {
-	float: left;
-	width: 755px;
+
+.posts {
+    float: left;
+    width: 755px;
+}
+
+.post-thumb {
+	margin-bottom: 30px;
 }
 
 .post-thumb .post-date {
@@ -8,8 +13,37 @@
 	color: #AAB1B6;
 }
 
-.post .post-text {
+.post-thumb img {
+	float: left;
+	max-width: 200px;
+	max-height: 100px;
+	margin-right: 10px;
+	margin-bottom: 30px;
+}
+
+.post-thumb p.post-text {
+	padding-right: 30px;
+	margin-bottom: 5px;
 	text-align: justify;
+}
+
+.post-thumb p {
+	margin: 0;
+}
+.post {
+	float: left;
+	width: 755px;
+}
+
+.post .post-text {
 	padding-right: 40px;
+	margin-bottom: 10px;
+	text-align: justify;
 	box-sizing: border-box;
+}
+
+.post img {
+    float: left;
+	max-width: 715px;
+    margin-right: 10px;
 }

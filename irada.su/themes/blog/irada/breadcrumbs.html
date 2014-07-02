@@ -1,0 +1,18 @@
+<div class="breadcrumbs">
+	{* Главная - обязательно *}
+	<div class="crumb">
+		<a href="{$wa_url}">Главная</a>
+	</div>
+	{if isset($blog)}
+		<div class="crumb">
+			{if isset($post)}<a href="{$blog.link}">{/if}
+				{$blog.name|escape}
+			{if isset($post)}</a>{/if}
+		</div>
+	{/if}
+	{if isset($post)}
+		<div class="crumb">
+			{$post.title|escape}
+		</div>
+	{/if}
+</div>

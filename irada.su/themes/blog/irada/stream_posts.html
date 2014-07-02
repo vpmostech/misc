@@ -1,12 +1,22 @@
 <div class="posts">
 	{foreach $posts as $post}
+		{$post = $wa->blog->post($post.id)}
 		<div class="post-thumb">
 			{if $post.status == "published"}
 				<div class="post-date">{$post.datetime}</div>
 				<h3>
 					<a href="{$post.link}">{$post.title}</a>
 				</h3>
+				<p class="post-text">
+					{if strlen($post.text_before_cut) > 0}
+						{$post.text_before_cut}
+						<a href="{$post.link}" class="readmore">Читать далее...</a>
+					{else}
+						{$post.text}
+					{/if}
+				</p>
 			{/if}
 		</div>
+		<div class="clearfix"></div>
 	{/foreach}
 </div>

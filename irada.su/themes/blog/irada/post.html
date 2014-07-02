@@ -1,4 +1,8 @@
+{$blog = $wa->blog->blog($post.blog_id)}
+{include file="breadcrumbs.html"}
 <div class="post">
-	<h2>{$post.title}</h2>
+	<h1>{$post.title}</h1>
 	<div class="post-text">{$post.text}</div>
+	<a href="{$blog.link}">Смотреть все новости {$post.blog_name}</a>
+		{debug}
 </div>

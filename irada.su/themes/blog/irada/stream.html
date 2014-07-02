@@ -1,4 +1,5 @@
 {$blog = $wa->blog->blog($wa->globals('blog_id'))}
+{include file="breadcrumbs.html"}
 <h1>{$blog.name}</h1>
 <div class="posts posts-news">
 	{include file="stream_posts.html"}
