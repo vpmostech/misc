@@ -79,20 +79,47 @@
 	<h3>Новости</h3>
 	<div class="line"></div>
 	<div> {* Чтобы first-child правильно работал *}
-		{$news = $wa->blog->posts($newsBlogIndex, 2)} {* Отбирать надо не 2, а все, и искать опубликованные *}
+		{$news = $wa->blog->posts($newsBlogIndex)} {* Отбирать надо не 2, а все, и искать опубликованные *}
+		{$newsShown = 0}
+		{*
 		<div class="new">
 			<img src="{$imgDir}/IRADA RAMADAN.jpg" alt="" height="146" style="float: left; margin-right: 5px;" />
 			<span class="date">01.07.2014</span><br />
 			<span class="text">Готовясь к священному месяцу Рамадан, компания IRADA выпустила коллекцию RAMADAN - THE BEST FOR REST. Срединная коллекция лета содержит комфортные объемные платья для молитвы "Саванна", летние варианты самого строгого и самого популярного платья "Фантазия", а также по многочисленным просьбам покупателей - хлопковые подъюбники, являющиеся для мусульманок не менее важным элементом гардероба, чем, собственно, широкое платье в пол с неизменно длинным рукавом. Ткани в коллекции IRADA RAMADAN, как и подобает названию - светлые и легкие - THE BEST FOR REST. Это пастельные однотоны светлых смесовых хлопоков классических цветов - для платьев и юбок. Это трикотаж пастельных тонов – бежевого и светло-серого, а также черный и насыщенные цвета в платьях для намаза «Саванна». Особенностью этого платья является необычной формы конструкция цельнокроеного воротника-хомута, который легко превращается с головной убор для совершения молитвы. Традиционно к Рамадану IRADA отшивает большое число разнообразных головных уборов для женщин - это платки, палантины, шапочки под платок, бони, нарукавники, химары. Для постоянных покупателей IRADA месяц Рамадан - время поста и посещения мечетей. В Рамадан многие покупают хиджаб не только для себя, но и в подарок. Потому, весь июль во всех магазинах IRADA действует скидка в 10% на все виды товаров.</span>
 		</div>
-		<div class="new" style="display: none;">
-			{$new = $news[1]}
-			{debug}
-			{if true}
-				<img src="{$imgDir}/186.jpg" style="max-width: 100%; float: left;">
-			{/if}
-		</div>
-		<div class="new" style="padding-left: 30px; box-sizing: border-box;">
+		*}
+		{foreach $news as $new}
+			<div class="new">
+				{if $new.status != "published"}{continue}{/if}
+				{* Нужно вытащить из поста первое изображение *}
+				{if $new.text_before_cut != ""}
+					{$newText = $new.text_before_cut}
+				{else}
+					{$newText = $new.text}
+				{/if}
+				{if strpos($newText, "<img") === 0}
+					{$imgHtml = substr($newText, 0, strpos($newText, ">") + 1)}
+					{$restHtml = substr($newText, strpos($newText, ">") + 1)}
+				{else}
+					{$imgHtml = ""}
+					{$restHtml = $newText}
+				{/if}
+				{$newDate = substr($new.datetime, 0, strpos($new.datetime, " "))}
+				{* > Подсветка синтаксиса *}
+				<a href="{$new.link}">{$imgHtml}</a>
+				<div class="textpart">
+					<div class="date">{$newDate}</div>
+					<div class="clearfix"></div>
+					<div class="title">{$new.title}</div>
+					<div class="clearfix"></div>
+					<div class="text">{$restHtml}</div>
+					<a href="{$new.link}" class="readmore">Читать далее...</a>
+				</div>
+			</div>
+			{$newsShown = $newsShown + 1}
+			{if $newsShown == 2}{break}{/if}
+		{/foreach}
+		<div class="new" style="padding-left: 30px; box-sizing: border-box; display: none;">
 			<div class="image" style="margin-right: 5px;">
 				<img src="{$imgDir}/186.jpg" alt="" width="106" height="146" style="float: left; margin-right: 5px;" />
 			</div>
