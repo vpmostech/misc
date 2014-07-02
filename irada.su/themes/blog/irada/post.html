@@ -3,6 +3,5 @@
 <div class="post">
 	<h1>{$post.title}</h1>
 	<div class="post-text">{$post.text}</div>
-	<a href="{$blog.link}">Смотреть все новости {$post.blog_name}</a>
-		{debug}
+	<a href="{$blog.link}">Смотреть все {$post.blog_name|lower}</a>
 </div>
