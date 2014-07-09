@@ -62,7 +62,7 @@
 					<div class="image_paths" style="display: none;">
 						{* Это для перещёлкивания картинок, сохраняем в теле документа пути к ним, чтобы потом подгрузить *}
 						{foreach $pr.images as $image}
-							<span data-url="{$wa->shop->productImgUrl(['id'=> $pr.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '180x285', ['alt' => $image.description|escape])}">
+							<span data-url="{$wa->shop->productImgUrl(['id'=> $pr.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '0x285', ['alt' => $image.description|escape])}">
 							</span>
 						{/foreach}
 					</div>
@@ -88,7 +88,7 @@
 						{if $badge_html}
 							<div class="corner top right">{$badge_html}</div>
 						{/if}
-						{$wa->shop->productImgHtml($p, '180x285', ['itemprop' => 'image', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}
+						{$wa->shop->productImgHtml($p, '0x285', ['itemprop' => 'image', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}
 					</div>
 				</div>
 				<div class="fullname">

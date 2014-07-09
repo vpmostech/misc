@@ -94,12 +94,15 @@ $(document).ready(function () {
 // Лупа на основном изображении товара
 $(document).ready(function () {
 	
-	$('.image-main').jqzoom({
-		zoomWidth: 300,
+	$imageMain = $('.image-main');
+	w = $imageMain.children('img').width();
+	h = $imageMain.children('img').height();
+	$imageMain.jqzoom({
+		zoomWidth: w ? w : 300,
+		zoomHeight: h ? h : 300,
 		preloadText: 'Загрузка изображения...',	
 		title: false,
 	});
-	
 });
 
 // Всё, что связано, с выбором размера товара
@@ -140,6 +143,8 @@ $(document).ready(function () {
 });
 
 // Галерея при клике на изображение товара
+// Посчитали, что боковых эскизов вполне достаточно
+/*
 $(document).ready(function () {
 
 	var hrefs = [];
@@ -179,8 +184,8 @@ $(document).ready(function () {
 			},
 		},
 	});
-
 });
+*/
 
 // Таблица размеров
 $(document).ready(function () {

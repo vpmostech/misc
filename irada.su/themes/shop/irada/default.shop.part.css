@@ -53,7 +53,7 @@ ul.product-nav li.selected a { background: #eed; }
 ul.thumbs .image .corner.right { right:28px; }
 .image #switching-image { background: #fff url('img/loading32.gif') no-repeat 50% 50%; background-size: 32px 32px; padding: 10px; opacity: 0.5; position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
 .more-images { display: block; margin: 10px; }
-.more-images .image img { border: 1px solid #fff; max-width: 48px; padding: 1px; float: left\9; /* IE8 */ }
+.more-images .image img { border: 1px solid #fff; max-width: 75px; padding: 1px; float: left\9; /* IE8 */ }
 .more-images .image.selected img { border-color: #ddd; border: 1px solid #777777; box-shadow: 0 1px 6px #bbb; }
 
 ul.skus { list-style: none; padding-left: 2px; }

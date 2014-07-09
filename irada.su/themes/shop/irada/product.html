@@ -28,8 +28,8 @@
 				<div class="more-images" id="product-gallery">
 					{foreach $product.images as $image}
 						<div class="image{if $image.id == $product.image_id} selected{/if} thumb-image">
-							<a id="product-image-{$image.id}" href="{$wa->shop->productImgUrl(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext], '970')}" class="swipebox">
-								{$wa->shop->productImgHtml(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '100', ['alt' => $image.description|escape])}
+							<a id="product-image-{$image.id}" href="{$wa->shop->productImgUrl(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext], '1500')}" class="swipebox">
+								{$wa->shop->productImgHtml(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '75x0', ['alt' => $image.description|escape])}
 							</a>
 						</div>
 					{/foreach}
@@ -40,8 +40,8 @@
                     <div class="corner top right">
                         {$wa->shop->badgeHtml($product.badge)}
                     </div>
-                    <a class="image-main" href="{$wa->shop->productImgUrl($product, '970')}">
-                        {$wa->shop->productImgHtml($product, '750', ['itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape, 'title' => $product.name|escape])}
+                    <a class="image-main" href="{$wa->shop->productImgUrl($product, '1500')}">
+                        {$wa->shop->productImgHtml($product, '300x0', ['itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape, 'title' => $product.name|escape])}
                     </a>
                     <div id="switching-image" style="display: none;"></div>
                 </div>
