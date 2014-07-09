@@ -258,10 +258,15 @@ input[type="text"] {
 }
 
 #header form.search #search {
+	float: left;
 	width: 270px;
 	height: 15px;
 	position: relative;
+	margin: 0;
+	padding: 2px;
+	border-width: 1px;
 	font-size: 11px;
+	box-sizing: content-box;
 }
 
 #header form.search button {
