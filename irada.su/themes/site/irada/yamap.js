@@ -3,7 +3,7 @@ ymaps.ready(function () {
 	myMap = new ymaps.Map('yamap', {
         center: [55.73811857813739, 37.61699737548825], // Москва
         zoom: 11,
-		controls: [],
+		controls: ['zoomControl'],
     });
 
 	//myMap.behaviors.disable(['drag', 'rightMouseButtonMagnifier', 'scrollZoom', 'dblClickZoom', 'multiTouch']);
