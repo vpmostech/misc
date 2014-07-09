@@ -1,0 +1,22 @@
+*** C:/bazar-projects/irada/thumb_old.php	Thu Apr 24 15:44:50 2014
+--- C:/bazar-projects/irada/thumb.php	Wed Jul 09 14:24:12 2014
+***************
+*** 70,76 ****
+  }
+  
+  if ($file && file_exists($thumb_path)) {
+!     waFiles::readFile($thumb_path);
+  } else {
+      header("HTTP/1.0 404 Not Found");
+      exit;
+--- 70,79 ----
+  }
+  
+  if ($file && file_exists($thumb_path)) {
+! 	// Просто выдавать не будем, лучше наклеим watermark
+! 	//waFiles::readFile($thumb_path);
+! 	$_GET['path'] = $thumb_path;
+! 	include(realpath('../../../../wa-data/public/shop/products/watermark.php')); // wa->getRootUlr() здесь выдаёт полный отстой
+  } else {
+      header("HTTP/1.0 404 Not Found");
+      exit;

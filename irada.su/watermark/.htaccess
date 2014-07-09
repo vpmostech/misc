@@ -1,0 +1,11 @@
+
+<ifModule mod_rewrite.c>
+    RewriteEngine On
+	#watermark
+	RewriteCond %{REQUEST_FILENAME} -f
+	RewriteRule ^([0-9]+/.*.[gif|jpeg|jpg|png])$ watermark.php?path=$1 [QSA,NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ thumb.php [L,QSA]
+
+</ifModule>
