@@ -513,6 +513,7 @@ table.order tr.summary-start td {
 .product-quickview {
 	position: absolute;
 	width: 100%;
+	margin-left: 5px;
 	border: 1px solid grey;
 	box-shadow: 0 0 5px grey;
 	color: black;

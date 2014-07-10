@@ -44,7 +44,7 @@ $(document).ready(function () {
             if (this.complete) { $(this).trigger("load"); }
         });
         //var size = $("#product-image").parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
-		// Перепилено (добавлен parent()) для совместимости с magnific popup, так как он создаёт свои элементы
+		// Перепилено (добавлен parent()) для совместимости с magnific popup ИЛИ лупой, так как он создаёт свои элементы
 		var size = $("#product-image").parent().parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
 		var href = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
 
@@ -55,10 +55,11 @@ $(document).ready(function () {
 	// Быстрый просмотр товаров
 	$('ul.product-list li').on('mouseover', function (event) {
 		$('.product-quickview-link').hide();
-		$(this).children('.product-quickview-link').show();
+		w = $(this).find('img:visible').width();
+		$(this).children('.product-quickview-link').width(w).show();
 	});
 	$('.product-quickview').on('mouseleave', function (event) {
-		$(this).parent().hide();
+		//$(this).parent().hide();
 	});
 	$('.image-left, .image-right').on('click', function (event) {
 		event.preventDefault();
