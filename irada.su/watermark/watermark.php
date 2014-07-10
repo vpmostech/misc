@@ -18,7 +18,7 @@ $image = imagecreatefromstring(file_get_contents($realpath));
 $w = imagesx($image);
 $h = imagesy($image);
 
-if ($w > 150 && $h > 150) {
+if ($w > 110 && $h > 110) {
 
 	// Load the watermark
 	$watermark = imagecreatefrompng(realpath("watermark.png"));
