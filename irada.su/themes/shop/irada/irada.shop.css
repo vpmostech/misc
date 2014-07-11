@@ -269,8 +269,7 @@ article #product-gallery .thumb-image {
 
 article #product-core-image {
 	float: left;
-	width: 300px;
-	_height: 700px;
+	width: 320px;
 }
 
 .product-info {
@@ -279,7 +278,7 @@ article #product-core-image {
 
 .product-data {
 	float: left;
-	width: 320px;
+	width: 300px;
 	margin-left: 20px;
 }
 
