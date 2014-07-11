@@ -241,7 +241,7 @@ Product.prototype.cartButtonVisibility = function (visible) {
 $(function () {
 
     if ($("#product-core-image a").length) {
-        $('.swipebox').swipebox({useSVG : false});
+        //$('.swipebox').swipebox({useSVG : false});
 		/*
         $("#product-core-image a").click(function (e) {
             e.preventDefault();
