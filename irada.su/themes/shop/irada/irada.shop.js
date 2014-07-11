@@ -112,7 +112,7 @@ $(document).ready(function () {
 	$imageMain.jqzoom({
 		zoomWidth: w ? w : 300,
 		zoomHeight: h ? h : 300,
-		xOffset: 40,
+		xOffset: 30,
 		preloadText: 'Загрузка изображения...',	
 		title: false,
 	});

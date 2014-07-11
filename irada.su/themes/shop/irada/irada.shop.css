@@ -260,6 +260,7 @@ article {
 
 article #product-gallery {
 	float: left;
+	margin-top: -1px;
 }
 
 article #product-gallery .thumb-image {
@@ -267,9 +268,14 @@ article #product-gallery .thumb-image {
 	clear: left;
 }
 
+article #product-gallery .thumb-image img {
+	padding-top: 0;
+}
+
 article #product-core-image {
 	float: left;
 	width: 320px;
+	margin-left: 15px;
 }
 
 .product-info {
@@ -278,7 +284,7 @@ article #product-core-image {
 
 .product-data {
 	float: left;
-	width: 300px;
+	width: 290px;
 	margin-left: 20px;
 }
 
