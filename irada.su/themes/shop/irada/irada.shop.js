@@ -48,7 +48,18 @@ $(document).ready(function () {
 		var size = $("#product-image").parent().parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
 		var href = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
 
-        $("#product-image").parent().attr('href', href);
+		// Добавлен parent() (аналогично size выше)
+        $("#product-image").parent().parent('a').attr('href', href);
+
+		// Тут некий хак лупы (jqzoom).
+		// Если использовать её галереей, для смены изображений она использует свою функцию swapimage
+		// объекта, хранящегося в .data('jqzoom') того, на что мы налепили лупу при создании.
+		// на вход она получает тот же свой объект, у которого в 'rel' ссылки на новое изображение.
+		// Будем вызывать эту функцию, подкладывая ей нужный объект.
+		$('.image-main')
+			.attr('rel', JSON.stringify({smallimage: $("#product-image").attr('src'), largeimage: $imageMain.attr('href')})) // Записали подставной rel
+			.data('jqzoom').swapimage('.image-main'); // Вызвали функцию
+
         return false;
     });
 
@@ -59,7 +70,7 @@ $(document).ready(function () {
 		$(this).children('.product-quickview-link').width(w).show();
 	});
 	$('.product-quickview').on('mouseleave', function (event) {
-		//$(this).parent().hide();
+		$(this).parent().hide();
 	});
 	$('.image-left, .image-right').on('click', function (event) {
 		event.preventDefault();

@@ -264,6 +264,7 @@ $(function () {
     }
 
     // product images
+	/*
     $("#product-gallery a").click(function () {
         $('.product-gallery .image').removeClass('selected');
         $(this).parent().addClass('selected');
@@ -287,6 +288,7 @@ $(function () {
         $("#product-image").parent().attr('href', href);
         return false;
     });
+	*/
 
     // compare block
     $("a.compare-add").click(function () {
