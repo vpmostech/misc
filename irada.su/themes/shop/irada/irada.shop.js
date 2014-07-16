@@ -53,8 +53,8 @@ $(document).ready(function () {
 
 		// Тут некий хак лупы (jqzoom).
 		// Если использовать её галереей, для смены изображений она использует свою функцию swapimage
-		// объекта, хранящегося в .data('jqzoom') того, на что мы налепили лупу при создании.
-		// на вход она получает тот же свой объект, у которого в 'rel' ссылки на новое изображение.
+		// объекта, хранящегося в поле .data('jqzoom') того, на что мы налепили лупу при создании.
+		// На вход она получает тот же свой объект, у которого в 'rel' ссылки на новое изображение.
 		// Будем вызывать эту функцию, подкладывая ей нужный объект.
 		$('.image-main')
 			.attr('rel', JSON.stringify({smallimage: $("#product-image").attr('src'), largeimage: $imageMain.attr('href')})) // Записали подставной rel
@@ -107,14 +107,16 @@ $(document).ready(function () {
 $(document).ready(function () {
 	
 	$imageMain = $('.image-main');
-	w = $imageMain.children('img').width();
-	h = $imageMain.children('img').height();
-	$imageMain.jqzoom({
-		zoomWidth: w ? w : 300,
-		zoomHeight: h ? h : 300,
-		xOffset: 30,
-		preloadText: 'Загрузка изображения...',	
-		title: false,
+	$imageMain.find('#product-image').on('load', function () {
+		w = $(this).width();
+		h = $(this).height();
+		$imageMain.jqzoom({
+			zoomWidth: w ? w : 300,
+			zoomHeight: h ? h : 300,
+			xOffset: 30,
+			preloadText: 'Загрузка изображения...',	
+			title: false,
+		});
 	});
 });
 
