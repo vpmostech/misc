@@ -19,18 +19,6 @@ function addToFavourites(a)
 	return false;
 }
 
-function swapBG()
-{
-	if ( typeof swapBG.flag == 'undefined' ) {
-        swapBG.flag = 1;
-    } else {
-		swapBG.flag = (swapBG.flag == 2) ? 1 : 2;
-	}
-	img = 'http://' + document.location.host + '/wa-data/public/site/themes/irada/graphics/Fon-';
-	jQuery('body').css('background-image', 'url(' + img + swapBG.flag + '.jpg)');
-}
-
-
 // Выключим по-умолчанию некоторые формы (до нажатия определённой кнопки)
 $(document).ready(function () { 
 	

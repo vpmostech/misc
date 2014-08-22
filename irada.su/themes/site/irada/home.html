@@ -1,6 +1,5 @@
 {$imgDir="{$wa_theme_url}graphics"}
 <div id="slider">
-	<!--<img src="{$imgDir}/slider_placeholder.png" alt="слайдер" />-->
 	{include file="slider.html"}
 </div>
 <div class="spacer" style="height: 6px;"></div>
@@ -23,7 +22,7 @@
 <div class="spacer" style="height: 40px;"></div>
 <div class="hits">
 	<div class="line"></div>
-	<h3>Хит продаж</h3>
+	<h3>Лучшее на сайте</h3>
 	<div class="line"></div>
 	<div> {* Чтобы first-child правильно работал *}
 		{$hits = $wa->shop->productSet("promo")}
@@ -140,19 +139,22 @@
 			<a href="http://vk.com/iradasu" target="_blank"><img src="{$imgDir}/social/vk.png" alt="vk" /></a>
 		</div>
 		<div class="social_icon">
-			<a href="#"><img src="{$imgDir}/social/lj.png" alt="lj" /></a>
-		</div>
-		<div class="social_icon">
 			<a href="https://www.facebook.com/pages/IRADA-Confession-Fashion-Confection/145185655669772" target="_blank"><img src="{$imgDir}/social/facebook.png" alt="fb" /></a>
 		</div>
 		<div class="social_icon">
 			<a href="#"><img src="{$imgDir}/social/insta.png" alt="insta" /></a>
 		</div>
 		<div class="social_icon">
+			<a href="http://www.odnoklassniki.ru/group/50739860865032" target="_blank"><img src="{$imgDir}/social/odno.png" alt="odno" /></a>
+		</div>
+		<div class="social_icon">
 			<a href="#"><img src="{$imgDir}/social/twitter.png" alt="tw" /></a>
 		</div>
 		<div class="social_icon">
-			<a href="http://www.odnoklassniki.ru/group/50739860865032" target="_blank"><img src="{$imgDir}/social/odno.png" alt="odno" /></a>
+			<a href="#"><img src="{$imgDir}/social/youtube.png" alt="yt" /></a>
+		</div>
+		<div class="social_icon">
+			<a href="#"><img src="{$imgDir}/social/googleplus.png" alt="g+" /></a>
 		</div>
 	</div>
 </div>
@@ -164,7 +166,7 @@
 	</div>
 	<div class="info">
 		<h3>Купить через Интернет легко!</h3>
-		<ol>
+		<ol style="padding: 0px; list-style-position: inside;">
 			<li>Выберите в каталоге товаров ассортимент (платье, юбка, блуза или другое), модель, цвет и размер.</li>
 			<li>Отправьте заказ в корзину, указав свои контакты.</li>
 			<li>Дождитесь сообщения менеджера о принятом заказе, подтвердите все параметры заказа.</li>

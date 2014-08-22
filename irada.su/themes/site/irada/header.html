@@ -3,7 +3,7 @@
 		<img src="{$imgDir}/topline.png" alt="" />
 	</div>
 	<div id="upperArea" class="fullwidth">
-		<div class="logo" onclick="swapBG(); return false;">
+		<div class="logo">
 			<img src="{$imgDir}/logo.png" alt="irada_logo">
 		</div>
 		<div class="center">
@@ -19,19 +19,21 @@
 			<div class="leader">
 				<table>
 					<tr>
-						<td style="width: 38px;"><img src="{$imgDir}/irada_head.png" alt="Ирада"></td>
-						<td>Лидер в области производства одежды конфессионального стиля</td>
+						<td style="width: 48px;"><img src="{$imgDir}/irada_symbol.png" alt="Ирада"></td>
+						<td>Халяль-компания года<br />в дизайне и производстве одежды</td>
 					</tr>
 				</table>	
 			</div>
 			<div class="contacts">
 				<table>
 					<tr>
-						<td class="time" style="padding-top: 8px; padding-left: 15px;">
+						<td class="time" style="padding-top: 8px; padding-left: 15px; width: 8%;">
 							<img src="{$imgDir}/clock.png" />
 						</td>
-						<td class="time" style="padding-top: 7px;">10-20</td>
-						<td class="phone" style="padding-left: 14px; padding-top: 8px;">
+						<td class="time" style="padding-top: 12px; padding-left: 5px; line-height: 1em; width: 19%;">
+							10-20 <span class="tz">UTC+04:00</span>
+						</td>
+						<td class="phone" style="padding-left: 14px; padding-top: 8px; width: 6%;">
 							<img src="{$imgDir}/phone.png" alt="" />
 						</td>
 						<td class="phone" style="padding-top: 6px;">
@@ -43,6 +45,7 @@
 			</div>
 		</div>
 		<div class="myAccount">
+			<h2>Личный кабинет</h2>
 			{if $wa->user()->isAuth()}
 				{if strlen($wa->user('name', 'default')) > 0}
 					{$shownUsername = {$wa->user('name', 'default')}}
@@ -85,9 +88,6 @@
 						<div class="cart_title">Моя корзина</div>
 					</a>
 					<div class="cart_count">{$cart->count()} товаров | {$cart->total()} руб.</div>
-					<div class="cart_checkout">
-						<a href="{if isset($demosite)}http://irada.su/cart/{else}{$wa->getUrl('shop/frontend/cart')}{/if}">Оформить</a>
-					</div>
 				</div>
 			</div>
 		</div> <!-- myAccount -->
@@ -102,9 +102,10 @@
 				"Каталог товаров" => $wa->getUrl('shop/frontend'),
 				"Новинки" => $wa->getUrl('shop/frontend')|cat:"?sort=create_datetime&order=desc",
 				"Скидки" => "/skidki/",
+				"Акции" => "#",
 				"Магазины" => "/magaziny/",
-				"Оплата" => "/oplata/",
-				"Доставка" => "/dostavka/",
+				"Оплата и доствка" => "/oplata/",
+				"О компании" => "",
 				"Партнерам" => "/partneram/",
 				"Контакты" => "/kontakty/"
 			]
@@ -114,9 +115,10 @@
 					"Каталог товаров" => "http://irada.su/razdel/",
 					"Новинки" => "http://irada.su/razdel/",
 					"Скидки" => "http://irada.su/razdel/rasprodaja/",
+					"Акции" => "#",
 					"Магазины" => "/magaziny/",
-					"Оплата" => "http://irada.su/how/",
-					"Доставка" => "http://irada.su/dostavka/",
+					"Оплата и доставка" => "http://irada.su/dostavka/",
+					"О компании" => "http://irada.su/contacts/",
 					"Партнерам" => "http://irada.su/partneram/",
 					"Контакты" => "http://irada.su/contacts/"
 				]
@@ -127,8 +129,5 @@
 			<div class="menuItem">{$upperMenuItem@key}</div>
 		</a>
 		{/foreach}
-		<div class="clientCard">
-			<a href="#"><table class="centerer"><tr><td>Карта покупателя</td></tr></table></a>
-		</div>
 	</div>
 </div>
