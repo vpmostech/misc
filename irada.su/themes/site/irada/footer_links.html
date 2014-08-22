@@ -1,126 +1,32 @@
 <div class="linksarea fullwidth">
-	<div class="linkscol linkscol2">
-		<h3>Каталог товаров</h3>
-		<ul class="links" style="width: 158px;">
+	<div class="linkscol">
+		<h3>Каталог</h3>
+		<ul class="links">
 		{$flinks = [
-			"ОДЕЖДА" => "/shop/category/plate/",
-			"Платья" => "#",
-			"Костюмы" => "#",
-			"Сарафаны" => "#",
-			"Туники" => "#",
-			"Жакеты" => "#",
-			"Юбки" => "#",
-			"Одежда для намаза" => "#",
-			"Мусульманские купальники" => "#"
+			"Одежда" => "/shop/category/plate/",
+			"Аксессуары" => "#",
+			"Детям" => "#",
+			"Подарки" => "#",
+			"Новинки" => "#",
+			"Акции" => "#",
+			"Скидки" => "#"
 		]}
-		{if isset($demosite)}
-			{$flinks = [
-				"ОДЕЖДА" => "http://irada.su/razdel/",
-				"Платья" => "http://irada.su/razdel/platiya/",
-				"Костюмы" => "http://irada.su/razdel/platiya/",
-				"Сарафаны" => "http://irada.su/razdel/sarafany/",
-				"Туники" => "http://irada.su/razdel/tuniki/",
-				"Жакеты" => "http://irada.su/razdel/tuniki/",
-				"Юбки" => "http://irada.su/razdel/ubki/",
-				"Одежда для намаза" => "http://irada.su/razdel/dlyadoma/",
-				"Мусульманские купальники" => "http://irada.su/razdel/m2/"
-			]}	
-		{/if}
 		{foreach $flinks as $flink}
-			<li><a href="{$flink}">{$flink@key}</a></li>
-		{/foreach}
-		</ul>
-		<ul class="links" style="margin-left: 0;">
-		{$flinks = [
-			"АКСЕССУАРЫ" => "#",
-			"Платки" => "#",
-			"Шапочки" => "#",
-			"Нарукавники" => "#",
-			"Сумки" => "#",
-			"ДЕТЯМ" => "#",
-			"Кукла-мусульманка" => "#",
-			"Одежда детям" => "#",
-			"СУВЕНИРЫ" => "#",
-			"РАСПРОДАЖА, АКЦИИ" => "#"
-		]}
-		{if isset($demosite)}
-			{$flinks = [
-				"АКСЕССУАРЫ" => "http://irada.su/razdel/",
-				"Платки" => "http://irada.su/razdel/aksessuary/",
-				"Шапочки" => "http://irada.su/razdel/aksessuary/",
-				"Нарукавники" => "http://irada.su/razdel/naruk/",
-				"Сумки" => "http://irada.su/razdel/",
-				"ДЕТЯМ" => "http://irada.su/razdel/pl31/",
-				"Кукла-мусульманка" => "http://irada.su/razdel/pl31/",
-				"Одежда детям" => "http://irada.su/razdel/pl31/",
-				"СУВЕНИРЫ" => "http://irada.su/razdel/",
-				"РАСПРОДАЖА, АКЦИИ" => "http://irada.su/razdel/rasprodaja/"
-			]}
-		{/if}
-		{foreach $flinks as $flink}
-			<li><a href="{$flink}">{$flink@key}</a></li>
+			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
 		{/foreach}
 		</ul>
 	</div>
 	<div class="linkscol">
-		<h3>Личный кабинет</h3>
+		<h3>Оплата и доставка</h3>
 		<ul class="links">
 		{$flinks = [
-			"Мои данные" => $wa->getUrl('/frontend/myProfile'),
-			"Моя корзина" => $wa->getUrl('shop/frontend/cart'),
-			"Архив заказов" => $wa->getUrl('/frontend/myOrders'),
-			"Управление подпиской" => "#",
-			"Подписаться на новости" => "#"
+			"Оплата" => "#",
+			"Доставка" => "#",
+			"Как получить скидку" => "#",
+			"Возврат и обмен" => "#"
 		]}
-		{if isset($demosite)}
-			{$flinks = [
-				"Мои данные" => "http://irada.su/user/",
-				"Моя корзина" => "http://irada.su/user/",
-				"Архив заказов" => "http://irada.su/user/",
-				"Управление подпиской" => "http://irada.su/user/",
-				"Подписаться на новости" => "http://irada.su/user/"
-			]}	
-		{/if}
 		{foreach $flinks as $flink}
-			<li><a href="{$flink}">{$flink@key}</a></li>
-		{/foreach}
-		</ul>
-	</div>
-	<div class="linkscol">
-		<h3>О компании</h3>
-		<ul class="links">
-		{$flinks = [
-			"Галерея" => "#",
-			"Партнеры" => "#",
-			"Наша команда" => "#",
-			"Договор оферты" => "#",
-			"Франчайзинг" => "#",
-			"Пресса о нас" => "#",
-			"История компании" => "#",
-			"Партнерам" => "#",
-			"Вакансии" => "#",
-			"Контакты" => "/kontakty/",
-			"Видео" => "#",
-			"Блог" => "#"
-		]}
-		{if isset($demosite)}
-			{$flinks = [
-				"Галерея" => "http://irada.su/",
-				"Партнеры" => "http://irada.su/",
-				"Наша команда" => "http://irada.su/",
-				"Договор оферты" => "http://irada.su/",
-				"Франчайзинг" => "http://irada.su/",
-				"Пресса о нас" => "http://irada.su/",
-				"История компании" => "http://irada.su/",
-				"Партнерам" => "http://irada.su/",
-				"Вакансии" => "http://irada.su/",
-				"Контакты" => "http://irada.su/contacts/",
-				"Видео" => "http://irada.su/",
-				"Блог" => "http://irada.su/"
-			]}
-		{/if}
-		{foreach $flinks as $flink}
-			<li><a href="{$flink}">{$flink@key}</a></li>
+			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
 		{/foreach}
 		</ul>
 	</div>
@@ -136,35 +42,59 @@
 			"Набережные Челны" => "/magaziny/?city=Nabereg"
 		]}
 		{foreach $flinks as $flink}
-			<li><a href="{$flink}">{$flink@key}</a></li>
+			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
 		{/foreach}
 		</ul>
 	</div>
 	<div class="linkscol">
-		<h3>Информация</h3>
+		<h3>О компании</h3>
 		<ul class="links">
 		{$flinks = [
-			"Карта сайта" => "#",
-			"Таблица размеров" => "#",
-			"Как купить" => "#",
-			"Оплата" => "/oplata/",
-			"Доставка" => "/dostavka/",
-			"Возврат и обмен" => "#",
-			"Вопросы и ответы" => "#"
+			"О нас" => "#",
+			"Новости" => "#",
+			"Наша команда" => "#",
+			"Сотрудничество" => "#",
+			"Франчайзинг" => "#",
+			"Наши друзья" => "#",
+			"Фотогалерея" => "#",
+			"Видео" => "#",
+			"Вакансии" => "#",
+			"Контакты" => "#"
 		]}
-		{if isset($demosite)}
-			{$flinks = [
-				"Карта сайта" => "http://irada.su/",
-				"Таблица размеров" => "http://irada.su/",
-				"Как купить" => "http://irada.su/how/",
-				"Оплата" => "http://irada.su/how/",
-				"Доставка" => "http://irada.su/dostavka/",
-				"Возврат и обмен" => "http://irada.su/how/",
-				"Вопросы и ответы" => "http://irada.su/faq/"
-			]}
-		{/if}
 		{foreach $flinks as $flink}
-			<li><a href="{$flink}">{$flink@key}</a></li>
+			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
+		{/foreach}
+		</ul>
+	</div>
+	<div class="linkscol">
+		<h3>Пресса</h3>
+		<ul class="links">
+		{$flinks = [
+			"Пресса о нас" => "#",
+			"Пресс - релиз" => "#",
+			"Наши проекты" => "#",
+			"Контакты для прессы" => "#"
+		]}
+		{foreach $flinks as $flink}
+			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
+		{/foreach}
+		</ul>
+	</div>
+	<div class="linkscol">
+		<h3>Сервис</h3>
+		<ul class="links">
+		{$flinks = [
+			"Личный кабинет" => "#",
+			"Как сделать заказ" => "#",
+			"Правила продажи" => "#",
+			"Таблица размеров" => "#",
+			"Ткани и уход за ними" => "#",
+			"Публичная оферта" => "#",
+			"Вопросы &mdash; ответы" => "#",
+			"Карта сайта" => "#"
+		]}
+		{foreach $flinks as $flink}
+			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
 		{/foreach}
 		</ul>
 	</div>

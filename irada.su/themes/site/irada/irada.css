@@ -530,7 +530,6 @@ input[type="text"] {
 
 #footer {
 	display: table;
-	_margin-top: 40px;
 	background: url('graphics/grad_pink3.png') repeat-x #f2e6f1;
 	background-position: 0 9px;
 	color: #634963;
@@ -542,7 +541,7 @@ input[type="text"] {
 
 #footer .linksarea .linkscol {
 	float: left;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 #footer /*.linksarea .linkscol*/ h3 {
@@ -647,39 +646,35 @@ input[type="text"] {
 
 #footer .copyright {
 	float: left;
-	max-width: 390px;
-	margin-left: 15px;
+	margin-left: 20px;
 	margin-top: 15px;
 }
 
 #footer .counter {
-	width: 89px;
-	height: 31px;
+	margin-top: 33px;
 	margin-left: 15px;
-	top: 10px;
 }
 
 #footer .social {
-	float: right;
-	width: 350px;
-	margin-right: 20px;
+	float: left;
+	width: 100%;
+	margin-top: 10px;
 }
 
-#footer .social .text {
+#footer .social h3 {
 	float: left;
 }
 
 #footer .social_icon {
 	float: left;
 	margin-left: 15px;
+	width: 90px;
 }
 
 #footer .signup {
-	float: right;
-	clear: right;
-	width: 350px;
-	margin-right: 20px;
-	margin-top: 15px;
+	float: left;
+	margin-left: 250px;
+	margin-top: 25px;
 }
 
 #footer .signup form {
