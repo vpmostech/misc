@@ -63,6 +63,15 @@ $(document).ready(function () {
         return false;
     });
 
+	// Галерея изображений (слайдер)
+	$('#product-gallery')
+		.on('click', '.thumbs-up, .thumbs-down', function (event) {
+			var dir = $(this).hasClass('thumbs-up') ? '-' : '+';
+			$(event.delegateTarget).children('.gallery-window')
+				.scrollTo(dir + '=100px', 1000);
+		})
+		.children('.gallery-window').scrollTop(0);
+
 	// Быстрый просмотр товаров
 	$('ul.product-list li').on('mouseover', function (event) {
 		$('.product-quickview-link').hide();
@@ -110,10 +119,12 @@ $(document).ready(function () {
 	$imageMain.find('#product-image').on('load', function () {
 		w = $(this).width();
 		h = $(this).height();
+		dh = 40; // const
 		$imageMain.jqzoom({
 			zoomWidth: w ? w : 300,
-			zoomHeight: h ? h : 300,
-			xOffset: 30,
+			zoomHeight: (h ? h : 300) - dh,
+			xOffset: 0,
+			yOffset: dh,
 			preloadText: 'Загрузка изображения...',	
 			title: false,
 		});

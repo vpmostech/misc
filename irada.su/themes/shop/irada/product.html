@@ -4,17 +4,6 @@
 {include file="breadcrumbs.html"}
 <article itemscope itemtype="http://schema.org/Product">
     
-    <h1 itemprop="name">
-        {$product.name|escape}
-        {if !empty($product.rating) && $product.rating > 0}
-            <span class="rating nowrap" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" title="{sprintf('[`Average user rating: %s / 5`]', $product.rating)}">
-                {$wa->shop->ratingHtml($product.rating, 16)}
-                <span itemprop="ratingValue" style="display: none;">{$product.rating}</span>
-                <span itemprop="reviewCount" style="display: none;">{$reviews_total_count}</span>
-            </span>
-        {/if}
-    </h1>
-
     <!-- product internal nav -->
     
     <!-- product info & gallery -->
@@ -26,13 +15,17 @@
             
                 <!-- thumbs -->
 				<div class="more-images" id="product-gallery">
-					{foreach $product.images as $image}
-						<div class="image{if $image.id == $product.image_id} selected{/if} thumb-image">
-							<a id="product-image-{$image.id}" href="{$wa->shop->productImgUrl(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext], '1500')}" class="swipebox">
-								{$wa->shop->productImgHtml(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '75x0', ['alt' => $image.description|escape])}
-							</a>
-						</div>
-					{/foreach}
+					<div class="thumbs-up"></div>
+					<div class="gallery-window">
+						{foreach $product.images as $image}
+							<div class="image{if $image.id == $product.image_id} selected{/if} thumb-image">
+								<a id="product-image-{$image.id}" href="{$wa->shop->productImgUrl(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext], '1500')}" class="swipebox">
+									{$wa->shop->productImgHtml(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '75x0', ['alt' => $image.description|escape])}
+								</a>
+							</div>
+						{/foreach}
+					</div>
+					<div class="thumbs-down"></div>
 				</div>
 
                 <!-- main image -->
@@ -58,8 +51,24 @@
 			{else}
 				{$sku = $product.skus[$product.sku_id]}
 			{/if}
-			<div class="sku"><b>Артикул: </b>{if $sku.sku}{$sku.sku|escape}{/if}</div>
-			<div class="price"><b>Цена: </b>{$sku.price} руб.</div>
+			<div class="sku">Артикул <b>{if $sku.sku}{$sku.sku|escape}{/if}</b></div>
+			<h1 itemprop="name">
+				{$product.name|escape}
+				{if !empty($product.rating) && $product.rating > 0}
+					<span class="rating nowrap" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" title="{sprintf('[`Average user rating: %s / 5`]', $product.rating)}">
+						{$wa->shop->ratingHtml($product.rating, 16)}
+						<span itemprop="ratingValue" style="display: none;">{$product.rating}</span>
+						<span itemprop="reviewCount" style="display: none;">{$reviews_total_count}</span>
+					</span>
+				{/if}
+			</h1>
+			<div class="rating">
+				{foreach [1,2,3,4,5] as $num}
+					<div class="star {if $p.rating >= $num}shine{/if}"></div>
+				{/foreach}
+			</div>
+			<div class="clearfix"></div>
+			<div class="price">{$sku.price} руб.</div>
 			<form id="cart-form{if $wa->get('cart')}-dialog{/if}" action="{$wa->getUrl('/frontendCart/add')}" method="post">
 				<input type="hidden" name="product_id" value="{$product.id}">
 				{if $product.sku_type}
@@ -70,11 +79,13 @@
 							<div class="option">
 								<div class="param-name">{$f.name}:</div>
 								{if $f.code == "razmer" or $f.code == "size"}
+									<div class="clearfix"></div>
 									<div class="size-vars" data-target-input="features[{$f.id}]">
 										{foreach $f.values as $v_id => $v}
 											{*{if $v_id == ifset($default_sku_features[$f.id])}size-var-active{/if}*}
 											<div class="size-var" data-value="{$v_id}">{$v}</div>
 										{/foreach}
+										<a href="#sizetable-popup" class="show-sizetable">Таблица размеров</a>
 									</div>
 									<div class="form-fill-hint">Выберите размер</div>
 									<input id="sizeparam" type="hidden" name="features[{$f.id}]" value="">
@@ -93,10 +104,11 @@
 					<input type="hidden" value="{$product.sku_id}" name="sku_id"></input>
 				{/if} {* Вообще там дальше тоже есть варианты, но пока это не нужно *}
 				<div class="options">
-					<div class="param-name">Количество:</div> <input class="param-value" type="text" value="1" name="quantity" size="2" />
-					<a href="#sizetable-popup" class="show-sizetable">Таблица размеров</a><br />
+					<div class="param-name">Количество:</div>
+					<div class="clearfix"></div>
+					<input class="param-value" type="text" value="1" name="quantity" size="2" />
 				</div>
-				<input id="add-to-cart" type="submit" value="В корзину" />
+				<input id="add-to-cart" type="submit" value="Отправить в корзину" />
 			</form>
 			<div class="description" itemprop="description"><b>Описание: </b>{if $product.description}{$product.description}{/if}</div>
 		</div>

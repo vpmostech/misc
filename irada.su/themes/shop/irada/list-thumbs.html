@@ -104,7 +104,7 @@
 					</div>
 				</div>
 				{if $p.rating > 0}
-						<span class="rating nowrap">{$wa->shop->ratingHtml($p.rating)}</span>
+						<!--<span class="rating nowrap">{$wa->shop->ratingHtml($p.rating)}</span>-->
 				{/if}
 				{if $p.summary}{*<span itemprop="description" class="summary">*}{$p.summary|escape|truncate:100}{*</span>*}{/if}                
 			</a>

@@ -6,7 +6,7 @@ body {
 	margin: 0;
 	font-family: 'Arial';
 	font-size: 13px;
-	background: url('graphics/Fon-3.png') no-repeat center;
+	background: url('graphics/Fon-3.png') repeat-x top center;
 }
 
 table.centerer {
@@ -100,6 +100,7 @@ h3 a {
 	float: left;
 	width: 755px;
 	height: 15px;
+	margin-left: 10px;
 	margin-bottom: 5px;
 	font-size: 11px;
 	color: #7d7d7d;
@@ -124,15 +125,20 @@ h3 a {
 
 a.button,
 input[type="submit"] {
+	height: 35px;
 	padding: 0 6px 0;
 	border: none;
-	background: url('graphics/grad_pink1.png') repeat-x #dfbed7;
+	background: url('graphics/grad_violet.png') repeat-x scroll 0% 0% #6e3075;
 	color: white;
 	font-family: 'DINPro-Bold';
 	font-size: 18px;
 	font-weight: 400;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+a.button-light {
+	background: url('graphics/grad_pink1.png') repeat-x #dfbed7;
 }
 
 a.button:hover,
