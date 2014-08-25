@@ -1,5 +1,5 @@
 $(document).ready(function () { 
-	
+	'use strict';
 	// Количество товаров на странице
 	$('ul.goods-per-page li a').on('click', function (event) {
 		$.cookie('products_per_page', $(this).html(), { expires: 30, path: '/'});	
@@ -32,9 +32,9 @@ $(document).ready(function () {
         $("#product-image").addClass('blurred');
         $("#switching-image").show();
         
-        var img = $(this).find('img');
-        var size = $("#product-image").attr('src').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
-        var src = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
+        var img = $(this).find('img'),
+			size = $("#product-image").attr('src').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1'),
+			src = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
         $('<img>').attr('src', src).load(function () {
             $("#product-image").attr('src', src);
             $("#product-image").removeClass('blurred');
@@ -45,8 +45,8 @@ $(document).ready(function () {
         });
         //var size = $("#product-image").parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
 		// Перепилено (добавлен parent()) для совместимости с magnific popup ИЛИ лупой, так как он создаёт свои элементы
-		var size = $("#product-image").parent().parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
-		var href = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
+		var size = $("#product-image").parent().parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1'),
+			href = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
 
 		// Добавлен parent() (аналогично size выше)
         $("#product-image").parent().parent('a').attr('href', href);
@@ -57,7 +57,7 @@ $(document).ready(function () {
 		// На вход она получает тот же свой объект, у которого в 'rel' ссылки на новое изображение.
 		// Будем вызывать эту функцию, подкладывая ей нужный объект.
 		$('.image-main')
-			.attr('rel', JSON.stringify({smallimage: $("#product-image").attr('src'), largeimage: $imageMain.attr('href')})) // Записали подставной rel
+			.attr('rel', JSON.stringify({smallimage: $("#product-image").attr('src'), largeimage: $(this).attr('href')})) // Записали подставной rel
 			.data('jqzoom').swapimage('.image-main'); // Вызвали функцию
 
         return false;
@@ -75,7 +75,7 @@ $(document).ready(function () {
 	// Быстрый просмотр товаров
 	$('ul.product-list li').on('mouseover', function (event) {
 		$('.product-quickview-link').hide();
-		w = $(this).find('img:visible').width();
+		var w = $(this).find('img:visible').width();
 		$(this).children('.product-quickview-link').width(w).show();
 	});
 	$('.product-quickview').on('mouseleave', function (event) {
@@ -83,11 +83,11 @@ $(document).ready(function () {
 	});
 	$('.image-left, .image-right').on('click', function (event) {
 		event.preventDefault();
-		var $this = $(this);
-		var $spanimgs = $this.siblings('.image_paths').children('span');
+		var $this = $(this),
+			$spanimgs = $this.siblings('.image_paths').children('span');
 		if ($spanimgs.length > 1) {
-			var $img = $this.parent().parent().parent().find('div.image img');
-			$curSpan = $spanimgs.filter('[data-url="' + $img.attr('src') + '"]');
+			var $img = $this.parent().parent().parent().find('div.image img'),
+				$curSpan = $spanimgs.filter('[data-url="' + $img.attr('src') + '"]');
 			if ($this.hasClass('image-right')) {
 				var newsrc = ($curSpan.next('span').length ? $curSpan.next('span') : $spanimgs.first()).attr('data-url');
 			} else {
@@ -115,11 +115,11 @@ $(document).ready(function () {
 // Лупа на основном изображении товара
 $(document).ready(function () {
 	
-	$imageMain = $('.image-main');
+	var $imageMain = $('.image-main');
 	$imageMain.find('#product-image').on('load', function () {
-		w = $(this).width();
-		h = $(this).height();
-		dh = 40; // const
+		var w = $(this).width(),
+			h = $(this).height();
+			dh = 40; // const
 		$imageMain.jqzoom({
 			zoomWidth: w ? w : 300,
 			zoomHeight: (h ? h : 300) - dh,
@@ -136,7 +136,7 @@ $(document).ready(function () {
 
 	// Выбор размера в карточке товара
 	$('.size-var').on('click', function (event) {
-		$this = $(this);
+		var $this = $(this);
 		$('.size-var').removeClass('size-var-active');
 		$this.addClass('size-var-active');
 		hideHint();
@@ -153,7 +153,7 @@ $(document).ready(function () {
 
 	function showHint()
 	{
-		$hint = $('.form-fill-hint');
+		var $hint = $('.form-fill-hint');
 		if ($hint.filter(':hidden').length) {
 			$hint.show('clip', {}, 1000);
 		} else {
