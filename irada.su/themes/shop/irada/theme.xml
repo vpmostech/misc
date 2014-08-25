@@ -9,6 +9,8 @@
 		</file>
 		<file path="head.html" parent="1">
 		</file>
+		<file path="sidebar_home.html" parent="1">
+		</file>
 		<file path="head.shop.html">
 			<description locale="ru_RU">Содержимое html-блока head, нужное для магазина</description>
 		</file>

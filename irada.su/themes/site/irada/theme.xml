@@ -51,8 +51,8 @@
 		<file path="slider.js">
 			<description locale="ru_RU">Скрипты для слайдера</description>
 		</file>
-		<file path="sidebar.html">
-			<description locale="ru_RU">Слайдер</description>
+		<file path="sidebar_home.html">
+			<description locale="ru_RU">Сайдбар домашней страницы</description>
 		</file>
 	</files>
 </theme>
