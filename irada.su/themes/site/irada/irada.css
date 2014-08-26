@@ -125,7 +125,7 @@ h3 a {
 
 a.button,
 input[type="submit"] {
-	height: 35px;
+	height: 27px;
 	padding: 0 6px 0;
 	border: none;
 	background: url('graphics/grad_violet.png') repeat-x scroll 0% 0% #6e3075;
@@ -750,6 +750,17 @@ TODO:
 
 .wa-field .wa-value > p {
 	margin: 0; 
+}
+
+.wa-field-address > .wa-field {
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.wa-field-address > .wa-value {
+	float: none;
+	width: 755px;
+	margin-top: 30px;
 }
 
 .wa-field-address .wa-value .field {

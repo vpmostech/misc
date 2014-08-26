@@ -482,6 +482,10 @@ div.checkout {
 	width: 755px;
 }
 
+div.checkout blockquote {
+	margin-left: 0;
+}
+
 div.checkout ul {
 	list-style: none outside none;
 	padding-left: 0;

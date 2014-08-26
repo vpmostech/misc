@@ -1,3 +1,4 @@
+{include file="`$wa_parent_theme_path`/sidebar_static.html"}
 {$wa->myNav('menu-h bottom-padded my-menu')}
 
 <h1>[`My profile`]</h1>
@@ -10,9 +11,7 @@
 
 <form id="userprofile" class="disabled-by-default" action="" method="post">
 	<div class="wa-form">
-
 		{$form->html()}
-
 		<div class="wa-field">
 			<div class="wa-value">
 				<input type="submit" value="[`Save`]">
