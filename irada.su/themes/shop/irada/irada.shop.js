@@ -212,15 +212,3 @@ $(document).ready(function () {
 	});
 });
 */
-
-// Таблица размеров
-$(document).ready(function () {
-	
-	$('.show-sizetable').magnificPopup({
-		type: 'inline',
-	});
-
-});
-
-// Чтобы в корзине по клику на позицию (в любое место строки) происходил переход в карточку товара
-// TODO

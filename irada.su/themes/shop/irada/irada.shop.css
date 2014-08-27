@@ -534,6 +534,10 @@ article #product-core-image .zoomWrapper {
 	background: url('graphics/grad_pink3.png') repeat-x #f3e1eb;
 }
 
+.cart-summary-page .coupons .value {
+	float: left;
+}
+
 .cart-summary-page .coupons .text {
 	float: left;
 	width: 105px;

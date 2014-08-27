@@ -96,6 +96,12 @@ h3 a {
 	font-size: 16px;
 }
 
+h6 {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 5px 0;
+}
+
 .breadcrumbs {
 	float: left;
 	width: 755px;
