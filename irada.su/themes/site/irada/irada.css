@@ -754,7 +754,7 @@ TODO:
 	margin: 0; 
 }
 
-.wa-field-address > .wa-field {
+.wa-field-address > .wa-name {
 	font-weight: 600;
 	text-decoration: underline;
 }
