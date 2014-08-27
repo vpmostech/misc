@@ -82,50 +82,52 @@
 
     <!-- order content and total -->
     <table class="table order">
-        <tr>
-            <th>Позиция</th>
-			<th>Цена за единицу</th>
-            <th>Количество</th>
-            <th>Итого</th>
-        </tr>
-        {foreach $order.items as $item}
-			{$pr = $wa->shop->product($item.product_id)}{*$pr.url*}
-			{*$col = $wa->shop->products("id/12")*}
-            <tr class="orderline{if $item.type == 'service'} service{/if}">
-                <td>{if $item.type == 'service'}+ {/if}<a href="#" target="">{$item.name}</a>
-                    {if $item.type == 'product' && !empty($item.download_link)}<a href="{$item.download_link}"><strong>[`Download`]</strong></a>{/if}</td>
-                <td><span class="gray">{wa_currency_html($item.price, $order.currency)}</span> </td>
-				<td>{$item.quantity}</td>
-                <td>{wa_currency_html($item.price * $item.quantity, $order.currency)}</td>
-            </tr>
-        {/foreach}
-        <tr class="summary-start">
-            <td colspan="3">[`Subtotal`]</td>
-            <td>{wa_currency_html($subtotal, $order.currency)}</td>
-        </tr>
-        <tr>
-            <td colspan="3">[`Discount`]</td>
-            <td >&minus; {wa_currency_html($order.discount, $order.currency)}</td>
-        </tr>
-        <tr>
-            <td colspan="3">
-                [`Shipping`]
-                {if !empty($order.params.shipping_name)}
-                    (<strong>{$order.params.shipping_name}</strong>)
-                {/if}
-            </td>
-            <td class="align-right">{wa_currency_html($order.shipping, $order.currency)}</td>
-        </tr>
-        {if $order.tax > 0}
-            <tr class="no-border thin">
-                <td colspan="3">[`Tax`]</td>
-                <td>{wa_currency_html($order.tax, $order.currency)}</td>
-            </tr>
-        {/if}
-        <tr class="no-border thin large">
-            <td colspan="3"><b>[`Total`]</b></td>
-            <td>{wa_currency_html($order.total, $order.currency)}</td>
-        </tr>
+		<thead>
+			<tr>
+				<td>Позиция</td>
+				<td>Цена за единицу</tD>
+				<td>Количество</td>
+				<td>Итого</td>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach $order.items as $item}
+				<tr class="orderline{if $item.type == 'service'} service{/if}">
+					<td>{if $item.type == 'service'}+ {/if}<a href="{$wa->shop->productUrl($wa->shop->product($item.product_id))}" target="">{$item.name}</a>
+						{if $item.type == 'product' && !empty($item.download_link)}<a href="{$item.download_link}"><strong>[`Download`]</strong></a>{/if}</td>
+					<td><span class="gray">{wa_currency_html($item.price, $order.currency)}</span> </td>
+					<td>{$item.quantity}</td>
+					<td>{wa_currency_html($item.price * $item.quantity, $order.currency)}</td>
+				</tr>
+			{/foreach}
+			<tr class="summary-start">
+				<td colspan="3">[`Subtotal`]</td>
+				<td>{wa_currency_html($subtotal, $order.currency)}</td>
+			</tr>
+			<tr>
+				<td colspan="3">[`Discount`]</td>
+				<td >&minus; {wa_currency_html($order.discount, $order.currency)}</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					[`Shipping`]
+					{if !empty($order.params.shipping_name)}
+						(<strong>{$order.params.shipping_name}</strong>)
+					{/if}
+				</td>
+				<td class="align-right">{wa_currency_html($order.shipping, $order.currency)}</td>
+			</tr>
+			{if $order.tax > 0}
+				<tr class="no-border thin">
+					<td colspan="3">[`Tax`]</td>
+					<td>{wa_currency_html($order.tax, $order.currency)}</td>
+				</tr>
+			{/if}
+			<tr class="no-border thin large">
+				<td colspan="3"><b>[`Total`]</b></td>
+				<td>{wa_currency_html($order.total, $order.currency)}</td>
+			</tr>
+		</tbody>
     </table>
 {/if}
 

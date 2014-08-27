@@ -658,16 +658,28 @@ table.orders thead {
 	font-weight: bold;
 }
 
+table.orders tr td:first-child {
+	padding-left: 3px;
+}
+
 table.order {
 	width: 755px;
+}
+
+table.order tr:hover {
+	background: #f5ebf0;
 }
 
 table.order tr td {
 	height: 25px;
 }
 
-table.order tr:hover {
-	background: #f5ebf0;
+table.order tr td:first-child {
+	padding-left: 3px;
+}
+
+table.order tr td:last-child {
+	padding-right: 3px;
 }
 
 table.order td {
