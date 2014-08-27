@@ -11,8 +11,12 @@ $(function () {
 		if (data.discount) {
 			discount = parseInt(data.discount.replace(new RegExp(' ','g'), ''));
 		}
+		// На странице корзины
         $('.cart-sum .value > .val').text(total + discount);
-		$('.cart-total .value > .val').html(total);
+		$('.cart-total .value > .val').text(total);
+		// В шапке сайта
+		$('#header .cart span.count').text(data.count);
+		$('#header .cart span.total').text(total);
     }
 
 	// Удаление позиций из корзины

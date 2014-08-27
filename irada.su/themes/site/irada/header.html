@@ -87,7 +87,7 @@
 					<a href="{if isset($demosite)}http://irada.su/cart/{else}{$wa->getUrl('shop/frontend/cart')}{/if}">
 						<div class="cart_title">Моя корзина</div>
 					</a>
-					<div class="cart_count">{$cart->count()} товаров | {$cart->total()} руб.</div>
+					<div class="cart_count"><span class="count">{$cart->count()}</span> товаров | <span class="total">{$cart->total()}</span> руб.</div>
 				</div>
 			</div>
 		</div> <!-- myAccount -->

@@ -32,14 +32,16 @@
 					<tr data-id="{$item.id}">
 						<td class="num">{$item@iteration}</td>
 						<td class="thumb">
-							{$wa->shop->productImgHtml($item.product, '85x0', ['default' => "`$wa_theme_url`img/dummy48.png"])}
+							<a href="{$wa->shop->productUrl($item.product)}" title="{$item.product.name|escape}">
+								{$wa->shop->productImgHtml($item.product, '85x0', ['default' => "`$wa_theme_url`img/dummy48.png"])}
+							</a>
 						</td>
 						<td class="title">
 							<span class="name">{$item.product.name|escape}</span><br />
 							<span class="sku">{$item.sku_code|escape}</span>
 						</td>
 						<td class="size">
-							{$item.sku_name|escape}
+							{ifset($item.sku_name)|escape}
 						</td>
 						<td class="quantity">
 							<input id="qty" name="quantity[{$item.id}]" value="{$item.quantity}" class="qty{if !empty($item.error)} error{/if}">
