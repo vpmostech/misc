@@ -125,16 +125,18 @@ h3 a {
 
 a.button,
 input[type="submit"] {
-	height: 27px;
+	height: 35px;
 	padding: 0 6px 0;
 	border: none;
+	border-radius: 3px;
 	background: url('graphics/grad_violet.png') repeat-x scroll 0% 0% #6e3075;
 	color: white;
 	font-family: 'DINPro-Bold';
-	font-size: 18px;
+	font-size: 13px;
 	font-weight: 400;
 	text-decoration: none;
 	cursor: pointer;
+	text-transform: uppercase;
 }
 
 a.button-light {
@@ -845,4 +847,22 @@ TODO:
 
 .readmore {
 	color: #4d4d4f;
+}
+
+.table {
+	border-collapse: collapse;
+}
+
+.table thead {
+	height: 30px;
+	text-align: left;
+	background: #f7f8f8;
+}
+
+.table tr {
+	border-bottom: 1px solid #dedede;
+}
+
+.table tr td {
+	padding: 10px 0;
 }

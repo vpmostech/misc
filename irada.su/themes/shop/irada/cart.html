@@ -15,73 +15,66 @@
         <!-- sixteen-column cart layout -->
         <div class="cart cart-summary-page">
             
-            {foreach $cart.items as $item}
-            
-                <!-- cart item -->
-                <div class="row cart-item" data-id="{$item.id}">                  
-                    <div class="col w1 item-thumb"><a href="{$wa->shop->productUrl($item.product)}" title="{$item.product.name|escape}">{$wa->shop->productImgHtml($item.product, '100', ['default' => "`$wa_theme_url`img/dummy48.png"])}</a>&nbsp;</div>
-                    <div class="col w9 item-name">
-                        <a href="{$wa->shop->productUrl($item.product)}" class="bold">{$item.product.name|escape}</a>
-                        {if $item.sku_name && $item.sku_name != $item.product.name}{$item.sku_name|escape}{/if}
-                    </div>
-                    <div class="col w2 item-qty align-center nowrap">
-						<span class="gray">&times;</span>
-						<!--<input type="text" name="quantity[{$item.id}]" value="{$item.quantity}" class="qty{if !empty($item.error)} error{/if}">-->
-						<input id="qty" name="quantity[{$item.id}]" value="{$item.quantity}" class="qty{if !empty($item.error)} error{/if}">
-					</div>
-					<div class="col w3 align-center item-total nowrap">{shop_currency_html($item.full_price, true)}</div>
-					<div class="col w1 item-remove"><a class="delete" href="#" title="[`Remove from cart`]"><i class="icon16 remove"></i></a></div>
+			<table class="table">
+				<thead>
+					<tr>
+						<td class="num">№</td>
+						<td class="thumb">Фото</td>
+						<td class="title">Наименование товара</td>
+						<td class="size">Размер</td>
+						<td class="quantity">Кол-во</td>
+						<td class="price">Цена (руб.)</td>
+						<td class="sum">Сумма (руб.)</td>
+						<td class="action">Действие</td>
+					</tr>
+				</thead>
+				{foreach $cart.items as $item}
+					<tr data-id="{$item.id}">
+						<td class="num">{$item@iteration}</td>
+						<td class="thumb">
+							{$wa->shop->productImgHtml($item.product, '85x0', ['default' => "`$wa_theme_url`img/dummy48.png"])}
+						</td>
+						<td class="title">
+							<span class="name">{$item.product.name|escape}</span><br />
+							<span class="sku">{$item.sku_code|escape}</span>
+						</td>
+						<td class="size">
+							{$item.sku_name|escape}
+						</td>
+						<td class="quantity">
+							<input id="qty" name="quantity[{$item.id}]" value="{$item.quantity}" class="qty{if !empty($item.error)} error{/if}">
+						</td>
+						<td class="price">
+							{$item.price|floor}
+						</td>
+						<td class="sum">
+							{$item.full_price|floor}
+						</td>
+						<td class="action">
+							<a class="delete" href="#" title="[`Remove from cart`]">Удалить</a>
+						</td>
+					</tr>
+				{/foreach}
+			</table>
+            {if !empty($item.error)}<script>alert({json_encode($item.error)});</script>{/if}
 
-                    {if !empty($item.services)}
-                    <!-- services -->
-                    {/if}
+			<div class="cart-sum">Общая сумма заказа: <span class="value">{$cart.total + $discount} руб.</span></div>
+			<div class="clearfix"></div>
+			
+			<div class="coupons">
+				<div class="text">Промо-код</div>
+				<div class="value">
+					<input type="text" name="coupon_code" value="{$coupon_code|escape}" /> <input type="submit"  value="[`Apply`]">
+				</div>
+			</div>
+			<div class="clearfix"></div>
 
-                    <!-- cross-selling -->
-                </div>
-                {if !empty($item.error)}<script>alert({json_encode($item.error)});</script>{/if}
-            {/foreach}
+			<div class="cart-total">Сумма к оплате: <span class="value">{$cart.total} руб.</span></div>
+			<div class="clearfix"></div>
             
-            <!-- discount coupon -->
-            <div class="row no-border" {if !shopDiscounts::isEnabled('coupons') && !$discount}style="display:none"{/if}>
-                <div class="col w10 cart-coupon no-border">
-                    {if shopDiscounts::isEnabled('coupons')}
-                    <div style="margin-bottom: 5px;">Если у Вас есть промо-код, Вы можете ввести его:</div>
-                    <input class="formsize" type="text" name="coupon_code" value="{$coupon_code|escape}" style="margin-right: 5px;"> <input type="submit"  value="[`Apply`]">
-                    {/if}
-                </div>
-                <div class="col w2 align-center" style="clear: left; margin-top: 10px;"><b>Итоговая скидка:</b></div>
-                <div class="col w3 align-center cart-discount nowrap" style="margin-top: 10px;">&minus; {shop_currency_html($discount, true)}</div>
-                <div class="col w1"></div>
-            </div>
-
-            {if shopAffiliate::isEnabled() && $affiliate_bonus > 0}
-            <!-- affiliate bonus -->
-            {/if}
-            
-            <!-- TOTAL -->
-            <div class="row large no-border">
-                <div class="col w12 no-border non-mobile-only">Итого:</div>
-                <div class="col w3 cart-total align-center total bold nowrap">{shop_currency_html($cart.total, true)}</div>
-                <div class="col w1">&nbsp;</div>
-            </div>
-            
-            <!-- checkout -->
-            <div class="row no-border">
-                <div class="col w12 no-border non-mobile-only">
-                    <a href="{$wa_app_url}" class="gray button">&larr;Вернуться в магазин</a>
-                    {if shopAffiliate::isEnabled() && !empty($add_affiliate_bonus)}
-                    {*<em class="float-right affiliate">{sprintf("[`This order will add +%s points to your affiliate bonus.`]", $add_affiliate_bonus)}</em>*}
-                    {/if}
-                </div>
-				<!--<input type="submit"  value="Обновить корзину">-->
-                <div class="col w3 align-center bold cart-checkout">
-                    <input name="checkout" type="submit" value="[`Proceed to checkout`] &rarr;" class="button large">
-                </div>
-                <div class="col w1">&nbsp;</div>
-            </div>
-            
-            
-            
+			<div class="buttons">
+				<input name="checkout" type="submit" value="[`Proceed to checkout`]" class="button large">
+			</div>
         </div>
 
         <!-- plugin hook: 'frontend_cart' -->

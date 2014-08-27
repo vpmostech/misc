@@ -106,7 +106,7 @@ div#product-list {
 .goods_pagination .menu-h li.selected {
 	border: 1px solid #d5b6ca;
 	padding-top: 2px;
-	background: url('graphics/grad_pink5.png') repeat-x #612767;
+	background: url('graphics/grad_pink5.png') repeat-x #dfbfd6;
 	color: white;
 }
 
@@ -427,6 +427,63 @@ article #product-core-image .zoomWrapper {
 	box-sizing: border-box;
 }
 
+.cart-summary-page .table {
+	width: 750px;
+}
+
+.cart-summary-page .table tr td {
+	vertical-align: top;
+}
+
+.cart-summary-page .table thead tr td.num {
+	text-align: center;
+}
+
+.cart-summary-page .table tbody tr td.num {
+	width: 5%;
+	text-align: center;
+}
+
+.cart-summary-page .table tbody tr td.thumb {
+	width: 14%;
+}
+
+.cart-summary-page .table tbody tr td.thumb img {
+	border: 1px solid #EBEBEB;
+}
+
+.cart-summary-page .table tbody tr td.title {
+	width: 20%;
+}
+
+.cart-summary-page .table tbody tr td.title .name {
+	font-weight: 600;
+	color: black;
+}
+
+.cart-summary-page .table tbody tr td.size {
+	width: 11%;
+}
+
+.cart-summary-page .table tbody tr td.quantity {
+	width: 11%;
+}
+
+.cart-summary-page .table tbody tr td.price {
+	width: 12.5%;
+	font-weight: 600;
+}
+
+.cart-summary-page .table tbody tr td.sum {
+	width: 12.5%;
+	font-weight: 600;
+	color: #ba256d;
+}
+
+.cart-summary-page .table input {
+	width: 20px;
+}
+
 .cart-summary-page {
 	float: left;
 	width: 755px;
@@ -446,9 +503,66 @@ article #product-core-image .zoomWrapper {
 	color: black;
 }
 
-.cart-summary-page .col {
+.cart-summary-page .cart-sum {
 	float: left;
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.cart-summary-page .cart-sum .value {
+	font-size: 16px;
+	font-weight: 600;
+	color: #ba256d;
+}
+
+.cart-summary-page .cart-total {
+	float: left;
+	margin-top: 25px;
+	font-size: 21px;
+}
+
+.cart-summary-page .cart-total .value {
+	font-size: 34px;
+	font-weight: 600;
+	color: #ba256d;
+}
+
+.cart-summary-page .coupons {
+	width: 500px;
+	height: 55px;
+	margin-top: 20px;
+	background: url('graphics/grad_pink3.png') repeat-x #f3e1eb;
+}
+
+.cart-summary-page .coupons .text {
+	float: left;
+	width: 105px;
+	margin-top: 18px;
 	margin-left: 15px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #712e78;
+	text-transform: uppercase;
+}
+
+.cart-summary-page .coupons input[type="text"] {
+	float: left;
+	width: 230px;
+	height: 30px;
+	margin-top: 12px;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+.cart-summary-page .coupons input[type="submit"] {
+	margin-top: 12px;
+	height: 30px;
+	margin-left: 10px;
+}
+
+.cart-summary-page .buttons {
+	float: left;
+	margin-top: 50px;
 }
 
 .icon16 {
