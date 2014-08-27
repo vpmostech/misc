@@ -555,9 +555,10 @@ article #product-core-image .zoomWrapper {
 }
 
 .cart-summary-page .coupons input[type="submit"] {
-	margin-top: 12px;
 	height: 30px;
+	margin-top: 12px;
 	margin-left: 10px;
+	padding-top: 5px;
 }
 
 .cart-summary-page .buttons {

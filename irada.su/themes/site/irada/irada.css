@@ -124,9 +124,10 @@ h3 a {
 }
 
 a.button,
-input[type="submit"] {
-	height: 35px;
-	padding: 0 6px 0;
+input.button,
+input[type="button"],
+input[type="submit"]
+{
 	border: none;
 	border-radius: 3px;
 	background: url('graphics/grad_violet.png') repeat-x scroll 0% 0% #6e3075;
@@ -139,6 +140,15 @@ input[type="submit"] {
 	text-transform: uppercase;
 }
 
+a.button,
+input[type="button"],
+input[type="submit"]
+{
+	display: inline-block;
+	padding: 10px 25px;
+	box-sizing: border-box;
+}
+
 a.button-light {
 	background: url('graphics/grad_pink1.png') repeat-x #dfbed7;
 }
@@ -148,17 +158,10 @@ input[type="submit"]:hover {
 	background: url('graphics/grad_pink1_hover.png') repeat-x #ead0d6;
 }
 
-input.formsize,
-a.button {
-	height: 27px;
-	display: inline-block;
-}
-
 input[type="text"] {
 	float: left;
 	box-sizing: border-box;
 }
-
 
 .ui-spinner {
 	margin-top: -4px;

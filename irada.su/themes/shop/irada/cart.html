@@ -66,7 +66,7 @@
 			<div class="coupons">
 				<div class="text">Промо-код</div>
 				<div class="value">
-					<input type="text" name="coupon_code" value="{$coupon_code|escape}" /> <input type="submit"  value="[`Apply`]">
+					<input type="text" name="coupon_code" value="{$coupon_code|escape}" /> <input type="submit" class="button" value="[`Apply`]">
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -75,7 +75,12 @@
 			<div class="clearfix"></div>
             
 			<div class="buttons">
-				<input name="checkout" type="submit" value="[`Proceed to checkout`]" class="button large">
+				{if $wa->user()->isAuth()}
+					<input name="checkout" type="submit" value="[`Proceed to checkout`]" class="button">
+				{else}
+					<a href="{$wa->getUrl('shop/signup')}" class="button">Зарегистрироваться и заказать</a>
+					<a href="{$wa->getUrl('shop/frontend/my')}" class="button" style="margin-left: 10px;">Войти и заказать</a>
+				{/if}
 			</div>
         </div>
 
