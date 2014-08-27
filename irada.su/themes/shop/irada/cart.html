@@ -1,5 +1,5 @@
 {include file="`$wa_parent_theme_path`/sidebar_static.html"}
-<script type="text/javascript" src="{$wa_theme_url}cart.js"></script>
+<script type="text/javascript" src="{$wa_theme_url}irada.cart.js"></script>
 
 {if !$cart.count}
 
@@ -58,7 +58,7 @@
 			</table>
             {if !empty($item.error)}<script>alert({json_encode($item.error)});</script>{/if}
 
-			<div class="cart-sum">Общая сумма заказа: <span class="value">{$cart.total + $discount} руб.</span></div>
+			<div class="cart-sum">Общая сумма заказа: <span class="value"><span class="val">{$cart.total + $discount}</span> руб.</span></div>
 			<div class="clearfix"></div>
 			
 			<div class="coupons">
@@ -69,7 +69,7 @@
 			</div>
 			<div class="clearfix"></div>
 
-			<div class="cart-total">Сумма к оплате: <span class="value">{$cart.total} руб.</span></div>
+			<div class="cart-total">Сумма к оплате: <span class="value"><span class="val">{$cart.total}</span> руб.</span></div>
 			<div class="clearfix"></div>
             
 			<div class="buttons">
