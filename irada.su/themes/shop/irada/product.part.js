@@ -240,56 +240,6 @@ Product.prototype.cartButtonVisibility = function (visible) {
 
 $(function () {
 
-    if ($("#product-core-image a").length) {
-        //$('.swipebox').swipebox({useSVG : false});
-		/*
-        $("#product-core-image a").click(function (e) {
-            e.preventDefault();
-            var images = [];
-            if ($("#product-gallery a").length) {
-                var k = $("#product-gallery div.selected").prevAll('.image').length;
-                $('#product-gallery div.image').each(function () {
-                    images.push({href: $(this).find('a').attr('href')});
-                });
-                if (k) {
-                    images = images.slice(k).concat(images.slice(0, k));
-                }
-            } else {
-                images.push({href: $(this).attr('href')});
-            }
-            $.swipebox(images, {useSVG : false});
-            return false;
-        });
-		*/
-    }
-
-    // product images
-	/*
-    $("#product-gallery a").click(function () {
-        $('.product-gallery .image').removeClass('selected');
-        $(this).parent().addClass('selected');
-
-        $("#product-image").addClass('blurred');
-        $("#switching-image").show();
-        
-        var img = $(this).find('img');
-        var size = $("#product-image").attr('src').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
-        var src = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
-        $('<img>').attr('src', src).load(function () {
-            $("#product-image").attr('src', src);
-            $("#product-image").removeClass('blurred');
-            $("#switching-image").hide();
-        }).each(function() {
-            //ensure image load is fired. Fixes opera loading bug
-            if (this.complete) { $(this).trigger("load"); }
-        });
-        var size = $("#product-image").parent().attr('href').replace(/^.*\/[0-9]+\.(.*)\..*$/, '$1');
-        var href = img.attr('src').replace(/^(.*\/[0-9]+\.)(.*)(\..*)$/, '$1' + size + '$3');
-        $("#product-image").parent().attr('href', href);
-        return false;
-    });
-	*/
-
     // compare block
     $("a.compare-add").click(function () {
         var compare = $.cookie('shop_compare');
