@@ -1,0 +1,30 @@
+h4 {
+	margin-bottom: 5px;
+}
+
+table.vacancy {
+	width: 680px;
+}
+
+table.vacancy tr td {
+	border-bottom: 1px dotted black;
+}
+
+table.vacancy tr td {
+	padding: 15px 0;
+}
+
+table.vacancy tr td:first-child {
+	width: 90px;
+	color: #999999;
+	font-size: 12px;
+}
+
+table.vacancy tr td:last-child {
+	color: black;
+}
+
+.contactus {
+	margin-top: 10px;
+	margin-bottom: 120px;
+}
