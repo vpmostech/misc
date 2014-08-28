@@ -1,0 +1,8 @@
+{foreach $photos as $ph}
+	<div class="gallery-photo">
+		{$photo = $wa->photos->photo($ph.id, "140x95")}
+		<a href="#">
+			<img src="{$photo.thumb_140x95.url}" alt="{$photo.name}" />
+		</a>
+	</div>
+{/foreach}
