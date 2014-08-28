@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd" >
+<theme id="irada" system="0" vendor="mostech" author="mostech" app="photos" parent_theme_id="site:irada" version="0.7.0">
+	<name locale="ru_RU">Тема irada для фотогалереи</name>
+	<files>
+		<file path="index.html" parent="1">
+		</file>
+		<file path="error.html" parent="1">
+		</file>
+		<file path="head.html" parent="1">
+		</file>
+		<file path="head.photos.html">
+			<description locale="ru_RU">Содержимое html-блока head, нужное для фотогалереи</description>
+		</file>
+		<file path="home.html">
+			<description locale="ru_RU">Основная страница фотогалереи</description>
+		</file>
+		<file path="irada.photos.css">
+			<description locale="ru_RU">Стили для страниц фотогалереи</description>
+		</file>
+		<file path="irada.photos.js">
+			<description locale="ru_RU">Скрипты для страниц фотогалереи</description>
+		</file>
+		<file path="albums.html">
+			<description locale="ru_RU">Список альбомов с превью фотографий</description>
+		</file>
+	</files>
+</theme>

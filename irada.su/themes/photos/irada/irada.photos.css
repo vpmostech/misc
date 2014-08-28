@@ -1,0 +1,62 @@
+.albums-list {
+	float: left;
+	width: 750px;
+}
+
+.album-preview {
+	float: left;
+	width: 345px;
+	height: 345px;
+	margin: 20px 15px;
+	color: black;
+}
+
+.album-preview .title {
+	float: left;
+	width: 100%;
+	height: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+	background: #f7f8f8;
+}
+
+.album-preview .title .name {
+	float: left;
+	max-width: 85%;
+}
+
+.album-preview .title .photos_count {
+	float: right;
+	width: 45px;
+}
+
+.album-preview .title .photos_count .count {
+	float: right;
+}
+
+.album-preview .thumbs {
+	float: left;
+	width: 100%;
+	height: 310px;
+}
+
+.album-preview .thumbs .thumb-main {
+	float: left;
+	width: 180px;
+	height: 100%;
+	margin: 5px 0;
+	text-align: center;
+}
+
+.album-preview .thumbs .thumb-main img {
+	max-width: 100%;
+}
+
+.album-preview .thumbs .thumb-side {
+	float: left;
+	width: 77px;
+	height: 97px;
+	margin-left: 5px;
+	margin: 5px 0 5px 5px;
+	text-align: center;
+}
