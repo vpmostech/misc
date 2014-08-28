@@ -1,0 +1,16 @@
+.attention {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.conditions {
+	margin-bottom: 0;
+}
+
+.conditions li {
+	margin-top: 10px;
+}
+
+h2 {
+	margin-top: 35px;
+}

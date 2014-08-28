@@ -67,15 +67,17 @@ h1 {
 h2 {
 	margin-top: 0;
 	font-family: 'Arial';
-	font-size: 16px;
+	font-size: 17px;
 	font-weight: bold;
 	color: black;
+	text-transform: uppercase;
 }
 
 h2 a {
 	font-weight: bold;
 	color: #712e78;
-	text-decoration: none;	
+	font-size: 17px;
+	text-decoration: none;
 }
 
 h2 a.hint {
@@ -94,6 +96,17 @@ h3 {
 h3 a {
 	color: black;
 	font-size: 16px;
+}
+
+h4 {
+	min-height: 30px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	padding: 0 15px;
+	line-height: 30px;
+	font-size: 14px;
+	background: #f7f8f8;
+	text-transform: uppercase;
 }
 
 h6 {
