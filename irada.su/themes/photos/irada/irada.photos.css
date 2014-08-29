@@ -76,4 +76,86 @@
 	height: 95px;
 	margin-right: 10px;
 	margin-bottom: 10px;
+	text-align: center;
+}
+
+.gallery-photos .gallery-photo img {
+	max-width: 140px;
+}
+
+.mfp-bg {
+	opacity: 0.4;
+}
+
+.mfp-figure .nav-left,
+.mfp-figure .nav-right {
+	position: absolute;
+	width: 25px;
+	height: 94px;
+	background: red;
+	top: 50%;
+	margin-top: -48px;
+	cursor: pointer;
+}
+
+.mfp-figure .nav-left {
+	left: 7px;
+	background: url('graphics/page_left.png') center no-repeat;
+}
+
+.mfp-figure .nav-right {
+	right: 7px;
+	background: url('graphics/page_right.png') center no-repeat;
+}
+
+.mfp-figure .image-container {
+	padding: 10px;
+	background: white;
+}
+
+img.mfp-img {
+	padding-top: 0;
+	padding-bottom: 0;
+	max-height: 570px !important;
+}
+
+.mfp-bottom-bar {
+	height: 80px;
+	margin-top: 0;
+	padding: 0 10px 15px;
+	background: white;
+	box-sizing: border-box;
+}
+
+.mfp-bottom-bar .counter {
+	float: left;
+	width: 95px;
+	height: 35px;
+	line-height: 1em;
+	background: red;
+}
+
+.mfp-bottom-bar .mfp-counter {
+	position: relative;
+	float: left;
+	color: black;
+}
+
+.mfp-bottom-bar .date,
+.mfp-bottom-bar .albumname {
+	float: left;
+	clear: left;
+	line-height: 1em;
+	margin-top: 5px;
+	font-size: 11px;
+}
+
+.mfp-figure button.mfp-close {
+	top: -35px;
+	right: -35px;
+	width: 35px;
+	height: 35px;
+	font-size: 0;
+	cursor: pointer;
+	background: url('graphics/close.png') center no-repeat;
 }

@@ -1,8 +1,9 @@
 {foreach $photos as $ph}
 	<div class="gallery-photo">
-		{$photo = $wa->photos->photo($ph.id, "140x95")}
-		<a href="#">
-			<img src="{$photo.thumb_140x95.url}" alt="{$photo.name}" />
+		{$photo_thumb = $wa->photos->photo($ph.id, "0x95")}
+		{$photo_big = $wa->photos->photo($ph.id, "970")}
+		<a href="{$photo_big.thumb_970.url}">
+			<img src="{$photo_thumb.thumb_0x95.url}" alt="{$photo_thumb.name}" />
 		</a>
 	</div>
 {/foreach}
