@@ -1,8 +1,8 @@
-{foreach $photos as $ph}
+{foreach $photos as $photo}
 	<div class="gallery-photo">
-		{$photo_thumb = $wa->photos->photo($ph.id, "0x95")}
-		{$photo_big = $wa->photos->photo($ph.id, "970")}
-		<a href="{$photo_big.thumb_970.url}">
+		{$photo_thumb = $wa->photos->photo($photo.id, "0x95")}
+		{$photo_big = $wa->photos->photo($photo.id, "970")}
+		<a href="{$photo_big.thumb_970.url}" data-albumname="{$album.name}" data-uploaddate="{$photo.upload_datetime}">
 			<img src="{$photo_thumb.thumb_0x95.url}" alt="{$photo_thumb.name}" />
 		</a>
 	</div>
