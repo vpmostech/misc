@@ -542,6 +542,7 @@ input[type="text"] {
 }
 
 #sidebar .sidegroup h3 a {
+	font-size: 13px;
 	color: black;
 	text-decoration: none;
 }
@@ -549,8 +550,13 @@ input[type="text"] {
 #sidebar .sidegroup h4 {
 	font-size: 13px;
 	font-weight: normal;
+	min-height: unset;
+	line-height: 1.2em;
+	padding: 0;
 	margin-top: 3px;
 	margin-bottom: 0;
+	text-transform: none;
+	background: none;
 }
 
 #sidebar .sidegroup h4 a {
