@@ -3,7 +3,7 @@
 		<h3>Каталог</h3>
 		<ul class="links">
 		{$flinks = [
-			"Одежда" => "/shop/category/plate/",
+			"Одежда" => "`$wa->getUrl('shop/frontend')`category/plate/",
 			"Аксессуары" => "#",
 			"Детям" => "#",
 			"Подарки" => "#",
@@ -20,8 +20,8 @@
 		<h3>Оплата и доставка</h3>
 		<ul class="links">
 		{$flinks = [
-			"Оплата" => "#",
-			"Доставка" => "#",
+			"Оплата" => "`$wa_url`dostavka/",
+			"Доставка" => "`$wa_url`dostavka/",
 			"Как получить скидку" => "#",
 			"Возврат и обмен" => "#"
 		]}
@@ -35,11 +35,11 @@
 		<ul class="links">
 		{$flinks = [
 			"Интернет-магазин" => $wa->getUrl('shop/frontend'),
-			"Москва" => "/magaziny/?city=Moscow",
-			"Казань" => "/magaziny/?city=Kazan",
-			"Ульяновск" => "/magaziny/?city=Ulyanovsk",
-			"Тюмень" => "/magaziny/?city=Tumen",
-			"Набережные Челны" => "/magaziny/?city=Nabereg"
+			"Москва" => "`$wa_url`magaziny/?city=Moscow",
+			"Казань" => "`$wa_url`magaziny/?city=Kazan",
+			"Ульяновск" => "`$wa_url`magaziny/?city=Ulyanovsk",
+			"Тюмень" => "`$wa_url`magaziny/?city=Tumen",
+			"Набережные Челны" => "`$wa_url`magaziny/?city=Nabereg"
 		]}
 		{foreach $flinks as $flink}
 			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
@@ -56,9 +56,9 @@
 			"Сотрудничество" => "#",
 			"Франчайзинг" => "#",
 			"Наши друзья" => "#",
-			"Фотогалерея" => "#",
+			"Фотогалерея" => "`$wa_url`photos/",
 			"Видео" => "#",
-			"Вакансии" => "#",
+			"Вакансии" => "`$wa_url`vakansii/",
 			"Контакты" => "#"
 		]}
 		{foreach $flinks as $flink}

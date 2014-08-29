@@ -100,14 +100,14 @@
 		</a>
 		{$upperMenuItems=[
 				"Каталог товаров" => $wa->getUrl('shop/frontend'),
-				"Новинки" => $wa->getUrl('shop/frontend')|cat:"?sort=create_datetime&order=desc",
-				"Скидки" => "/skidki/",
+				"Новинки" => "`$wa->getUrl('shop/frontend')`?sort=create_datetime&order=desc",
+				"Скидки" => "`$wa_url`skidki/",
 				"Акции" => "#",
-				"Магазины" => "/magaziny/",
-				"Оплата и доствка" => "/dostavka/",
-				"О компании" => "",
-				"Партнерам" => "/partneram/",
-				"Контакты" => "/kontakty/"
+				"Магазины" => "`$wa_url`magaziny/",
+				"Оплата и доствка" => "`$wa_url`dostavka/",
+				"О компании" => "#",
+				"Партнерам" => "`$wa_url`partneram/",
+				"Контакты" => "`$wa_url`kontakty/"
 			]
 		}
 		{if isset($demosite)}
