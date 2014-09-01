@@ -1,0 +1,20 @@
+{$crumbs = [
+	"Главная" => "`$wa_url`",
+	"О компании" => "#",
+	"Фотогалерея" => "`$wa_url`photos"
+]}
+{if isset($album)}
+	{$crumbs[$album.name] = "#"}
+{elseif isset($smarty.get.all)}
+	{$crumbs["Все фото"] = "#"}
+{/if}
+
+<div class="breadcrumbs">
+	{foreach $crumbs as $crumb}
+		<div class="crumb">
+			{if !$crumb@last}<a href="{$crumb}">{/if}
+				{$crumb@key}
+			{if !$crumb@last}</a>{/if}
+		</div>
+	{/foreach}
+</div>

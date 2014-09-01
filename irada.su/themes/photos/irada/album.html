@@ -1,4 +1,5 @@
 {include file="`$wa_parent_theme_path`/sidebar_static.html"}
+{include file="breadcrumbs.html"}
 <h1>{$album.name}</h1>
 {$photos = $wa->photos->photos("album/`$album.id`", "77x0", "0", "100500")}
 <div class="photos_count">В альбоме {count($photos)} фотографий.</div>
