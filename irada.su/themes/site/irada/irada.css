@@ -177,7 +177,7 @@ a.button-light {
 a.button:hover,
 input[type="submit"]:hover {
 	background: url('graphics/grad_pink1_hover.png') repeat-x #ead0d6;
-	/* TODO: grad */
+	background: linear-gradient(#893d91, #66256e);
 }
 
 input[type="text"] {
@@ -401,7 +401,7 @@ input[type="text"] {
 
 #header .myAccount .login:hover {
 	background: url('graphics/grad_pink1_hover.png') repeat-x #ead0d6;
-	/* TODO: grad */
+	background: linear-gradient(#ffe3e8, #e7bceb);
 }
 
 #header .myAccount .register {
@@ -413,7 +413,7 @@ input[type="text"] {
 
 #header .myAccount .register:hover {
 	background: url('graphics/grad_gray_hover.png') repeat-x #b4bac0;
-	/* TODO: grad */
+	background: linear-gradient(#e8eced, #b9c1c7);
 }
 
 #header .myAccount .cart {

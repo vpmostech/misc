@@ -169,7 +169,7 @@
 
 .feature .link:hover {
 	background: url('graphics/grad_pink1_hover.png') repeat-x #e2bde3;
-	/* TODO: grad */
+	background: linear-gradient(#ffe3e9, #e8beeb);	 
 }
 
 .news {
