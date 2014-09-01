@@ -11,17 +11,17 @@
 						<div class="count">{$album.count}</div>
 					</div>
 				</div>
-				{$thumb_main = $wa->photos->photos("album/`$album.id`", "180x0", "1")}
+				{$thumb_main = $wa->photos->photos("album/`$album.id`", "180x310", "1")}
 				<div class="thumbs">
 					{foreach $thumb_main as $th}
 						<div class="thumb-main">
-							<img src="{$th.thumb_180x0.url}" alt="{$th.name}" />
+							<img src="{$th.thumb_180x310.url}" alt="{$th.name}" />
 						</div>
 					{/foreach}
-					{$thumbs_side = $wa->photos->photos("album/`$album.id`", "77x0", "1", "6")}
+					{$thumbs_side = $wa->photos->photos("album/`$album.id`", "77x97", "1", "6")}
 					{foreach $thumbs_side as $thumb_side}
 						<div class="thumb-side">
-							<img src="{$thumb_side.thumb_77x0.url}" alt="{$thumb_side.name}" />
+							<img src="{$thumb_side.thumb_77x97.url}" alt="{$thumb_side.name}" />
 						</div>
 					{/foreach}
 				</div>
