@@ -12,8 +12,12 @@
 .album-preview {
 	float: left;
 	width: 345px;
-	height: 345px;
+	height: 365px;
 	margin: 20px 25px 20px 0px;
+	color: black;
+}
+
+.album-preview a {
 	color: black;
 }
 
@@ -87,6 +91,11 @@
 
 .gallery-photos .gallery-photo img {
 	max-width: 140px;
+}
+
+.album-date {
+	float: left;
+	margin-top: 10px;
 }
 
 .mfp-bg {

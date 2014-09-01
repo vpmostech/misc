@@ -1,7 +1,38 @@
+{function name=monthname_of short=0}
+{* num *}
+	{$monthnames = [
+			'1' => 'января',
+			'2' => 'февраля',
+			'3' => 'марта',
+			'4' => 'апреля',
+			'5' => 'мая',
+			'6' => 'июня',
+			'7' => 'июля',
+			'8' => 'августа',
+			'9' => 'сентября',
+			'10' => 'октября',
+			'11' => 'ноября',
+			'12' => 'декабря'
+	]}
+	{if isset($monthnames[$num])}
+		{if $short == 0}
+			{$monthnames[$num]}
+		{else}
+			{$monthnames[$num]|truncate:3:""}
+		{/if}
+	{/if}
+{/function}
+{function name=date_string}
+{* date, format_type(1=>'ДД имямесяца ГГГГ г.') *}
+	{$d = date_parse($date)}
+	{if $format_type == 1}
+		{$d['day']} {monthname_of num=$d['month']} {$d['year']} г.
+	{/if}
+{/function}
 <div class="albums-list">
 	{foreach $albums as $album}
-		<a href="{$album.url}">
-			<div class="album-preview">
+		<div class="album-preview">
+			<a href="{$album.url}">
 				<div class="title">
 					<div class="name">
 						{$album.name}
@@ -25,7 +56,8 @@
 						</div>
 					{/foreach}
 				</div>
-			</div>
-		</a>
+			</a>
+			<div class="album-date">{call name=date_string date=$album.create_datetime format_type=1}</div>
+		</div>
 	{/foreach}
 </div>
