@@ -1,4 +1,13 @@
 {include file="`$wa_parent_theme_path`/sidebar_static.html"}
-<h1>Фотогалерея</h1>
-{$albums=$wa->photos->albums(0)}
-{include file="albums.html"}
+{if isset($smarty.get.all)}
+	<h1>Все фото</h1>
+	<a href="{$wa_app_url}" class="allphotos" style="margin-right: 30px;">К списку альбомов</a>
+	<div class="gallery-photos">
+		{include file="list-thumbs.html"}
+	</div>
+{else}
+	<h1>Фотогалерея</h1>
+	<a href="?all" class="allphotos" style="margin-right: 55px;">Все фото</a>
+	{$albums=$wa->photos->albums(0)}
+	{include file="albums.html"}
+{/if}
