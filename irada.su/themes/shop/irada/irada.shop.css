@@ -107,6 +107,7 @@ div#product-list {
 	border: 1px solid #d5b6ca;
 	padding-top: 2px;
 	background: url('graphics/grad_pink5.png') repeat-x #dfbfd6;
+	background: linear-gradient(#ead1d6, #d5aed7);
 	color: white;
 }
 
@@ -400,6 +401,7 @@ article #product-core-image .zoomWrapper {
 	color: #898989;
 	cursor: pointer;
 	background: url('graphics/grad_gray2.png') repeat-x scroll 0% 0% #bcc2c5;
+	background: linear-gradient(#f7f7f7, #ececec);
 }
 
 .product-data #cart-form .form-fill-hint {
@@ -412,6 +414,7 @@ article #product-core-image .zoomWrapper {
 .product-data #cart-form .size-var-active {
 	color: #74337a;
 	background: url('graphics/grad_pink5.png') repeat-x scroll 0% 0% #c48cba;
+	background: linear-gradient(#f8ebed, #edd7e9);
 	border: 1px solid #e2cedc;
 }
 
@@ -532,6 +535,7 @@ article #product-core-image .zoomWrapper {
 	height: 55px;
 	margin-top: 20px;
 	background: url('graphics/grad_pink3.png') repeat-x #f3e1eb;
+	background: linear-gradient(#f8ebed, #ead3e5);
 }
 
 .cart-summary-page .coupons .value {

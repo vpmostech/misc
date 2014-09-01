@@ -13,6 +13,7 @@
 	height: 53px;
 	margin-left: 13px;
 	background: url('graphics/grad_gray2.png') repeat-x #e6e9ea;
+	background: linear-gradient(#f8ebed, #edd7e9);f8ebed
 }
 
 .icon {
@@ -116,6 +117,7 @@
 	margin-top: 12px;
 	padding-top: 12px;
 	background: url('graphics/grad_white.png') repeat-x white;
+	background: linear-gradient(#ffffff, #f3f5f5);
 	box-sizing: border-box;
     border: 1px solid #d5d6d6;
     border-radius: 4px;
@@ -162,10 +164,12 @@
 	text-align: center;
 	border-radius: 2px;
 	background: url('graphics/grad_pink1.png') repeat-x #dfbfd6;
+	background: linear-gradient(#ead0d6, #d4aed7);
 }
 
 .feature .link:hover {
 	background: url('graphics/grad_pink1_hover.png') repeat-x #e2bde3;
+	/* TODO: grad */
 }
 
 .news {
@@ -219,6 +223,7 @@
 	margin-left: 13px;
 	padding: 15px 15px 10px;
 	background: url('graphics/grad_gray2.png') repeat-x #e6e9ea;
+	background: linear-gradient(#f7f8f8, #e6e9ea);
 }
 
 .contactsline > div {

@@ -150,6 +150,7 @@ input[type="submit"]
 	border: none;
 	border-radius: 3px;
 	background: url('graphics/grad_violet.png') repeat-x scroll 0% 0% #6e3075;
+	background: linear-gradient(#75347c, #541f5a);
 	color: white;
 	font-family: 'DINPro-Bold';
 	font-size: 13px;
@@ -170,11 +171,13 @@ input[type="submit"]
 
 a.button-light {
 	background: url('graphics/grad_pink1.png') repeat-x #dfbed7;
+	background: linear-gradient(#ead1d6, #cea9d2);
 }
 
 a.button:hover,
 input[type="submit"]:hover {
 	background: url('graphics/grad_pink1_hover.png') repeat-x #ead0d6;
+	/* TODO: grad */
 }
 
 input[type="text"] {
@@ -393,20 +396,24 @@ input[type="text"] {
 	float: left;
 	width: 39%;
 	background: url('graphics/grad_pink1.png') repeat-x #dfbed7;
+	background: linear-gradient(#ebd1d6, #d4add7);
 }
 
 #header .myAccount .login:hover {
 	background: url('graphics/grad_pink1_hover.png') repeat-x #ead0d6;
+	/* TODO: grad */
 }
 
 #header .myAccount .register {
 	float: left;
 	width: 60%;
 	background: url('graphics/grad_gray.png') repeat-x #bcc2c5;
+	background: linear-gradient(#d4d8d9, #a7aeb3);
 }
 
 #header .myAccount .register:hover {
 	background: url('graphics/grad_gray_hover.png') repeat-x #b4bac0;
+	/* TODO: grad */
 }
 
 #header .myAccount .cart {
@@ -462,6 +469,7 @@ input[type="text"] {
 #upperMenu {
 	height: 49px;
 	background: url('graphics/grad_violet.png') repeat-x #6e3075;
+	background: linear-gradient(#87407e, #66285d);
 }
 
 #upperMenu .menuItem {
@@ -485,26 +493,12 @@ input[type="text"] {
 
 #upperMenu .menuItem:hover {
 	background: url('graphics/grad_pink2.png') repeat-x #d6b1d7;
+	background: linear-gradient(#ebd2d6, #d4add7);
+	
 }
 
 #upperMenu a .menuItem:hover {
 	color: white;
-}
-
-#upperMenu .clientCard {
-	float: left;
-	margin-top: 12px;
-	margin-left: 14px;
-	width: 178px;
-	height: 25px;
-	background: url('graphics/grad_pink4.png') center repeat-x #c48cba;
-	font-family: 'DINPro-Bold';
-	font-size: 13px;
-	font-weight: 400;
-}
-
-#upperMenu .clientCard:hover {
-	background: url('graphics/grad_pink4_hover.png') center repeat-x #c48cba;
 }
 
 #upperMenu .clientCard a {
@@ -567,6 +561,7 @@ input[type="text"] {
 #footer {
 	display: table;
 	background: url('graphics/grad_pink3.png') repeat-x #f2e6f1;
+	background: linear-gradient(#f7edf0, #f0e3f1);
 	background-position: 0 9px;
 	color: #634963;
 }
@@ -741,6 +736,7 @@ input[type="text"] {
 	font-size: 11px;
 	color: white;
 	background: url('graphics/grad_violet2.png') repeat-x #612767;
+	background: linear-gradient(#75347c, #541f5a);
 	cursor: pointer;
 }
 
