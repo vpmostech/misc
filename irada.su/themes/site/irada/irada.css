@@ -99,6 +99,8 @@ h3 a {
 }
 
 h4 {
+	float: left;
+	width: 740px;
 	min-height: 30px;
 	margin-top: 30px;
 	margin-bottom: 10px;
@@ -107,6 +109,7 @@ h4 {
 	font-size: 14px;
 	background: #f7f8f8;
 	text-transform: uppercase;
+	box-sizing: border-box;
 }
 
 h6 {
@@ -182,6 +185,11 @@ input[type="submit"]:hover {
 input[type="text"] {
 	float: left;
 	box-sizing: border-box;
+}
+
+.page-static p {
+	width: 740px;
+	text-align: justify;
 }
 
 .ui-spinner {
