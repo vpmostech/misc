@@ -424,6 +424,35 @@ article #product-core-image .zoomWrapper {
 	margin-top: 15px;
 }
 
+.info-icons {
+	float: left;
+	width: 390px;
+	height: 21px;
+	margin-top: 20px;
+}
+
+.info-icons > a {
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	color: #525252;
+}
+
+.info-icons > a > div {
+	float: left;
+}
+
+.info-icons .info-icon {
+	height: 21px;
+}
+
+.info-icons .info-text {
+	margin-left: 5px;
+	margin-right: 25px;
+	line-height: 21px;
+}
+
 #product-tabs {
 	float: left;
 	margin-top: 20px;
