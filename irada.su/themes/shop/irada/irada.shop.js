@@ -165,6 +165,9 @@ $(document).ready(function () {
 	{
 		$('.form-fill-hint').hide('clip', {}, 1000);
 	}
+
+	// Табы в карточке товара
+	$('#product-tabs').tabs();
 	
 });
 

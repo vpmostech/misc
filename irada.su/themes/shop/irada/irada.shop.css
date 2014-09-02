@@ -335,7 +335,7 @@ article #product-core-image .zoomWrapper {
 
 .product-data h1 {
 	float: left;
-	width: 350px;
+	width: 210px;
 	margin-top: 10px;
 	font-size: 30px;
 }
@@ -422,6 +422,39 @@ article #product-core-image .zoomWrapper {
 
 .product-data #cart-form input[type="submit"] {
 	margin-top: 15px;
+}
+
+#product-tabs {
+	float: left;
+	margin-top: 20px;
+	border: none;
+}
+
+#product-tabs .ui-tabs-nav {
+	padding: 0;
+	border: none;
+	border-bottom: 1px solid #ececec;
+	background: transparent;
+}
+
+#product-tabs .ui-state-default {
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 2px #ececec solid;
+	border-radius: 0;
+	background: linear-gradient(#f0f0f0, #d7d7d7);
+}
+
+#product-tabs .ui-state-active {
+	border-bottom: none;
+	background: white;
+}
+
+#product-tabs .ui-tabs-nav li.ui-tabs-active {
+	margin-bottom: -3px;
+	padding-bottom: 3px;
+	border-left: none;
 }
 
 .description {
