@@ -537,10 +537,11 @@ input[type="text"] {
 }
 
 #sidebar .sidegroup h3 {
+	float: left;
 	font-size: 13px;
 	font-weight: bold;
 	text-transform: uppercase;
-	margin-top: 0;
+	margin-top: 10px;
 	margin-bottom: 5px;
 }
 

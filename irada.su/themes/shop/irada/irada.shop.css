@@ -255,15 +255,17 @@ ul.product-list li .rating .star.shine {
 article {
 	position: relative;
 	float: left;
-	width: 100%;
+}
+
+article .product-gallery {
+	float: left;
+	text-align: center;
 }
 
 article #product-gallery {
 	float: left;
 	width: 70px;
 	height: 320px;
-	margin-top: -1px;
-	margin-left: 9px;
 	padding: 3px;
 	border: 2px solid #ebebeb;
 	background: #f7f8f8;
@@ -325,8 +327,8 @@ article #product-core-image .zoomWrapper {
 
 .product-data {
 	float: left;
-	width: 540px;
-	margin-left: 20px;
+	width: 340px;
+	margin-left: 30px;
 	color: #5c5d60;
 	font-size: 14px;
 }
