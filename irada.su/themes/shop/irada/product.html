@@ -5,7 +5,7 @@
     <!-- product info & gallery -->
     <div class="product-info" id="overview">
 
-        {if $product.images}
+		{if $product.images}
             <section class="product-gallery">
                 <!-- thumbs -->
 				<div class="more-images" id="product-gallery">
@@ -44,17 +44,10 @@
 			<div class="sku">Артикул <b>{if $sku.sku}{$sku.sku|escape}{/if}</b></div>
 			<h1 itemprop="name">
 				{$product.name|escape}
-				{if !empty($product.rating) && $product.rating > 0}
-					<span class="rating nowrap" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" title="{sprintf('[`Average user rating: %s / 5`]', $product.rating)}">
-						{$wa->shop->ratingHtml($product.rating, 16)}
-						<span itemprop="ratingValue" style="display: none;">{$product.rating}</span>
-						<span itemprop="reviewCount" style="display: none;">{$reviews_total_count}</span>
-					</span>
-				{/if}
 			</h1>
 			<div class="rating">
 				{for $i=1 to 5}
-					<div class="star {if $p.rating >= $i}shine{/if}"></div>
+					<div class="star {if $product.rating >= $i}shine{/if}"></div>
 				{/for}
 			</div>
 			<div class="clearfix"></div>
