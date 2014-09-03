@@ -171,20 +171,38 @@ input[type="submit"]
 	box-sizing: border-box;
 }
 
-a.button-light {
+a.button-light,
+input[type="button"].button-light,
+input[type="submit"].button-light
+{
 	background: url('graphics/grad_pink1.png') repeat-x #dfbed7;
 	background: linear-gradient(#ead1d6, #cea9d2);
 }
 
 a.button:hover,
+input[type="button"]:hover,
 input[type="submit"]:hover {
 	background: url('graphics/grad_pink1_hover.png') repeat-x #ead0d6;
 	background: linear-gradient(#893d91, #66256e);
 }
 
+a.button-light:hover,
+input[type="button"].button-light:hover,
+input[type="submit"].button-light:hover
+{
+	background: linear-gradient(#fce1e7, #e0b6e3);
+}
+
 input[type="text"] {
 	float: left;
 	box-sizing: border-box;
+}
+
+.greylink {
+	color: #aab1b6;
+    font-family: "Arial";
+    font-size: 11px;
+    font-style: italic;
 }
 
 .page-static p {
