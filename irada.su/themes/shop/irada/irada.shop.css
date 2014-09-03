@@ -337,6 +337,7 @@ article #product-core-image .zoomWrapper {
 	float: left;
 	width: 210px;
 	margin-top: 10px;
+	margin-bottom: 0;
 	font-size: 30px;
 }
 
@@ -368,7 +369,7 @@ article #product-core-image .zoomWrapper {
 
 .product-data #cart-form,
 .product-data #cart-form-dialog {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .product-data #cart-form .option {
@@ -492,6 +493,105 @@ article #product-core-image .zoomWrapper {
 
 #product-tabs .ui-tabs-panel p {
 	margin-top: 0;
+}
+
+.product-reviews {
+	float: left;
+	width: 100%;
+	margin-top: 20px;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.product-reviews h2 {
+	float: left;
+	height: 25px;
+	margin-bottom: 0;
+	line-height: 25px;
+	color: #802990;
+}
+
+.product-reviews input[type="button"] {
+	height: 25px;
+	margin-left: 15px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.product-reviews .rules {
+	margin-left: 10px;
+	font-size: 12px;
+	font-style: normal;
+}
+
+.product-reviews .review {
+	width: 100%;
+	height: 135px;
+	margin-top: 10px;
+	background: #f7f8f8;
+}
+
+.product-reviews .review > div {
+	float: left;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.product-reviews .review .author {
+	width: 20%;
+}
+
+.product-reviews .review .author .avatar {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.product-reviews .review .author .name {
+	float: left;
+	margin-top: 30px;
+	margin-left: 10px;
+	font-family: 'Myriad-Pro', 'Tahoma';
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.product-reviews .review .payload {
+	width: 80%;
+}
+
+.product-reviews .review .payload .date {
+	margin-top: 15px;
+}
+
+.product-reviews .review .payload .rate {
+	margin-top: 10px;
+}
+
+.product-reviews .review .payload .rate .star {
+	float: left;
+	width: 13px;
+	height: 13px;
+	background: url('graphics/rate_off.png') no-repeat;
+}
+
+.product-reviews .review .payload .rate .star.shine {
+	background: url('graphics/rate_on.png') no-repeat;
+}
+
+
+.product-reviews .review .payload .text {
+	float: left;
+	margin-top: 10px;
+	text-align: justify;
+	padding-right: 10px;
+}
+
+.product-reviews .no-reviews {
+	float: left;
+	margin-top: 20px;
 }
 
 .cart-summary-page .table {

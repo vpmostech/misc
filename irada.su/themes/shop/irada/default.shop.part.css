@@ -107,7 +107,6 @@ table.features tr.divider td { border-bottom: 1px solid #ccc; padding-left: 0; p
 
 .write-review { margin: 30px 0 40px; }
 
-.review { margin-bottom: 30px; }
 .review .summary { font-size: 0.9em; color: #777; }
 .review .summary h6 { color: #000; font-size: 1.1em; margin-bottom: 0.3em; }
 .review .summary a.username { color: #777; }

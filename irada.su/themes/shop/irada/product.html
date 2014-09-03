@@ -1,4 +1,17 @@
-
+{$monthnames_rp = [
+	'1' => 'января',
+	'2' => 'февраля',
+	'3' => 'марта',
+	'4' => 'апреля',
+	'5' => 'мая',
+	'6' => 'июня',
+	'7' => 'июля',
+	'8' => 'августа',
+	'9' => 'сентября',
+	'10' => 'октября',
+	'11' => 'ноября',
+	'12' => 'декабря'
+]}
 {include file="`$wa_parent_theme_path`/sidebar_home.html"}
 {include file="breadcrumbs.html"}
 <article itemscope itemtype="http://schema.org/Product">
@@ -125,7 +138,44 @@
         {* @event frontend_product.%plugin_id%.block *}
         {foreach $frontend_product as $_}{$_.block}{/foreach}
 
-        <!-- product reviews -->
     </div>
+	<!-- product reviews -->
 
 </article>
+
+<div class="product-reviews">
+	<h2>Отзывы</h2>
+	<input type="button" class="button button-light" value="Оставить отзыв" />
+	<a href="#" class="rules greylink">Правила оформления отзыва</a>
+	<div class="cleafix"></div>
+	{if $reviews}
+		{foreach $reviews as $review}
+			{if $review.status != "approved"}
+				{continue}
+			{/if}
+			<div class="review">
+				<div class="author">
+					<div class="avatar">
+						<img src="{if $review.author.photo != '0'}{$review.author.photo_url_50}{else}{$wa_theme_url}graphics/user-nophoto.png{/if}" width="50" height="50" alt="" />
+					</div>
+					<div class="name">{$review.author.name}</div>
+				</div>
+				<div class="payload">
+					<div class="date">{$d = date_parse($review.datetime)}{$d['day']} {$monthnames_rp[$d['month']]}</div>
+					<div class="rate">
+						{if $review.rate}
+							{for $i=1 to 5}
+								<div class="star {if $review.rate >= $i}shine{/if}"></div>
+							{/for}
+						{else}
+							(нет оценки)
+						{/if}
+					</div>
+					<div class="text">{$review.text}</div>
+				</div>
+			</div>
+		{/foreach}
+	{else}
+		<div class="no-reviews">Отзывов пока нет</div>
+	{/if}
+</div>
