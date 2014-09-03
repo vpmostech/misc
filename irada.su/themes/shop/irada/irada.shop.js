@@ -108,9 +108,19 @@ $(document).ready(function () {
 			*/
 		}
 	});
+
+	// Новый отзыв
+	$('#addReview').on('click', function (event) {
+		if ($(this).attr('href') != '#') {
+			return true;
+		}
+		event.preventDefault();
+		var $previewForm = $('#product-review-form');
+		$previewForm.show('clip');
+		return false;
+	});
 		
 });
-
 
 // Лупа на основном изображении товара
 $(document).ready(function () {

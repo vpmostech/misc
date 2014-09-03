@@ -506,12 +506,13 @@ article #product-core-image .zoomWrapper {
 	margin-bottom: 0;
 	line-height: 25px;
 	color: #802990;
+	text-transform: none;
 }
 
-.product-reviews input[type="button"] {
-	height: 25px;
+.product-reviews a.button {
+	height: 30px;
 	margin-left: 15px;
-	padding-top: 0;
+	padding-top: 6px;
 	padding-bottom: 0;
 }
 
@@ -578,7 +579,6 @@ article #product-core-image .zoomWrapper {
 	background: url('graphics/rate_on.png') no-repeat;
 }
 
-
 .product-reviews .review .payload .text {
 	float: left;
 	margin-top: 10px;
@@ -589,6 +589,16 @@ article #product-core-image .zoomWrapper {
 .product-reviews .no-reviews {
 	float: left;
 	margin-top: 20px;
+}
+
+.review-form {
+	display: none;
+	margin-top: 30px;
+}
+
+.review-form p {
+	float: left;
+	width: 100%;
 }
 
 .cart-summary-page .table {
@@ -746,6 +756,15 @@ article #product-core-image .zoomWrapper {
 
 .icon16.remove {
 	background-position: -96px -16px;
+}
+
+.icon16.star-empty {
+	background-position: -48px -16px;
+}
+
+.icon16.star-hover, 
+.icon16.star {
+	background-position: -64px -16px;
 }
 
 .checkout-header {

@@ -144,10 +144,52 @@
 </article>
 
 <div class="product-reviews">
+	
 	<h2>Отзывы</h2>
-	<input type="button" class="button button-light" value="Оставить отзыв" />
+	{$userID = $wa->userId()}
+	<a id="addReview" href="{if empty($userID)}{$wa->getUrl('shop/frontend/my')}{else}#{/if}" class="button button-light">Оставить отзыв</a>
 	<a href="#" class="rules greylink">Правила оформления отзыва</a>
 	<div class="cleafix"></div>
+
+	<script type="text/javascript" src="{$wa_theme_url}reviews.js"></script>
+	<script type="text/javascript" src="{$wa_app_static_url}js/rate.widget.js"></script>
+	<div class="review-form" id="product-review-form">
+		<h3>Добавление отзыва</h3>
+		<form method="post">
+			<div class="review-form-fields">
+				<p class="review-field">
+					<label for="review-title">Заголовок</label>
+					<input type="text" name="title" id="review-title" class="bold" />
+				</p>
+				<div class="clearfix"></div>
+				<p class="review-field">
+					<label>Оцените товар:</label>
+					<a href="#" class="no-underline rate" data-rate="0" id="review-rate">
+						{for $i = 1 to 5}<i class="icon16 star-empty"></i>{/for}
+					</a>
+					<input name="rate" type="hidden" value="0" />
+				</p>
+				<div class="clearfix"></div>
+				<p class="review-field">
+					<label for="review-text">Текст отзыва:</label>
+					<textarea id="review-text" name="text" rows="10" cols="45"></textarea>
+				</p>
+				<div class="clearfix"></div>
+				<div class="review-submit">
+					{*$wa->captcha()*}
+					<input type="submit" class="save" value="[`Add review`]" />
+					
+					<em class="hint">Ctrl+Enter</em>
+					<input type="hidden" name="parent_id" value="0">
+					<input type="hidden" name="product_id" value="{if isset($product.id)}{$product.id}{else}0{/if}">
+					<input type="hidden" name="auth_provider" value="{$current_auth_source|default:shopProductReviewsModel::AUTH_GUEST}">
+					<input type="hidden" name="count" value="{$reviews_count}">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="cleafix"></div>
+
 	{if $reviews}
 		{foreach $reviews as $review}
 			{if $review.status != "approved"}
@@ -171,6 +213,7 @@
 							(нет оценки)
 						{/if}
 					</div>
+					<div class="clearfix"></div>
 					<div class="text">{$review.text}</div>
 				</div>
 			</div>
@@ -178,4 +221,5 @@
 	{else}
 		<div class="no-reviews">Отзывов пока нет</div>
 	{/if}
+
 </div>
