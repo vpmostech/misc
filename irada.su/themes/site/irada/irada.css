@@ -531,6 +531,7 @@ input[type="text"] {
 }
 
 #sidebar .sidegroup {
+	float: left;
 	width: 100%;
 	padding-left: 25px;
 	padding-bottom: 10px;

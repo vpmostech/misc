@@ -2,16 +2,11 @@
 {include file="`$wa_parent_theme_path`/sidebar_home.html"}
 {include file="breadcrumbs.html"}
 <article itemscope itemtype="http://schema.org/Product">
-    
-    <!-- product internal nav -->
-    
     <!-- product info & gallery -->
     <div class="product-info" id="overview">
 
         {if $product.images}
-        
             <section class="product-gallery">
-            
                 <!-- thumbs -->
 				<div class="more-images" id="product-gallery">
 					<div class="thumbs-up"></div>
@@ -26,7 +21,6 @@
 					</div>
 					<div class="thumbs-down"></div>
 				</div>
-
                 <!-- main image -->
                 <div class="image" id="product-core-image">
                     <div class="corner top right">
@@ -36,11 +30,8 @@
                         {$wa->shop->productImgHtml($product, '300x0', ['itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape, 'title' => $product.name|escape])}
                     </a>
                     <div id="switching-image" style="display: none;"></div>
-                </div>
-                
-                
+                </div>                
             </section>
-    
         {/if}
 
 		{$pr=$wa->shop->product($product.id)}
@@ -62,9 +53,9 @@
 				{/if}
 			</h1>
 			<div class="rating">
-				{foreach [1,2,3,4,5] as $num}
-					<div class="star {if $p.rating >= $num}shine{/if}"></div>
-				{/foreach}
+				{for $i=1 to 5}
+					<div class="star {if $p.rating >= $i}shine{/if}"></div>
+				{/for}
 			</div>
 			<div class="clearfix"></div>
 			<div class="price">{$sku.price} руб.</div>
@@ -137,29 +128,11 @@
 			</div>
 		</div>
 		
-
         <!-- plugin hook: 'frontend_product.block' -->
         {* @event frontend_product.%plugin_id%.block *}
         {foreach $frontend_product as $_}{$_.block}{/foreach}
 
-        {if $product.description}
-            <!--<section class="description" id="product-description" itemprop="description">{$product.description}</section>-->
-        {/if}
-
-        <!-- product features -->
-
-		<!-- purchase -->
-
-        <!-- categories -->
-
-        <!-- tags -->
- 
         <!-- product reviews -->
     </div>
 
 </article>
-
-
-<!-- RELATED PRODUCTS -->
-{$upselling = $product->upSelling(12)}
-{$crossselling = $product->crossSelling(12)}
