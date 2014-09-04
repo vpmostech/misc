@@ -109,6 +109,11 @@ $(document).ready(function () {
 		}
 	});
 
+	// Табы в карточке товара
+	$('#product-tabs').tabs({
+		show: true
+	});
+
 	// Новый отзыв
 	$('#addReview').on('click', function (event) {
 		if ($(this).attr('href') != '#') {
@@ -116,7 +121,7 @@ $(document).ready(function () {
 		}
 		event.preventDefault();
 		var $previewForm = $('#product-review-form');
-		$previewForm.show('clip');
+		$previewForm.toggle('blind', {direction: 'up'});
 		return false;
 	});
 		
@@ -175,9 +180,6 @@ $(document).ready(function () {
 	{
 		$('.form-fill-hint').hide('clip', {}, 1000);
 	}
-
-	// Табы в карточке товара
-	$('#product-tabs').tabs();
 	
 });
 
