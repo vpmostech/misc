@@ -374,6 +374,7 @@ input[type="text"] {
 #header .center .contacts .time {
 	font-family: 'DINPro-Bold';
 	font-size: 20px;
+	text-align: right;
 }
 
 #header .center .contacts .time .tz {
@@ -398,6 +399,7 @@ input[type="text"] {
 
 #header .center .contacts .phone .callback {
 	float: right;
+	margin-right: 13px;
 }
 
 #header .myAccount {
