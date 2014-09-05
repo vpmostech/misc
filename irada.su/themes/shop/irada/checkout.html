@@ -106,7 +106,7 @@
             if (step == 'payment' || step == 'shipping') {
                 if (!f.find('input[name="' + step + '_id"]:checked').not(':disabled').length) {
                     if (!f.find('em.errormsg').length) {
-                    $('<em class="errormsg inline">' + (step == 'payment' ? '[`Please select payment option`]' :
+	                    $('<em class="errormsg">' + (step == 'payment' ? '[`Please select payment option`]' :
                             '[`Please select shipping option`]') + '</em>').insertAfter(f.find('input:submit:last'));
                     }
                     return false;
@@ -157,7 +157,7 @@
 {if $checkout_current_step == "contactinfo"}
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$("form.checkout-form").submit();
+			$(".checkout-step.step-contactinfo form.checkout-form").submit();
 		});
 	</script>
 {/if}

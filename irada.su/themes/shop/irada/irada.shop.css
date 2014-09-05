@@ -830,6 +830,12 @@ article #product-core-image .zoomWrapper {
 	color: #b869a7;
 }
 
+em.errormsg {
+	display: block;
+	margin-left: 0px;
+	clear: left;
+}
+
 .addr-form div.label {
 	width: 100px;
 	padding-top: 5px;
