@@ -800,9 +800,17 @@ article #product-core-image .zoomWrapper {
 	width: 755px;
 }
 
+.checkout .button.back {
+	float: left; 
+	clear: left;
+	width: 114px;
+	height: 41px;
+	margin-top: 20px;
+	margin-right: 40px;
+}
+
 .checkout input[type="submit"] {
 	float: left;
-	clear: left;
 }
 
 .addr-form {

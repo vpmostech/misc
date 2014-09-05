@@ -17,8 +17,6 @@
 			<div class="checkout-step step-{$step_id}">
 				<form class="checkout-form{if $s@last} last{/if}" method="post" action="">
 
-					{*<a href="#" class="hint float-right back"{if $checkout_current_step != $step_id} style="display:none"{/if}>&larr; Вернуться к предыдущему шагу</a>*}
-
 					<div class="checkout-step-content" style="{if $checkout_current_step != $step_id} display:none;{/if}">
 						{if $checkout_current_step == $step_id}
 							{if in_array($step_id,['contactinfo', 'shipping', 'payment', 'confirmation'])}
@@ -31,15 +29,17 @@
 						{/if}
 						<div class="clear-both"></div>
 						<input type="hidden" name="step" value="{$step_id}">
+						{if $step_id == "shipping"}
+							<a href="{$wa->getUrl('/frontend/cart')}" class="button back" style="padding: 2px 5px 0; text-align: center;" >Вернуться в корзину</a>
+						{elseif $step_id == "payment"}
+							<a href="#" class="button back">&larr; Назад</a>
+						{/if}
 						{if $s@last}
 							{if empty($error)}
 								<input type="submit" class="large bold" value="[`Place order`]">
 							{/if}
 						{else}
-							{if !$s@first && $step_id != "shipping"}
-								<a href="#" class="hint float-right back"{if $checkout_current_step != $step_id} {*style="display:none"*}{/if}>&larr; Вернуться к предыдущему шагу</a>
-							{/if}
-							<input type="submit" class="large bold" value="[`Next &rarr;`]">
+							<input type="submit" class="large bold" value="Далее &rarr;">
 						{/if}
 						<div class="clear-both"></div>
 					</div>
@@ -56,49 +56,33 @@
 
 <script type="text/javascript">
     $(function () {
-		/*
+		
         function checkoutStep(step_id) {
             $.get("{$wa->getUrl('/frontend/checkout')}" + step_id + '/', function (response) {
                 var current = $(".checkout-step .checkout-step-content:visible");
                 var current_step_id =  current.find(".checkout-content").data('step-id');
+				// Если мы не на запрошенном шаге, прячем контент
                 if (current_step_id != step_id) {
                     current.animate( { height: 0 }, 200, function() { $(this).hide(); } );
                     current.parent().find('a.back').hide();
                 }
-                $(".checkout-step.step-" + step_id + " .checkout-content").replaceWith(response);
-                $(".checkout-step.step-" + step_id + " a.back").show();
-                $(".checkout-step.step-" + step_id + ' h2').removeClass('upcoming')
-                $(".checkout-step.step-" + step_id).next('.checkout-step').each(function () {
-                    $(this).find('h2').addClass('upcoming');
-                });
-                $(".checkout-step.step-" + step_id).prev('.checkout-step').each(function () {
-                    $(this).find('h2').removeClass('upcoming');
-                });
+				// Заполняем полученный по AJAX контент (если возврат к адресу доставки - оставим старый)
+				if (step_id != 'shipping') {
+					$(".checkout-step.step-" + step_id + " .checkout-content").replaceWith(response);
+				}
+                
+				// Показываем новый контент
                 if (current_step_id != step_id) {
                     $(".checkout-step.step-" + step_id + " .checkout-step-content").show(0).css({ height: 'auto'});
                 }
-                if ($(".checkout-step.step-" + step_id + ' .auth').length) {
-                    $("input[name='user_type']").change();
-                }
             });
         }
-		*/
-		/*
-        $(".checkout h2 a").click(function () {
-            if ($(this).hasClass('hint')) {
-                if ($(this).hasClass('back')) {
-                    checkoutStep($(this).closest('div').prev().find('.checkout-content').data('step-id'));
-                    return false;
-                }
-                return true;
-            }
-            if ($(this).closest('h2').hasClass('upcoming')) {
-                return false;
-            }
-            checkoutStep($(this).closest('div').find('.checkout-content').data('step-id'));
-            return false;
-        });
-		*/
+
+		$('.checkout').on('click', '.back', function () {
+			if ($(this).attr('href') == '#') {
+				checkoutStep('shipping');
+			}
+		});
         $("form.checkout-form").on('submit', function () {
             var f = $(this);
             var step = f.find('.checkout-content').data('step-id');
