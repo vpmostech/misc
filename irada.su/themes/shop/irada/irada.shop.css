@@ -824,7 +824,7 @@ article #product-core-image .zoomWrapper {
 	box-sizing: border-box;
 }
 
-.required:after,
+label.required:after,
 .wa-required span:after {
 	content: "*";
 	color: #b869a7;

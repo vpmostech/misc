@@ -114,6 +114,23 @@
                     f.find('em.errormsg').remove();
                 }
             }
+			// Проверим заполненность формы адреса
+			if (step == "shipping") {
+				var filledFlag = true;
+				$('.addr-form input.required').each(function (index, elem) {
+					$(elem).toggleClass('error', $(elem).val() === '');
+					filledFlag &= $(elem).val() !== '';
+				});
+				console.log(filledFlag);
+				if (!filledFlag) {
+					if (!f.find('em.errormsg').length) {
+						$('<em class="errormsg">Пожалуйста, заполните обязательные поля.</em>').insertAfter(f.find('input:submit:last'));
+					}
+					return false;
+				} else {
+					f.find('em.errormsg').remove();
+				}
+			}
 			// Если это был последний шаг - просто переходим на страницу с результатом оформления заказа.
 			// Проще говоря - никаких AJAX-запросов, просто отправляем форму.
 			// Наверное, чтобы разделить оформление на отдельные страницы, надо сделать аналогично.
