@@ -131,6 +131,15 @@
 					f.find('em.errormsg').remove();
 				}
 			}
+			// Скопируем данные у нужную форму
+			if (step == "shipping") {
+				var shipID = $('ul.checkout-options li .iradio_minimal-pink.checked input:radio').val();
+				$('.addr-form input, .addr-form textarea').each(function () {
+					var $this = $(this),
+						hidName = $this.attr("data-rel-name").replace('$', shipID);
+					$('input[name="' + hidName + '"], textarea[name="' + hidName + '"]').val($this.val());
+				});
+			}
 			// Если это был последний шаг - просто переходим на страницу с результатом оформления заказа.
 			// Проще говоря - никаких AJAX-запросов, просто отправляем форму.
 			// Наверное, чтобы разделить оформление на отдельные страницы, надо сделать аналогично.

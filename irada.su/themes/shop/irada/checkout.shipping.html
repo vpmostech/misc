@@ -172,18 +172,6 @@
 					}, "json");
 				});
 				*/
-				// Из общей формы будем копировать данные во все другие
-				$('.addr-form').on('change', 'input, textarea', function () {
-					var $this = $(this);
-					$('input[name="shipping_id"]').each(function (index, elem) {
-						var inputName = $this.attr("data-rel-name").replace('$', $(elem).val());
-						$('.wa-form.wa-address [name="' + inputName + '"]').val($this.val());
-					});
-				});
-
-				// Чтобы в скрытых полях ничего не оставалось
-				$('.wa-address input, .wa-address textarea').val('');
-
 				$('input[name="shipping_id"]').iCheck({
 					checkboxClass: 'icheckbox_minimal-pink',
 					radioClass: 'iradio_minimal-pink',
