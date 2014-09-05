@@ -789,11 +789,22 @@ article #product-core-image .zoomWrapper {
 
 .steps-line {
 	float: left;
-	width: 500px;
-	height: 40px;
+	width: 501px;
+	height: 22px;
 	margin-top: 30px;
 	margin-bottom: 40px;
-	background: gray;
+}
+
+.checkout-content[data-step-id="shipping"] .steps-line {
+	background: url('graphics/steps-line-shipping.png') no-repeat;
+}
+
+.checkout-content[data-step-id="payment"] .steps-line {
+	background: url('graphics/steps-line-payment.png') no-repeat;
+}
+
+.checkout-result.success .steps-line {
+	background: url('graphics/steps-line-success.png') no-repeat;
 }
 
 .checkout {
@@ -969,6 +980,7 @@ div.checkout ul {
 }
 
 .checkout-result .box {
+	float: left;
 	width: 740px;
 	height: 160px;
 	padding: 0px 25px;
