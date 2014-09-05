@@ -134,8 +134,6 @@
 
 				$(".checkout-options input:radio").change(function () {
 					if ($(this).is(':checked') && !$(this).data('ignore')) {
-						//$(".checkout-options .wa-form").hide();
-						//$(this).closest('li').find('.wa-form').show();
 						if ($(this).data('changed')) {
 							$(this).closest('li').find('.wa-form').find('input,select').data('ignore', 1).change().removeData('ignore');
 							$(this).removeData('changed');
@@ -172,6 +170,8 @@
 					}, "json");
 				});
 				*/
+				
+				// Красивые radio
 				$('input[name="shipping_id"]').iCheck({
 					checkboxClass: 'icheckbox_minimal-pink',
 					radioClass: 'iradio_minimal-pink',

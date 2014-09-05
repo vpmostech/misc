@@ -105,7 +105,6 @@
 					$(elem).toggleClass('error', $(elem).val() === '');
 					filledFlag &= $(elem).val() !== '';
 				});
-				console.log(filledFlag);
 				if (!filledFlag) {
 					if (!f.find('em.errormsg').length) {
 						$('<em class="errormsg">Пожалуйста, заполните обязательные поля.</em>').insertAfter(f.find('input:submit:last'));
