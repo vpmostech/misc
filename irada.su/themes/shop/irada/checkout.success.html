@@ -1,7 +1,13 @@
 <div class="checkout-result success">
-    <h1>[`Thank you!`]</h1>
-    <p>[`We successfully accepted your order, and will contact you asap.`]<br />
-    [`Your order number is `] <strong>{$order.id}</strong>.</p>
+
+	<div class="box">
+		<div class="thanks">Благодарим Вас за заказ в IRADA.</div>
+		<div class="order-num">Номер заказа № {$order.id}</div>
+		<div class="soon">
+			Уведомление о заказе направлено на ваш e-mail.<br />
+			Менеджер IRADA свяжется с Вами для возможных уточнений параметров заказа в ближайшее время.
+		</div>
+	</div>
     
     {if !empty($payment)}
         <div class="plugin">
@@ -12,11 +18,7 @@
     {if !empty($payment_success)}
         <span class="highlighted">[`Your payment has been successfully accepted. We will process your order and contact you shortly.`]</span>
     {/if}
-    
-    <p class="back">
-        &larr; <a href="{$wa_app_url}">[`Back to the store`]</a>
-    </p>
-    
+      
     <!-- plugin hook: 'frontend_checkout' -->
     {* @event frontend_checkout.%plugin_id% *}
     {foreach $frontend_checkout as $_}{$_}{/foreach}

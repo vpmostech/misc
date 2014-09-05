@@ -792,6 +792,7 @@ article #product-core-image .zoomWrapper {
 	width: 500px;
 	height: 40px;
 	margin-top: 30px;
+	margin-bottom: 40px;
 	background: gray;
 }
 
@@ -965,6 +966,32 @@ div.checkout ul {
 .checkout-content[data-step-id="confirmation"] .table tr:last-child td {
 	font-size: 120%;
 	font-weight: bold;
+}
+
+.checkout-result .box {
+	width: 740px;
+	height: 160px;
+	padding: 0px 25px;
+	border: 2px solid #eadee0;
+	box-sizing: border-box;
+	font-size: 14px;
+	color: black;
+	background: linear-gradient(#f8ebed, #edd6e8);
+}
+
+.checkout-result .box .order-num {
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	color: #713278;
+}
+
+.checkout-result .box .thanks {
+	margin-top: 20px;
+}
+
+.checkout-result .box .soon {
+	margin-top: 20px;
 }
 
 .my-menu li a {
