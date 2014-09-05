@@ -1,17 +1,17 @@
 <div class="checkout-content" data-step-id="payment">
+	<h4>Способ оплаты</h4>
 
     <ul class="checkout-options payment">
         {foreach $checkout_payment_methods as $m}
             <li {if !empty($m.error)}class="gray"{/if}>
                 <h3>
                     <label>
-                        {if !empty($m.logo)}<img src="{$m.logo}" class="method-logo">{/if}
+						<div class="image">{if !empty($m.logo)}<img src="{$m.logo}" class="method-logo" />{/if}</div>
+						<div class="clearfix"></div>
                         <input {if !empty($m.error)}disabled="disabled"{/if} type="radio" name="payment_id" value="{$m.id}" {if $m.id == $payment_id}checked{/if}>
-                        {$m.name|escape}
+                        <div class="title">{$m.name|escape}</div>
                     </label>
-        
                 </h3>
-                {if $m.description}<p>{$m.description}</p>{/if}
                 {if !empty($m.error)}<p class="error"><em>{$m.error}</em></p>{/if}
                 {if !empty($m.custom_html)}<div class="wa-form" {if $m.id != $payment_id}style="display:none"{/if}>{$m.custom_html}</div>{/if}
             </li>
@@ -28,6 +28,12 @@
                 $(this).closest('li').find('.wa-form').show();
             }
         });
+
+		$('input[name="payment_id"]').iCheck({
+			checkboxClass: 'icheckbox_minimal-pink',
+			radioClass: 'iradio_minimal-pink',
+		});
+
     </script>
 
     <!-- plugin hook: 'frontend_checkout' -->

@@ -859,17 +859,56 @@ ul.checkout-options {
 	float: left;
 }
 
+div.checkout ul li {
+	margin-bottom: 10px;
+}
+
 input[name="shipping_id"] {
 
 }
 
-.step-shipping label {
+.step-shipping label,
+.step-payment label
+{
 	font-size: 13px;
 	color: black;
 }
 
 .step-shipping label .price {
 	color: #b869a7;
+}
+
+.step-payment {
+	float: left;
+}
+
+.step-payment ul {
+	width: 100%;
+}
+
+div.step-payment ul li {
+	float: left;
+	width: 20%;
+	margin-right: 5%;
+	margin-bottom: 35px;
+}
+
+.step-payment ul li .image {
+	width: 80px;
+	height: 55px;
+}
+
+.step-payment ul li .image img {
+    margin-left: 25px;
+}
+
+.step-payment label .iradio_minimal-pink {
+	float: left;
+	margin-right: 5px;
+}
+
+step-payment label .name {
+	width: 77px;
 }
 
 div.checkout blockquote {
@@ -879,10 +918,6 @@ div.checkout blockquote {
 div.checkout ul {
 	list-style: none outside none;
 	padding-left: 0;
-}
-
-div.checkout ul li {
-	margin-bottom: 10px;
 }
 
 .checkout-step {
