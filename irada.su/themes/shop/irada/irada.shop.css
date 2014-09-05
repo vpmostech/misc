@@ -767,22 +767,103 @@ article #product-core-image .zoomWrapper {
 	background-position: -64px -16px;
 }
 
-.checkout-header {
-	margin-top: 20px;
+.icon16.loading {
+	background-image: url('graphics/loading16.gif');
+	background-position: 0 0;
+	background-size: 16px 16px;
 }
 
-.checkout-header .sum {
-	float: left;
-}
-
-.checkout-header .tocart {
+.loggedInAs {
+	width: auto;
+	margin-right: 20px;
 	float: right;
-	margin-right: 50px;
+	font-family: 'Myriad-Pro', 'Tahoma';
+	font-size: 12px;
 }
 
-div.checkout {
+.loggedInAs .login {
+	float: right;
+	font-family: 'Arial';
+	font-size: 15px;
+}
+
+.steps-line {
+	float: left;
+	width: 500px;
+	height: 40px;
+	margin-top: 30px;
+	background: gray;
+}
+
+.checkout {
 	float: left;
 	width: 755px;
+}
+
+.checkout input[type="submit"] {
+	float: left;
+	clear: left;
+}
+
+.addr-form {
+	float: left;
+	width: 735px;
+	height: 310px;
+	padding-right: 275px;
+	border-bottom: 1px solid #ececec;
+	box-sizing: border-box;
+}
+
+.addr-form div.label,
+.addr-form input,
+.addr-form textarea
+{
+	float: left;
+	height: 30px;
+	margin-top: 7px;
+	box-sizing: border-box;
+}
+
+.required:after,
+.wa-required span:after {
+	content: "*";
+	color: #b869a7;
+}
+
+.addr-form div.label {
+	width: 100px;
+	padding-top: 5px;
+}
+
+.addr-form input,
+.addr-form textarea
+{
+	width: 350px;
+	padding: 0 10px;
+	font-size: 13px;
+	font-family: 'Arial';
+	color: black;
+}
+
+.addr-form textarea {
+	height: 90px;
+}
+
+ul.checkout-options {
+	float: left;
+}
+
+input[name="shipping_id"] {
+
+}
+
+.step-shipping label {
+	font-size: 13px;
+	color: black;
+}
+
+.step-shipping label .price {
+	color: #b869a7;
 }
 
 div.checkout blockquote {
@@ -795,6 +876,7 @@ div.checkout ul {
 }
 
 div.checkout ul li {
+	margin-bottom: 10px;
 }
 
 .checkout-step {
@@ -810,6 +892,11 @@ div.checkout ul li {
 .checkout form input[type="submit"] {
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.checkout-step-content .loading {
+	float: left;
+	clear: left;
 }
 
 .checkout-content[data-step-id="confirmation"] .table {

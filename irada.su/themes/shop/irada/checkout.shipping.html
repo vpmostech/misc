@@ -1,0 +1,200 @@
+<div class="checkout-content" data-step-id="shipping">
+	<h4>Доставка</h4>
+
+	<div class="addr-form">
+		<div class="label required">Страна</div>
+		<input type="text" data-rel-name="customer_$[address.shipping][strana]" style="width: 215px;" value="" />
+		<div class="label" style="width: 50px; margin-left: 20px;">Индекс</div>
+		<input type="text" data-rel-name="customer_$[address.shipping][zip]" style="width: 65px;" value="" />
+		<div class="label required">Город</div>
+		<input type="text" data-rel-name="customer_$[address.shipping][city]" value="" />
+		<div class="label">Район</div>
+		<input type="text" data-rel-name="customer_$[address.shipping][rayon]" value="" />
+		<div class="label required">Улица</div>
+		<input type="text" data-rel-name="customer_$[address.shipping][ulitsa]" value="" />
+		<div class="label required">Дом</div>
+		<input type="text" data-rel-name="customer_$[address.shipping][dom]" style="width: 45px;" value="" />
+		<div class="label" style="width: 50px; margin-left: 50px;">Корпус</div>
+		<input type="text" data-rel-name="customer_$[address.shipping][korpus]" style="width: 45px;" value="" />
+		<div class="label" style="width: 50px; margin-left: 50px;">Квартира</div>
+		<input type="text" data-rel-name="customer_$[address.shipping][kvartira]" style="width: 45px; margin-left: 15px;" value="" />
+		<div class="label">Дополнения</div>
+		<textarea type="text" data-rel-name="customer_$[address.shipping][dopolneniya]" value=""></textarea>
+	</div>
+
+	<ul class="checkout-options">
+		{$external_methods = []}
+		{foreach $checkout_shipping_methods as $m}
+			<li class="shipping-{$m.id}">
+			
+				<label>
+					<input type="radio" name="shipping_id" value="{$m.id}" {if $m.external || !empty($m.error)}disabled{/if} {if $m.id == $shipping.id}checked{/if} />
+					<span class="title">{$m.name|escape}</span> 
+					<span class="price">
+						{if $m.rate !== null}
+							{$m.rate} руб.
+						{elseif $m.external}
+							{$external_methods[] = $m.id}
+							Цена требует уточнения. {*<i class="icon16 loading"></i>*}
+						{/if}
+					</span>
+					<input type="hidden" name="rate_id[{$m.id}]" value="{key($m.rates)}">
+				</label>
+			
+				{*if empty($m.error)*}
+
+				{if !empty($m.form)}<div class="wa-form wa-address" style="display: none;">{$m.form->html()}</div>{/if}
+				{if !empty($m.custom_html)}
+					<div class="clear-both"></div>
+					<div class="wa-form" {if $m.id != $shipping.id}style="display:none"{/if}>{$m.custom_html}</div>
+				{/if}
+			</li>
+		{foreachelse}
+			<li>
+				<em class="error">Нет вариантов доставки. Пожалуйста, свяжитесь с нами по телефону или электронной почте.</em>
+			</li>
+		{/foreach}
+	</ul>
+	<script type="text/javascript">
+		$(function () {
+			
+			{if $external_methods}
+				/*
+				$.get("{$wa->getUrl('/frontend/shipping')}", { shipping_id: [{implode(',', $external_methods)}]}, function (response) {
+					for (var shipping_id in response.data) {
+						responseCallback(shipping_id, response.data[shipping_id]);
+					}
+				}, "json");
+				*/
+			{/if}
+				/*
+				function responseCallback(shipping_id, data) {
+					var name = 'rate_id[' + shipping_id + ']';
+					if (typeof(data) != 'string') {
+						$(".shipping-" + shipping_id + ' input:radio').removeAttr('disabled');
+					}
+					if (typeof(data) == 'string') {
+						$(".shipping-" + shipping_id + ' input[name="' + name + '"]').remove();
+						$(".shipping-" + shipping_id + ' select[name="' + name + '"]').remove();
+						var el = $(".shipping-" + shipping_id).find('.rate');
+						if (el.hasClass('error')) {
+							el.find('em').html(data);
+						} else {
+							el.find('.price, .hint').hide();
+							el.addClass('error').append($('<em class="shipping-error"></em>').html(data));
+						}
+					} else if (data.length > 1) {
+						$(".shipping-" + shipping_id + ' input[name="' + name + '"]').remove();
+						var select = $(".shipping-" + shipping_id + ' select[name="' + name + '"]');
+						var html = '<select class="shipping-rates" name="' + name + '">';
+						for (var i = 0; i < data.length; i++) {
+							var r = data[i];
+							html += '<option data-rate="' + r.rate + '" data-comment="' + (r.comment || '') + '" data-est_delivery="' + (r.est_delivery || '') + '" value="' + r.id + '">' + r.name + ' (' + r.rate + ')</option>';
+						}
+						html += '</select>';
+						if (select.length) {
+							var selected = select.val();
+							select.remove();
+						} else {
+							var selected = false;
+						}
+						select = $(html);
+						$(".shipping-" + shipping_id + " h3").append(select);
+						if (selected) {
+							select.val(selected);
+						}
+						select.trigger('change', 1);
+						$(".shipping-" + shipping_id).find('.rate').removeClass('error').find('.price').show();
+						$(".shipping-" + shipping_id).find('.rate em.shipping-error').remove();
+					} else {
+						$(".shipping-" + shipping_id + ' select[name="' + name + '"]').remove();
+						var input = $(".shipping-" + shipping_id + ' input[name="' + name + '"]');
+						if (input.length) {
+							input.val(data[0].id);
+						} else {
+							$(".shipping-" + shipping_id + " h3").append('<input type="hidden" name="' + name + '" value="' + data[0].id + '">');
+						}
+						$(".shipping-" + shipping_id + " .price").html(data[0].rate);
+						$(".shipping-" + shipping_id + " .est_delivery").html(data[0].est_delivery);
+						$(".shipping-" + shipping_id).find('.rate').removeClass('error').find('.price').show();
+						if (data[0].est_delivery) {
+							$(".shipping-" + shipping_id + " .est_delivery").parent().show();
+						} else {
+							$(".shipping-" + shipping_id + " .est_delivery").parent().hide();
+						}
+						if (data[0].comment) {
+							$(".shipping-" + shipping_id + " .comment").html('<br>' + data[0].comment).show();
+						} else {
+							$(".shipping-" + shipping_id + " .comment").hide();
+						}
+						$(".shipping-" + shipping_id).find('.rate em.shipping-error').remove();
+					}
+				}
+				*/
+
+				$(".checkout-options input:radio").change(function () {
+					if ($(this).is(':checked') && !$(this).data('ignore')) {
+						//$(".checkout-options .wa-form").hide();
+						//$(this).closest('li').find('.wa-form').show();
+						if ($(this).data('changed')) {
+							$(this).closest('li').find('.wa-form').find('input,select').data('ignore', 1).change().removeData('ignore');
+							$(this).removeData('changed');
+						}
+					}
+				});
+				/*
+				$(".wa-address").find('input,select').change(function () {
+					if ($(this).data('ignore')) {
+						return true;
+					}
+					var shipping_id = $("input[name=shipping_id]:checked").val();
+					var loaded_flag = false;
+					setTimeout(function () {
+						if (!loaded_flag && !$(".shipping-" + shipping_id + " .price .loading").length) {
+							$(".shipping-" + shipping_id + " .price").append(' <i class="icon16 loading"></i>');
+						}
+					}, 300);
+					var v = $(this).val();
+					var name = $(this).attr('name').replace(/customer_\d+/, '');
+					$(".checkout-options input:radio").each(function () {
+						if ($(this).val() != shipping_id) {
+							var el = $(this).closest('li').find('[name="customer_' + $(this).val() + name + '"]');
+							if (el.attr('type') != 'hidden') {
+								el.val(v);
+								$(this).data('changed', 1);
+							}
+						}
+					});
+
+					$.post("{$wa->getUrl('/frontend/shipping')}", $("form").serialize(), function (response) {
+						loaded_flag = true;
+						responseCallback(shipping_id, response.data);
+					}, "json");
+				});
+				*/
+				// Из общей формы будем копировать данные во все другие
+				$('.addr-form').on('change', 'input, textarea', function () {
+					var $this = $(this);
+					$('input[name="shipping_id"]').each(function (index, elem) {
+						var inputName = $this.attr("data-rel-name").replace('$', $(elem).val());
+						$('.wa-form.wa-address [name="' + inputName + '"]').val($this.val());
+					});
+				});
+
+				// Чтобы в скрытых полях ничего не оставалось
+				$('.wa-address input, .wa-address textarea').val('');
+
+				$('input[name="shipping_id"]').iCheck({
+					checkboxClass: 'icheckbox_minimal-pink',
+					radioClass: 'iradio_minimal-pink',
+					//increaseArea: '20%',
+				});
+			});
+
+	</script>
+
+	<!-- plugin hook: 'frontend_checkout' -->
+	{* @event frontend_checkout.%plugin_id% *}
+	{foreach $frontend_checkout as $_}{$_}{/foreach}
+
+</div>
