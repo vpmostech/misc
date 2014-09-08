@@ -6,6 +6,29 @@
             <p>[`You have successfully signed up.`]</p>
         {else}
             <h1>[`Sign up`]</h1>
+			{if $wa->get('with') == 'clientcard'}
+				<div class="register-info">
+					<img src="{$wa_theme_url}graphics/Karta_Pokupatelya.png" />
+					<p>Текст о преимуществах карты. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.</p>
+					<p>Vivamus laoreet pretiueros diam in tortor... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare varius dictum. Morbi semper ligula pellentesque neque blandit nec mattis diam tincidunt.</p>
+				</div>
+				<div class="register-welcome">Зарегистрируйтесь и получите дисконтную карту клуба IRADA для выгодных покупок.</div>
+			{/if}
+
+			<style>
+				{* 
+					Почему-то обязательные поля не помечаются классом wa-required. Хочется поправить view (/wa-system/view/waViewHelper.class.php),
+					но с обновлением это улетит, так что придётся впаять стили сюда.
+				*}
+				.wa-field-email .wa-name:after,
+				.wa-field-password .wa-name:after,
+				.wa-field-password_confirm .wa-name:after
+				{
+					content: "*";
+					color: #b869a7;
+				}
+			</style>
+
             {$wa->authAdapters()}
             {$wa->signupForm($errors)}
         {/if}

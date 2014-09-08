@@ -22,11 +22,11 @@
 		{$flinks = [
 			"Оплата" => "`$wa_url`dostavka/",
 			"Доставка" => "`$wa_url`dostavka/",
-			"Как получить скидку" => "#",
+			"Как получить скидку" => "`$wa->getUrl('shop/signup')`?with=clientcard",
 			"Возврат и обмен" => "#"
 		]}
 		{foreach $flinks as $flink}
-			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
+			<li><a href="{*if isset($demosite)}http://irada.su/{else*}{$flink}{*/if*}">{$flink@key}</a></li>
 		{/foreach}
 		</ul>
 	</div>
