@@ -1,12 +1,14 @@
 <div class="posts">
-	{foreach $posts as $post}
-		{$post = $wa->blog->post($post.id)}
+	{foreach $posts as $p}
+		{$post = $wa->blog->post($p.id)}
 		<div class="post-thumb">
-			{if $post.status == "published"}
-				<div class="post-date">{$post.datetime}</div>
-				<h3>
-					<a href="{$post.link}">{$post.title}</a>
-				</h3>
+			{if $post.status != "published"}{continue}{/if}
+			<div class="post-img"></div>
+			<div class="post-short">
+				{$d = date_parse($post.datetime)}
+				<img src="{$wa_theme_url}graphics/date.png" style="margin-right: 5px; margin-bottom: 0;" />
+				<div class="post-date">{$d.day}.{$d.month}.{$d.year}</div>
+				<h3>{$post.title}</h3>
 				<p class="post-text">
 					{if strlen($post.text_before_cut) > 0}
 						{$post.text_before_cut}
@@ -15,7 +17,7 @@
 						{$post.text}
 					{/if}
 				</p>
-			{/if}
+			</div>
 		</div>
 		<div class="clearfix"></div>
 	{/foreach}

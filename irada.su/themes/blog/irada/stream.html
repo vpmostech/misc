@@ -1,5 +1,6 @@
-{$blog = $wa->blog->blog($wa->globals('blog_id'))}
+{include file="`$wa_parent_theme_path`/sidebar_static.html"}
 {include file="breadcrumbs.html"}
+{$blog = $wa->blog->blog($wa->globals('blog_id'))}
 <h1>{$blog.name}</h1>
 <div class="posts posts-news">
 	{include file="stream_posts.html"}
