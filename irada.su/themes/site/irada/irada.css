@@ -10,15 +10,6 @@ body {
 	background: url('graphics/Fon-3.png') repeat-x top center;
 }
 
-table.centerer {
-	width: 100%;
-	height: 100%;
-}
-
-table.centerer td {
-	text-align: center;
-}
-
 .spacer {
 	clear: both;
 	margin: 0;
@@ -42,15 +33,6 @@ table.centerer td {
 	width: 0;
 	height: 0;
 	clear: both;
-}
-
-#sizetable-popup {
-	width: 500px;
-	min-height: 300px;  /* temp */
-    margin: 50px auto 0;
-    padding: 5px 10px;
-    box-sizing: border-box;
-	background: #f2e6f1;
 }
 
 .blur {
@@ -114,9 +96,9 @@ h4 {
 }
 
 h6 {
+	margin: 5px 0;
 	font-size: 14px;
 	font-weight: bold;
-	margin: 5px 0;
 }
 
 a {
@@ -254,8 +236,8 @@ input[type="text"] {
 }
 
 #header, #main, #footer {
-	margin: 0px auto;
 	position: relative;
+	margin: 0px auto;
 	clear: left;
 }
 
@@ -271,8 +253,8 @@ input[type="text"] {
 
 #upperArea {
 	height: 105px;
-	background: white;
 	padding: 1px 0 1px;
+	background: white;
 }
 
 #header, #header a {
@@ -322,9 +304,9 @@ input[type="text"] {
 #header form.search {
 	position: relative;
 	float: right;
+	height: 20px;
 	margin-top: 10px;
 	margin-right: 31px;
-	height: 20px;
 }
 
 #header form.search #search {
@@ -340,9 +322,9 @@ input[type="text"] {
 }
 
 #header form.search button {
+	position: absolute;
 	width: 21px;
 	height: 20px;
-	position: absolute;
 	background: url('graphics/search_button.png') no-repeat;
 	border: none;
 	cursor: pointer;
@@ -418,9 +400,8 @@ input[type="text"] {
 
 #header .myAccount .login, #header .myAccount .register {
 	height: 31px;
-}
-
-#header .myAccount .login a, #header .myAccount .register a {
+	line-height: 31px;
+	text-align: center;
 	color: white;
 	font-size: 12px;
 	text-decoration: none;
@@ -578,13 +559,13 @@ input[type="text"] {
 }
 
 #sidebar .sidegroup h4 {
-	font-size: 13px;
-	font-weight: normal;
 	min-height: unset;
-	line-height: 1.2em;
-	padding: 0;
 	margin-top: 3px;
 	margin-bottom: 0;
+	padding: 0;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 1.2em;
 	text-transform: none;
 	background: none;
 }
@@ -637,10 +618,10 @@ input[type="text"] {
 }
 
 #footer ul.links > li > a {
-	font-family: 'Myriad-Pro', 'Tahoma';
-	color: #634963;
 	margin: 0;
 	padding: 0;
+	font-family: 'Myriad-Pro', 'Tahoma';
+	color: #634963;
 	text-decoration: none;
 }
 

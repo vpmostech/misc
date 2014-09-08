@@ -56,27 +56,19 @@
 				{else}
 					{$shownUsername = 'Аноним'}
 				{/if}
-				<div class="login">
-					<a href="?logout">
-						<table class="centerer"><tr><td>Выход</td></tr></table>
-					</a>
-				</div>
-				<div class="register">
-					<a href="{$wa->getUrl('shop/frontend/my')}">
-						<table class="centerer"><tr><td><span style="font-size: 90%; font-style: italic;">{$shownUsername}</span></td></tr></table>
-					</a>
-				</div>
+				<a href="?logout">
+					<div class="login">Выход</div>
+				</a>
+				<a href="{$wa->getUrl('shop/frontend/my')}">
+					<div class="register"><span style="font-size: 90%; font-style: italic;">{$shownUsername}</span></div>
+				</a>
 			{else}
-				<div class="login">
-					<a href="{$wa->getUrl('shop/frontend/my')}">
-						<table class="centerer"><tr><td>Вход</td></tr></table>
-					</a>
-				</div>
-				<div class="register">
-					<a href="{$wa->getUrl('shop/signup')}">
-						<table class="centerer"><tr><td>Регистрация</td></tr></table>
-					</a>
-				</div>
+				<a href="{$wa->getUrl('shop/frontend/my')}">
+					<div class="login">Вход</div>
+				</a>
+				<a href="{$wa->getUrl('shop/signup')}">
+					<div class="register">Регистрация</div>
+				</a>
 			{/if}
 			{$cart=$wa->shop->cart()}
 			<div class="cart">
