@@ -559,6 +559,8 @@ input[type="text"] {
 }
 
 #sidebar .sidegroup h4 {
+	clear: left;
+	width: auto;
 	min-height: unset;
 	margin-top: 3px;
 	margin-bottom: 0;
