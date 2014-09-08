@@ -12,8 +12,10 @@
 <link href="{$wa_theme_url}js/iCheck/irada.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
 <link href="{$wa_theme_url}default.part.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
 <link href="{$wa_theme_url}irada.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
-<link href="{$wa_theme_url}home.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
-<link href="{$wa_theme_url}slider.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+{if $wa->currentUrl() eq $wa_url}
+	<link href="{$wa_theme_url}home.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+	<link href="{$wa_theme_url}slider.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+{/if}
 
 {* <link href="{$wa_theme_url}mobile.css?v{$wa_theme_version}"{if !$wa->isMobile()} media="screen and (max-width: 760px)"{/if} rel="stylesheet" type="text/css"> *}
 {if $wa->isMobile()}

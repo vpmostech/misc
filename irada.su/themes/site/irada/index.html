@@ -11,7 +11,7 @@
 <body>
 	{include file="header.html"}
 	<div id="main">
-		{if $wa->currentUrl() eq '/'}
+		{if $wa->currentUrl() eq $wa_url}
 			{include file="home.html"}
 		{else}
 			{$content}
