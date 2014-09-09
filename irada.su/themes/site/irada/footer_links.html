@@ -1,101 +1,12 @@
 <div class="linksarea fullwidth">
-	<div class="linkscol">
-		<h3>Каталог</h3>
-		<ul class="links">
-		{$flinks = [
-			"Одежда" => "`$wa->getUrl('shop/frontend')`category/plate/",
-			"Аксессуары" => "#",
-			"Детям" => "#",
-			"Подарки" => "#",
-			"Новинки" => "#",
-			"Акции" => "#",
-			"Скидки" => "#"
-		]}
-		{foreach $flinks as $flink}
-			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
-		{/foreach}
-		</ul>
-	</div>
-	<div class="linkscol">
-		<h3>Оплата и доставка</h3>
-		<ul class="links">
-		{$flinks = [
-			"Оплата" => "`$wa_url`dostavka/",
-			"Доставка" => "`$wa_url`dostavka/",
-			"Как получить скидку" => "`$wa->getUrl('shop/signup')`?with=clientcard",
-			"Возврат и обмен" => "#"
-		]}
-		{foreach $flinks as $flink}
-			<li><a href="{*if isset($demosite)}http://irada.su/{else*}{$flink}{*/if*}">{$flink@key}</a></li>
-		{/foreach}
-		</ul>
-	</div>
-	<div class="linkscol">
-		<h3>Где купить</h3>
-		<ul class="links">
-		{$flinks = [
-			"Интернет-магазин" => $wa->getUrl('shop/frontend'),
-			"Москва" => "`$wa_url`magaziny/?city=Moscow",
-			"Казань" => "`$wa_url`magaziny/?city=Kazan",
-			"Ульяновск" => "`$wa_url`magaziny/?city=Ulyanovsk",
-			"Тюмень" => "`$wa_url`magaziny/?city=Tumen",
-			"Набережные Челны" => "`$wa_url`magaziny/?city=Nabereg"
-		]}
-		{foreach $flinks as $flink}
-			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
-		{/foreach}
-		</ul>
-	</div>
-	<div class="linkscol">
-		<h3>О компании</h3>
-		<ul class="links">
-		{$flinks = [
-			"О нас" => "#",
-			"Новости" => "`$wa_url`blog/news",
-			"Наша команда" => "#",
-			"Сотрудничество" => "#",
-			"Франчайзинг" => "`$wa_url`franchayzing/",
-			"Наши друзья" => "#",
-			"Фотогалерея" => "`$wa_url`photos/",
-			"Видео" => "#",
-			"Вакансии" => "`$wa_url`vakansii/",
-			"Контакты" => "#"
-		]}
-		{foreach $flinks as $flink}
-			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
-		{/foreach}
-		</ul>
-	</div>
-	<div class="linkscol">
-		<h3>Пресса</h3>
-		<ul class="links">
-		{$flinks = [
-			"Пресса о нас" => "#",
-			"Пресс - релиз" => "#",
-			"Наши проекты" => "#",
-			"Контакты для прессы" => "#"
-		]}
-		{foreach $flinks as $flink}
-			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
-		{/foreach}
-		</ul>
-	</div>
-	<div class="linkscol">
-		<h3>Сервис</h3>
-		<ul class="links">
-		{$flinks = [
-			"Личный кабинет" => $wa->getUrl('shop/frontend/my'),
-			"Как сделать заказ" => "#",
-			"Правила продажи" => "#",
-			"Таблица размеров" => "`$wa_url`tablitsa-razmerov/",
-			"Ткани и уход за ними" => "#",
-			"Публичная оферта" => "#",
-			"Вопросы &mdash; ответы" => "`$wa_url`voprosy_otvety/",
-			"Карта сайта" => "#"
-		]}
-		{foreach $flinks as $flink}
-			<li><a href="{if isset($demosite)}http://irada.su/{else}{$flink}{/if}">{$flink@key}</a></li>
-		{/foreach}
-		</ul>
-	</div>
+	{foreach $site_links as $cat => $links}
+		<div class="linkscol">
+			<h3>{$cat}</h3>
+			<ul class="links">
+				{foreach $links as $title => $link}
+					<li><a href="{if isset($demosite)}http://irada.su/{else}{$link}{/if}">{$title}</a></li>
+				{/foreach}
+			</ul>
+		</div>
+	{/foreach}
 </div>
