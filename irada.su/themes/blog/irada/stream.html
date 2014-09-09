@@ -1,6 +1,7 @@
 {include file="`$wa_parent_theme_path`/sidebar_static.html"}
 {include file="breadcrumbs.html"}
 {$blog = $wa->blog->blog($wa->globals('blog_id'))}
+{if !$blog}{$blog = $wa->blog->blog(1)}{/if}
 <h1>{$blog.name}</h1>
 <div class="posts posts-news">
 	{include file="stream_posts.html"}
