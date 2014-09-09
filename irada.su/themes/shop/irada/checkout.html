@@ -1,170 +1,174 @@
 {include file="`$wa_parent_theme_path`/sidebar_static.html"}
 {*include file="breadcrumbs.html"*}
-<h1 style="float: left; margin-bottom: 0;">Оформление заказа</h1>
-{* TODO: обработать незалогиненного пользователя *}
-<div class="loggedInAs">
-	Вы зарегистрированы в системе под логином<br />
-	<div class="login">{$wa->user('login', 'default')}</div>
-</div>
+{if $wa->user()->isAuth()}
+	<h1 style="float: left; margin-bottom: 0;">Оформление заказа</h1>
 
-<div class="checkout">
+	<div class="loggedInAs">
+		Вы зарегистрированы в системе под логином<br />
+		<div class="login">{$wa->user('login', 'default')}</div>
+	</div>
 
-	{if isset($checkout_steps)}
-	    <!-- checkout step content -->
-		{foreach $checkout_steps as $step_id => $s}
-			<div class="checkout-step step-{$step_id}">
-				<form class="checkout-form{if $s@last} last{/if}" method="post" action="">
+	<div class="checkout">
 
-					<div class="checkout-step-content" style="{if $checkout_current_step != $step_id} display:none;{/if}">
-						{if $checkout_current_step == $step_id}
-							{if in_array($step_id,['contactinfo', 'shipping', 'payment', 'confirmation'])}
-								{include file="checkout.`$step_id`.html"}
+		{if isset($checkout_steps)}
+			<!-- checkout step content -->
+			{foreach $checkout_steps as $step_id => $s}
+				<div class="checkout-step step-{$step_id}">
+					<form class="checkout-form{if $s@last} last{/if}" method="post" action="">
+
+						<div class="checkout-step-content" style="{if $checkout_current_step != $step_id} display:none;{/if}">
+							{if $checkout_current_step == $step_id}
+								{if in_array($step_id,['contactinfo', 'shipping', 'payment', 'confirmation'])}
+									{include file="checkout.`$step_id`.html"}
+								{else}
+									{$s.content}
+								{/if}
 							{else}
-								{$s.content}
+								<div class="checkout-content" data-step-id="{$step_id}" style="display: none;"></div>
 							{/if}
-						{else}
-							<div class="checkout-content" data-step-id="{$step_id}" style="display: none;"></div>
-						{/if}
-						<div class="clear-both"></div>
-						<input type="hidden" name="step" value="{$step_id}">
-						{if $step_id == "shipping"}
-							<a href="{$wa->getUrl('/frontend/cart')}" class="button back" style="padding: 2px 5px 0; text-align: center;" >Вернуться в корзину</a>
-						{elseif $step_id == "payment"}
-							<a href="#" class="button back">&larr; Назад</a>
-						{/if}
-						{if $s@last}
-							{if empty($error)}
-								<input type="submit" class="large bold" value="[`Place order`]">
+							<div class="clear-both"></div>
+							<input type="hidden" name="step" value="{$step_id}">
+							{if $step_id == "shipping"}
+								<a href="{$wa->getUrl('/frontend/cart')}" class="button back" style="padding: 2px 5px 0; text-align: center;" >Вернуться в корзину</a>
+							{elseif $step_id == "payment"}
+								<a href="#" class="button back">&larr; Назад</a>
 							{/if}
-						{else}
-							<input type="submit" class="large bold" value="Далее &rarr;">
-						{/if}
-						<div class="clear-both"></div>
-					</div>
-				</form>
+							{if $s@last}
+								{if empty($error)}
+									<input type="submit" class="large bold" value="[`Place order`]">
+								{/if}
+							{else}
+								<input type="submit" class="large bold" value="Далее &rarr;">
+							{/if}
+							<div class="clear-both"></div>
+						</div>
+					</form>
+				</div>
+			{/foreach}
+		{else}
+			<div class="checkout-step">
+				{include file="checkout.`$checkout_current_step`.html"}
 			</div>
-		{/foreach}
-    {else}
-        <div class="checkout-step">
-            {include file="checkout.`$checkout_current_step`.html"}
-        </div>
-    {/if}
+		{/if}
 
-</div>
+	</div>
 
-<script type="text/javascript">
-    $(function () {
-		
-        function checkoutStep(step_id) {
-            $.get("{$wa->getUrl('/frontend/checkout')}" + step_id + '/', function (response) {
-                var current = $(".checkout-step .checkout-step-content:visible");
-                var current_step_id =  current.find(".checkout-content").data('step-id');
-				// Если мы не на запрошенном шаге, прячем контент
-                if (current_step_id != step_id) {
-                    current.animate( { height: 0 }, 200, function() { $(this).hide(); } );
-                    current.parent().find('a.back').hide();
-                }
-				// Заполняем полученный по AJAX контент (если возврат к адресу доставки - оставим старый)
-				if (step_id != 'shipping') {
-					$(".checkout-step.step-" + step_id + " .checkout-content").replaceWith(response);
-				}
-                
-				// Показываем новый контент
-                if (current_step_id != step_id) {
-                    $(".checkout-step.step-" + step_id + " .checkout-step-content").show(0).css({ height: 'auto'});
-                }
-            });
-        }
-
-		$('.checkout').on('click', '.back', function () {
-			if ($(this).attr('href') == '#') {
-				checkoutStep('shipping');
-			}
-		});
-        $("form.checkout-form").on('submit', function () {
-            var f = $(this);
-            var step = f.find('.checkout-content').data('step-id');
-			// Проверка выбранности корректного пункта для шагов выбора способа оплаты или доставки
-            if (step == 'payment' || step == 'shipping') {
-                if (!f.find('input[name="' + step + '_id"]:checked').not(':disabled').length) {
-                    if (!f.find('em.errormsg').length) {
-	                    $('<em class="errormsg">' + (step == 'payment' ? '[`Please select payment option`]' :
-                            '[`Please select shipping option`]') + '</em>').insertAfter(f.find('input:submit:last'));
-                    }
-                    return false;
-                } else {
-                    f.find('em.errormsg').remove();
-                }
-            }
-			// Проверим заполненность формы адреса
-			if (step == "shipping") {
-				var filledFlag = true;
-				$('.addr-form input.required').each(function (index, elem) {
-					$(elem).toggleClass('error', $(elem).val() === '');
-					filledFlag &= $(elem).val() !== '';
-				});
-				if (!filledFlag) {
-					if (!f.find('em.errormsg').length) {
-						$('<em class="errormsg">Пожалуйста, заполните обязательные поля.</em>').insertAfter(f.find('input:submit:last'));
-					}
-					return false;
-				} else {
-					f.find('em.errormsg').remove();
-				}
-			}
-			// Скопируем данные у нужную форму
-			if (step == "shipping") {
-				var shipID = $('ul.checkout-options li .iradio_minimal-pink.checked input:radio').val();
-				$('.addr-form input, .addr-form textarea').each(function () {
-					var $this = $(this),
-						hidName = $this.attr("data-rel-name").replace('$', shipID);
-					$('input[name="' + hidName + '"], textarea[name="' + hidName + '"]').val($this.val());
-				});
-			}
-			// Если это был последний шаг - просто переходим на страницу с результатом оформления заказа.
-			// Проще говоря - никаких AJAX-запросов, просто отправляем форму.
-			// Наверное, чтобы разделить оформление на отдельные страницы, надо сделать аналогично.
-            if (f.hasClass('last') || ($("#login-form").length && !$("#login-form input:submit").attr('disabled'))) {
-                return true;
-            }
-            $('<span class="loading"> <i class="icon16 loading"></i></span>').insertAfter(f.find('input:submit:last').attr('disabled', 'disabled'));
-            $.post(f.attr('action') || window.location, f.serialize(), function (response) {
-                var content = $(response);
-                var step_id = content.data('step-id');
-                var current = $(".checkout-step .checkout-step-content:visible");
-                var current_step_id =  current.find(".checkout-content").data('step-id');
-				// Если по результатам запроса шаг сменился - прячем текущий и показываем новый
-                if (current_step_id != step_id) {
-                    current.animate({ height: 0}, 200, function() {
-                        $(this).hide();
-                    });
-                    $(".checkout-step.step-" + step_id + " .checkout-step-content").css({ height: 'auto'}).show(200, function () {
-                        $(document).scrollTop($(".checkout-step.step-" + step_id).offset().top);
-                    });
-                    current.parent().find('a.back').hide();
-                }
-                $(".checkout-step.step-" + step_id + " .checkout-content").replaceWith(content);
-                //$(".checkout-step.step-" + step_id + " a.back").show(); // TODO: показывать, если надо
-                $(".checkout-step.step-" + step_id + " input[type=submit]:last").show();
-                // Зачем ещё раз?
-				/*
-				if (current_step_id != step_id) {
-                    $(".checkout-step.step-" + step_id + " .checkout-step-content").show(0).css({ height: 'auto'});
-                }
-				*/
-            }).always(function () {
-                f.find('span.loading').remove();
-                f.find('input:submit:last').removeAttr('disabled');
-            });
-            return false;
-        });
-    });
-</script>
-{* Первый шаг будем проскакивать. *}
-{if $checkout_current_step == "contactinfo"}
 	<script type="text/javascript">
-		$(document).ready(function () {
-			$(".checkout-step.step-contactinfo form.checkout-form").submit();
+		$(function () {
+			
+			function checkoutStep(step_id) {
+				$.get("{$wa->getUrl('/frontend/checkout')}" + step_id + '/', function (response) {
+					var current = $(".checkout-step .checkout-step-content:visible");
+					var current_step_id =  current.find(".checkout-content").data('step-id');
+					// Если мы не на запрошенном шаге, прячем контент
+					if (current_step_id != step_id) {
+						current.animate( { height: 0 }, 200, function() { $(this).hide(); } );
+						current.parent().find('a.back').hide();
+					}
+					// Заполняем полученный по AJAX контент (если возврат к адресу доставки - оставим старый)
+					if (step_id != 'shipping') {
+						$(".checkout-step.step-" + step_id + " .checkout-content").replaceWith(response);
+					}
+					
+					// Показываем новый контент
+					if (current_step_id != step_id) {
+						$(".checkout-step.step-" + step_id + " .checkout-step-content").show(0).css({ height: 'auto'});
+					}
+				});
+			}
+
+			$('.checkout').on('click', '.back', function () {
+				if ($(this).attr('href') == '#') {
+					checkoutStep('shipping');
+				}
+			});
+			$("form.checkout-form").on('submit', function () {
+				var f = $(this);
+				var step = f.find('.checkout-content').data('step-id');
+				// Проверка выбранности корректного пункта для шагов выбора способа оплаты или доставки
+				if (step == 'payment' || step == 'shipping') {
+					if (!f.find('input[name="' + step + '_id"]:checked').not(':disabled').length) {
+						if (!f.find('em.errormsg').length) {
+							$('<em class="errormsg">' + (step == 'payment' ? '[`Please select payment option`]' :
+								'[`Please select shipping option`]') + '</em>').insertAfter(f.find('input:submit:last'));
+						}
+						return false;
+					} else {
+						f.find('em.errormsg').remove();
+					}
+				}
+				// Проверим заполненность формы адреса
+				if (step == "shipping") {
+					var filledFlag = true;
+					$('.addr-form input.required').each(function (index, elem) {
+						$(elem).toggleClass('error', $(elem).val() === '');
+						filledFlag &= $(elem).val() !== '';
+					});
+					if (!filledFlag) {
+						if (!f.find('em.errormsg').length) {
+							$('<em class="errormsg">Пожалуйста, заполните обязательные поля.</em>').insertAfter(f.find('input:submit:last'));
+						}
+						return false;
+					} else {
+						f.find('em.errormsg').remove();
+					}
+				}
+				// Скопируем данные у нужную форму
+				if (step == "shipping") {
+					var shipID = $('ul.checkout-options li .iradio_minimal-pink.checked input:radio').val();
+					$('.addr-form input, .addr-form textarea').each(function () {
+						var $this = $(this),
+							hidName = $this.attr("data-rel-name").replace('$', shipID);
+						$('input[name="' + hidName + '"], textarea[name="' + hidName + '"]').val($this.val());
+					});
+				}
+				// Если это был последний шаг - просто переходим на страницу с результатом оформления заказа.
+				// Проще говоря - никаких AJAX-запросов, просто отправляем форму.
+				// Наверное, чтобы разделить оформление на отдельные страницы, надо сделать аналогично.
+				if (f.hasClass('last') || ($("#login-form").length && !$("#login-form input:submit").attr('disabled'))) {
+					return true;
+				}
+				$('<span class="loading"> <i class="icon16 loading"></i></span>').insertAfter(f.find('input:submit:last').attr('disabled', 'disabled'));
+				$.post(f.attr('action') || window.location, f.serialize(), function (response) {
+					var content = $(response);
+					var step_id = content.data('step-id');
+					var current = $(".checkout-step .checkout-step-content:visible");
+					var current_step_id =  current.find(".checkout-content").data('step-id');
+					// Если по результатам запроса шаг сменился - прячем текущий и показываем новый
+					if (current_step_id != step_id) {
+						current.animate({ height: 0}, 200, function() {
+							$(this).hide();
+						});
+						$(".checkout-step.step-" + step_id + " .checkout-step-content").css({ height: 'auto'}).show(200, function () {
+							$(document).scrollTop($(".checkout-step.step-" + step_id).offset().top);
+						});
+						current.parent().find('a.back').hide();
+					}
+					$(".checkout-step.step-" + step_id + " .checkout-content").replaceWith(content);
+					//$(".checkout-step.step-" + step_id + " a.back").show(); // TODO: показывать, если надо
+					$(".checkout-step.step-" + step_id + " input[type=submit]:last").show();
+					// Зачем ещё раз?
+					/*
+					if (current_step_id != step_id) {
+						$(".checkout-step.step-" + step_id + " .checkout-step-content").show(0).css({ height: 'auto'});
+					}
+					*/
+				}).always(function () {
+					f.find('span.loading').remove();
+					f.find('input:submit:last').removeAttr('disabled');
+				});
+				return false;
+			});
 		});
 	</script>
+	{* Первый шаг будем проскакивать. *}
+	{if $checkout_current_step == "contactinfo"}
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$(".checkout-step.step-contactinfo form.checkout-form").submit();
+			});
+		</script>
+	{/if}
+{else}
+	{Header("Location: `$wa->getUrl('shop/frontend/cart')`")};
 {/if}
