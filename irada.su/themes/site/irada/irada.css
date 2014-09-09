@@ -534,7 +534,10 @@ input[type="text"] {
 	width: 205px;
 	min-height: 600px;
 	margin-right: 20px;
-	background: white;
+	margin-top: -20px;
+	padding-top: 20px;
+	box-sizing: border-box;
+	background: linear-gradient(to left, #f9fafa, #ffffff);
 }
 
 #sidebar .sidegroup {
@@ -542,7 +545,6 @@ input[type="text"] {
 	width: 150px;
 	margin-left: 25px;
 	padding-bottom: 15px;
-	border-bottom: 1px solid #b79eb6;
 }
 
 #sidebar .sidegroup h3 {
@@ -554,7 +556,6 @@ input[type="text"] {
 	margin-top: 0;
 	margin-bottom: 5px;
 	padding-bottom: 5px;
-	border-bottom: 1px solid #b79eb6;
 }
 
 #sidebar .sidegroup h3 a {
@@ -566,10 +567,11 @@ input[type="text"] {
 #sidebar .sidegroup ul {
 	float: left;
 	width: 100%;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0;
 	margin-left: -7px;
 	padding: 0;
+	padding-top: 10px;
+	border-top: 1px solid #b79eb6;
 	list-style: none inside none;
 }
 
@@ -607,9 +609,11 @@ input[type="text"] {
 
 #sidebar.main {
 	min-height: 500px;
+	background: white;
 }
 
-#sidebar.main .sidegroup {
+#sidebar.main .sidegroup ul {
+	padding-top: 0;
 	border: none;
 }
 
