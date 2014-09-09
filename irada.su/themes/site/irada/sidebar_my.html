@@ -1,26 +1,47 @@
 <div id="sidebar">
-	<div class="sidegroup">
-		<h3>
-			<a href="#">Личный кабинет</a>
-		</h3>
-		{$links = [
-			'Мои данные' => $wa->getUrl('/frontend/myProfile'),
-			'Моя корзина' => $wa->getUrl('shop/frontend/cart'),
-			'Архив заказов' => $wa->getUrl('/frontend/myOrders')
-		]}
-		<ul>
-			{foreach $links as $link}
-				<li {if $wa->currentUrl() == $link}class="current"{/if}>
-					<a href="{$link}">{$link@key}</a>
+	{if $wa->user()->isAuth()}
+		<div class="sidegroup">
+			<h3>
+				<a href="#">Личный кабинет</a>
+			</h3>
+			{$links = [
+				'Мои данные' => $wa->getUrl('/frontend/myProfile'),
+				'Моя корзина' => $wa->getUrl('shop/frontend/cart'),
+				'Архив заказов' => $wa->getUrl('/frontend/myOrders')
+			]}
+			<ul>
+				{foreach $links as $link}
+					<li {if $wa->currentUrl() == $link}class="current"{/if}>
+						<a href="{$link}">{$link@key}</a>
+					</li>
+				{/foreach}
+			</ul>
+		</div>
+		<div class="sidegroup">
+			<ul>
+				<li>
+					<a href="?logout">Выйти</a>
 				</li>
-			{/foreach}
-		</ul>
-	</div>
-	<div class="sidegroup">
-		<ul>
-			<li>
-				<a href="?logout">Выйти</a>
-			</li>
-		</ul>
-	</div>
+			</ul>
+		</div>
+	{else}
+		<div class="sidegroup">
+			<h3>
+				<a href="#">Личный кабинет</a>
+			</h3>
+			{$links = [
+				'Вход' => $wa->getUrl('shop/frontend/my'),
+				'Регистрация' => $wa->getUrl('shop/signup'),
+				'Восстановление пароля' => $wa->getUrl('/forgotpassword'),
+				'Моя корзина' => $wa->getUrl('shop/frontend/cart')
+			]}
+			<ul>
+				{foreach $links as $link}
+					<li {if $wa->currentUrl() == $link}class="current"{/if}>
+						<a href="{$link}">{$link@key}</a>
+					</li>
+				{/foreach}
+			</ul>
+		</div>
+	{/if}
 </div>
