@@ -1,0 +1,26 @@
+<div id="sidebar">
+	<div class="sidegroup">
+		<h3>
+			<a href="#">Личный кабинет</a>
+		</h3>
+		{$links = [
+			'Мои данные' => $wa->getUrl('/frontend/myProfile'),
+			'Моя корзина' => $wa->getUrl('shop/frontend/cart'),
+			'Архив заказов' => $wa->getUrl('/frontend/myOrders')
+		]}
+		<ul>
+			{foreach $links as $link}
+				<li {if $wa->currentUrl() == $link}class="current"{/if}>
+					<a href="{$link}">{$link@key}</a>
+				</li>
+			{/foreach}
+		</ul>
+	</div>
+	<div class="sidegroup" style="border: none;">
+		<ul>
+			<li>
+				<a href="?logout">Выйти</a>
+			</li>
+		</ul>
+	</div>
+</div>
