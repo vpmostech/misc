@@ -1,11 +1,11 @@
-h4 {
+.questions h4 {
 	margin-top: 0;
 	margin-bottom: 15px;
 }
 
 .questions_set {
 	float: left;
-	width:  740px;
+	width: 740px;
 }
 
 .question {
@@ -37,40 +37,4 @@ h4 {
 	margin-bottom: 35px;
 	font-size: 12px;
 	text-align: justify;
-}
-
-.ui-accordion.questions .ui-accordion-header {
-	height: 30px;
-	margin-bottom: 10px;
-	padding: 0;
-	font-weight: 700;
-	font-size: 14px;
-	background: #f7f8f8;
-	border: none;
-}
-
-.ui-accordion-header.ui-state-default,
-.ui-accordion-header.ui-state-active,
-.ui-accordion-header:hover
-{
-	color: #5c5d60 !important;
-}
-
-.ui-accordion-header:before {
-	display: inline-block;
-	float: left;
-	width: 30px;
-	height: 30px;
-	margin-right: 10px;
-	background: url('../graphics/vo_closed.png');
-	content: "";
-}
-
-.ui-accordion-header.ui-state-active:before {
-	background: url('../graphics/vo_open.png');
-}
-
-.ui-accordion.questions .ui-accordion-content {
-	border: none;
-	padding: 0;
 }

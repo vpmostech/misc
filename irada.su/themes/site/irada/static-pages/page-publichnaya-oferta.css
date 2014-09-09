@@ -1,0 +1,11 @@
+.oferta .text {
+	width: 740px;
+	width: 740px;
+	text-align: justify;
+	font-size: 12px;
+	padding-bottom: 5px;
+}
+
+.oferta h4 {
+	margin-top: 20px !important; 
+}
