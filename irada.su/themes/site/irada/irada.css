@@ -544,6 +544,7 @@ input[type="text"] {
 	float: left;
 	width: 170px;
 	margin-left: 25px;
+	margin-bottom: 45px;
 	padding-bottom: 15px;
 }
 
@@ -610,6 +611,10 @@ input[type="text"] {
 #sidebar.main {
 	min-height: 500px;
 	background: white;
+}
+
+#sidebar.main .sidegroup {
+	margin-bottom: 0;
 }
 
 #sidebar.main .sidegroup ul {

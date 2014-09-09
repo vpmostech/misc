@@ -1,0 +1,59 @@
+.black {
+	color: black;
+}
+
+table.how {
+	width: 700px;
+}
+
+table.how tr {
+	height: 25px;
+}
+
+table.how tr td {
+	padding-left: 20px;
+	border-top: 1px dashed #b7b7b7;
+	border-bottom: 1px dashed #b7b7b7;
+}
+
+table.how tr:first-child td,
+table.how tr:last-child td
+{
+	border: none;;
+}
+
+table.how tr td:first-child {
+	width: 150px;
+	font-size: 11px;
+	border-right: 1px dashed #b7b7b7;
+}
+
+table.how tr td:last-child {
+	width: 550px;
+}
+
+table.how tr.order_internet td:first-child {
+	background: url('../graphics/order_internet.png') no-repeat center left;
+}
+
+table.how tr.order_internet td:last-child {
+	font-size: 14px;
+	font-weight: bold;
+	color: #74337a;
+}
+
+table.how tr.order_email td:last-child {
+	color: #74337a;
+}
+
+table.how tr.order_phone td:last-child {
+	font-weight: bold;
+}
+
+table.how tr.order_email td:first-child {
+	background: url('../graphics/order_email.png') no-repeat center left;
+}
+
+table.how tr.order_phone td:first-child {
+	background: url('../graphics/order_phone.png') no-repeat center left;
+}
