@@ -1,4 +1,8 @@
 {include file="globals.html"}
-{include file="sidebar_pages.html"}
+{if $page.parent_id == 14}
+	{include file="sidebar_pages2.html"}
+{else}
+	{include file="sidebar_pages.html"}
+{/if}
 <h1>{$page.name|escape}</h1>
 <div class="page-static">{$page.content}</div>
