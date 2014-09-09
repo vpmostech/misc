@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div id="sidebar" class="main">
 	{* Боковое меню *}
 	<div class="sidegroup">
 		<h3>
@@ -15,11 +15,13 @@
 			"Спортивная одежда" => "#",
 			"Купальники" => "#"
 		]}
-		{foreach $cats as $cat}
-		<h4>
-			<a href="{if isset($demosite)}http://irada.su/{else}{$cat}{/if}">{$cat@key}</a>
-		</h4>
-		{/foreach}
+		<ul>
+			{foreach $cats as $cat}
+				<li>
+					<a href="{if isset($demosite)}http://irada.su/{else}{$cat}{/if}">{$cat@key}</a>
+				</li>
+			{/foreach}
+		</ul>
 	</div>
 	<div class="sidegroup">
 		<h3>
@@ -34,11 +36,13 @@
 			"Украшения" => "#",
 			"Другое" => "#"
 		]}
-		{foreach $cats as $cat}
-		<h4>
-			<a href="{if isset($demosite)}http://irada.su/{else}{$cat}{/if}">{$cat@key}</a>
-		</h4>
-		{/foreach}
+		<ul>
+			{foreach $cats as $cat}
+				<li>
+					<a href="{if isset($demosite)}http://irada.su/{else}{$cat}{/if}">{$cat@key}</a>
+				</li>
+			{/foreach}
+		</ul>
 	</div>
 	<div class="sidegroup">
 		<h3>
@@ -48,11 +52,13 @@
 			"Кукла-мусульманка" => "#",
 			"Одежда для детей" => "#"
 		]}
-		{foreach $cats as $cat}
-		<h4>
-			<a href="{if isset($demosite)}http://irada.su/{else}{$cat}{/if}">{$cat@key}</a>
-		</h4>		
-		{/foreach}
+		<ul>
+			{foreach $cats as $cat}
+				<li>
+					<a href="{if isset($demosite)}http://irada.su/{else}{$cat}{/if}">{$cat@key}</a>
+				</li>		
+			{/foreach}
+		</ul>
 	</div>
 	<div class="sidegroup">
 		<h3>
