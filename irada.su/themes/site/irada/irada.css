@@ -973,3 +973,19 @@ TODO:
 	border: none;
 	padding: 0;
 }
+
+table.info tr td {
+	padding-left: 20px;
+	border-top: 1px dashed #b7b7b7;
+	border-bottom: 1px dashed #b7b7b7;
+}
+
+table.info tr:first-child td,
+table.info tr:last-child td
+{
+	border: none;
+}
+
+table.info tr td:first-child {
+	border-right: 1px dashed #b7b7b7;
+}

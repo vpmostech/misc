@@ -1,0 +1,81 @@
+.friends {
+	float: float;
+	width: 740px;
+	min-height: 100px;
+}
+
+.friends .friend {
+	float: left;
+	width: 100%;
+	margin-top: 50px;
+	box-sizing: border-box;
+}
+
+.friends .friend .title {
+	margin-bottom: 15px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #9f60aa;
+}
+
+.friends .friend .logo {
+	float: left;
+	width: 102px;
+	height: 102px;
+	text-align: center;
+	border: 1px solid #b7b7b7;
+	box-sizing: border-box;
+}
+
+table.friend-info {
+	float: left;
+	width: 623px;
+	margin-left: 15px;
+}
+
+table.friend-info tr {
+	height: 25px;
+}
+
+table.friend-info tr td {
+	padding-left: 15px;
+	box-sizing: border-box;
+}
+
+table.friend-info tr td:first-child {
+	width: 90px;
+	padding-left: 25px;
+}
+
+table.friend-info tr.friend-addr td:first-child {
+	background: url('../graphics/order_addr.png') no-repeat center left;
+}
+
+table.friend-info tr.friend-addr td:last-child {
+	font-size: 14px;
+	font-weight: bold;
+	color: black;
+}
+
+table.friend-info tr.friend-phone td:first-child {
+	background: url('../graphics/order_phone.png') no-repeat 2px 2px;
+}
+
+table.friend-info tr.friend-phone td:last-child {
+	font-family: 'Myriad-Pro', 'Tahoma';
+	font-size: 16px;
+	color: #636363;
+}
+
+table.friend-info tr.friend-site td:first-child {
+	background: url('../graphics/order_internet.png') no-repeat center left;
+}
+
+table.friend-info tr.friend-site td:last-child a {
+	color: #73337a;
+}
+
+.friends .friend .descr {
+	margin-top: 15px;
+	color: #363636;
+}

@@ -10,22 +10,9 @@ table.how tr {
 	height: 25px;
 }
 
-table.how tr td {
-	padding-left: 20px;
-	border-top: 1px dashed #b7b7b7;
-	border-bottom: 1px dashed #b7b7b7;
-}
-
-table.how tr:first-child td,
-table.how tr:last-child td
-{
-	border: none;;
-}
-
 table.how tr td:first-child {
 	width: 150px;
 	font-size: 11px;
-	border-right: 1px dashed #b7b7b7;
 }
 
 table.how tr td:last-child {
@@ -40,6 +27,10 @@ table.how tr.order_internet td:last-child {
 	font-size: 14px;
 	font-weight: bold;
 	color: #74337a;
+}
+
+table.how tr.order_internet td:last-child a {
+	text-decoration: none;
 }
 
 table.how tr.order_email td:last-child {
