@@ -1,0 +1,61 @@
+.team-first {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.team-summary {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h4.custom-stuff {
+	margin-bottom: 0;
+	color: #7a3b81;
+}
+
+.team {
+	float: left;
+	width: 740px;
+}
+
+.team .employee {
+	float: left;
+	width: 320px;
+	height: 145px;
+	margin-top: 20px;
+	margin-bottom: 45px;
+}
+
+.team .employee:nth-child(even) {
+	margin-left: 100px;
+}
+
+.team .employee img {
+	float: left;
+	margin-right: 25px;
+}
+
+.team .employee .fio {
+	float: left;
+	font-size: 16px;
+	font-weight: bold;
+	color: #231f20;
+}
+
+.team .employee .position,
+.team .employee .contact-phone,
+.team .employee .contact-email
+{
+	float: left;
+	width: 185px;
+	height: 13px;
+	font-size: 12px;
+}
+
+.team .employee .position {
+	margin-top: 10px;
+}
+
+.team .employee .contact-phone {
+	margin-top: 25px;
+}
