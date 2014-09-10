@@ -74,7 +74,7 @@
 						{foreach $features_selectable as $f}
 							<div class="option">
 								<div class="param-name">{$f.name}:</div>
-								{if $f.code == "razmer" or $f.code == "size"}
+								{if $f.code == "razmer" or $f.code == "razmer1" or $f.code == "size"}
 									<div class="clearfix"></div>
 									<div class="size-vars" data-target-input="features[{$f.id}]">
 										{foreach $f.values as $v_id => $v}
