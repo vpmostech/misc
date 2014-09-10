@@ -89,3 +89,13 @@
 	width: 285px;
 	padding-top: 25px;
 }
+
+.fabric-info {
+	display: none;
+	float: left;
+	width: 740px;
+	height: auto;
+	margin-top: 20px;
+	padding: 0px 10px;
+	box-sizing: border-box;
+}
