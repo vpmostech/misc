@@ -1,0 +1,91 @@
+.box {
+	float: left;
+	width: 740px;
+	border: 3px solid #f7f8f8;
+	box-sizing: border-box;
+	box-shadow: 1px 1px 2px;
+}
+
+.box .head {
+	width: 100%;
+	height: 45px;
+	padding-left: 15px;
+	line-height: 45px;
+	font-family: 'Myriad-Pro', 'Tahoma';
+	font-size: 15px;
+	font-weight: bold;
+	color: #a56aaf;
+	text-transform: uppercase;
+	background: #f7f8f8;
+	box-sizing: border-box;
+}
+
+.box .body {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.box.fabrics .body {
+	height: 125px;
+}
+
+.box.fabrics .body .col {
+	float: left;
+	width: 100px;
+	height: 100%;
+	margin-right: 15px;
+	padding-left: 25px;
+	box-sizing: border-box;
+}
+
+.box.fabrics .body .col .fabric {
+	float: left;
+	clear: left;
+	margin-top: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.box.fabrics .body .col .fabric:first-child {
+	margin-top: 20px;
+}
+
+.box.signs {
+	margin-top: 50px;
+}
+
+.box.signs .body {
+	height: 265px;
+	font-size: 12px;
+}
+
+.box.signs .body table {
+	width: 100%;
+	height: 100%;
+}
+
+.box.signs .body table td {
+	width: 50%;
+	height: 25%;
+	box-sizing: border-box;
+}
+
+.box.signs .body table td .sign,
+.box.signs .body table td .text
+{
+	float: left;
+	height: 100%;
+}
+
+.box.signs .body table td .sign {
+	width: 77px;
+	padding-top: 25px;
+	text-align: center;
+}
+
+.box.signs .body table td .text {
+	width: 285px;
+	padding-top: 25px;
+}
