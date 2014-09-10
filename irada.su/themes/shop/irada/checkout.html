@@ -63,7 +63,6 @@
 					// Если мы не на запрошенном шаге, прячем контент
 					if (current_step_id != step_id) {
 						current.animate( { height: 0 }, 200, function() { $(this).hide(); } );
-						current.parent().find('a.back').hide();
 					}
 					// Заполняем полученный по AJAX контент (если возврат к адресу доставки - оставим старый)
 					if (step_id != 'shipping') {
@@ -142,7 +141,6 @@
 						$(".checkout-step.step-" + step_id + " .checkout-step-content").css({ height: 'auto'}).show(200, function () {
 							$(document).scrollTop($(".checkout-step.step-" + step_id).offset().top);
 						});
-						current.parent().find('a.back').hide();
 					}
 					$(".checkout-step.step-" + step_id + " .checkout-content").replaceWith(content);
 					//$(".checkout-step.step-" + step_id + " a.back").show(); // TODO: показывать, если надо
