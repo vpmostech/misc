@@ -883,17 +883,33 @@ TODO:
 	width: 200px;
 }
 
-.makeeditable {
-	float: left;
-	padding: 3px 5px;
-	font-style: italic;
-	margin-bottom: 10px;
-	border-radius: 5px;
-	background: #f5ebf0;
-	text-decoration: underline;
+form#userprofile .wa-field-firstname .wa-name:after,
+form#userprofile .wa-field-lastname .wa-name:after,
+form#userprofile .wa-field-email .wa-name:after,
+form#userprofile .wa-field-phone .wa-name:after
+{
+	content: "*";
+	color: #b869a7;
 }
 
-.makeeditable:hover {
+form#userprofile input[type="text"] {
+	width: 350px;
+	height: 30px;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+form#userprofile input[name="bd"] {
+	width: 90px;
+	height: 25px;
+}
+
+form#userprofile .calendarIcon {
+	float: left;
+	width: 25px;
+	height: 25px;
+	margin-left: 5px;
+	background: url('graphics/calendar.png') no-repeat;
 	cursor: pointer;
 }
 
