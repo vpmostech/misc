@@ -124,6 +124,29 @@ $(document).ready(function () {
 		$previewForm.toggle('blind', {direction: 'up'});
 		return false;
 	});
+
+	// Задать вопрос
+	$('form#product_question').on('submit', function () {
+		var $this = $(this);
+		$this.find('input').each(function () {	
+			$(this).toggleClass('error', $(this).val() === '');
+		});
+		if ($this.find('input.error').length) {
+			return false;
+		}
+
+		$this.append('<span class="loading"><i class="icon16 loading"></i></span>');
+		$.post($this.attr('action'), $this.serialize(), function (response) {
+			var text = (response === "1") ? 'Спасибо! Мы свяжемся с Вами.' : 'Произошла ошибка.';
+			$this.replaceWith('<div>' + text + '</div>');
+		})
+		.fail(function () {
+			$this.replaceWith('<div>' + 'Произошла ошибка.' + '</div>');
+		});
+
+		return false;
+	});
+
 		
 });
 

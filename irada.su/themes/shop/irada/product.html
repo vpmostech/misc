@@ -122,14 +122,27 @@
 			</div>
 			<div id="product-tabs">
 				<ul>
-					<li><a href="#tab-descr">Описание</a></li>
-					<li><a href="#tab-care">Инструкции по уходу</a></li>
+					<li><a href="#tab-descr" style="margin-top: 10px;">Описание</a></li>
+					<li><a href="#tab-care">Инструкция<br />по уходу</a></li>
+					<li><a href="#tab-question">Задать<br />вопрос</a></li>
 				</ul>
 				<div id="tab-descr">
 					{if $product.description}{$product.description}{/if}
 				</div>
 				<div id="tab-care">
 					<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+				</div>
+				<div id="tab-question">
+					<form id="product_question" action="{$wa_url}question.php">
+						<div class="name">Ваше имя</div>
+						<input type="text" name="name" />
+						<div class="name">Ваше контакт</div>
+						<input type="text" name="contact" />
+						<input type="hidden" name="url" value="{$wa->currentUrl()}"/>
+						<div class="name">Ваш вопрос</div>
+						<textarea name="payload"></textarea>
+						<input type="submit" value="Отправить" />
+					</form>
 				</div>
 			</div>
 		</div>

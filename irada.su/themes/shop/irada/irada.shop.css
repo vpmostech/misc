@@ -460,10 +460,12 @@ article #product-core-image .zoomWrapper {
 	padding: 0;
 	border: none;
 	border-bottom: 1px solid #ececec;
+	text-align: center;
 	background: transparent;
 }
 
 #product-tabs .ui-state-default {
+	height: 45px;
 	font-size: 12px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -490,6 +492,23 @@ article #product-core-image .zoomWrapper {
 
 #product-tabs .ui-tabs-panel p {
 	margin-top: 0;
+}
+
+#tab-question div,
+#tab-question input,
+#tab-question textarea
+{
+	float: left;
+	clear: left;
+	margin-bottom: 5px;
+}
+
+#tab-question textarea {
+	width: 280px;
+}
+
+#tab-question .loading {
+	float: left;
 }
 
 .product-reviews {
