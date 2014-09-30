@@ -1,19 +1,33 @@
 {$crumbs = [
-	"Главная" => "`$wa_url`",
-	"О компании" => "#",
-	"Фотогалерея" => "`$wa_url`photos"
+	[
+		"url" => "`$wa_url`",
+		"name" => "Главная"
+	],
+	[
+		"url" => "`$wa_url`o-kompanii/",
+		"name" => "О компании"
+	],
+	[
+		"url" => $wa_app_url,
+		"name" => "Фотогалерея"
+	]
 ]}
 {if isset($album)}
-	{$crumbs[$album.name] = "#"}
+	{$crumbs[] = [
+		"url" => "#",
+		"name" => $album.name
+	]}
 {elseif isset($smarty.get.all)}
-	{$crumbs["Все фото"] = "#"}
+	{$crumbs[] = [
+		"url" => "#",
+		"name" => "Все фото"
+	]}
 {/if}
-
 <div class="breadcrumbs">
 	{foreach $crumbs as $crumb}
 		<div class="crumb">
-			{if !$crumb@last}<a href="{$crumb}">{/if}
-				{$crumb@key}
+			{if !$crumb@last}<a href="{$crumb.url}">{/if}
+				{$crumb.name}
 			{if !$crumb@last}</a>{/if}
 		</div>
 	{/foreach}

@@ -1,36 +1,9 @@
 <div class="breadcrumbs">
-	{* Главная - обязательно *}
-	<div class="crumb">
-		<a href="{$wa_url}">Главная</a>
-	</div>
-	{if isset($frontend_homepage)}
+	{foreach $crumbs as $crumb}
 		<div class="crumb">
-			Каталог товаров
+			{if !$crumb@last}<a href="{$crumb.url}">{/if}
+				{$crumb.name}
+			{if !$crumb@last}</a>{/if}
 		</div>
-	{/if}
-	{* Если это связано с каталогом - ссылку на сам каталог *}
-	{if isset($category) or isset($product)}
-		<div class="crumb">
-			<a href="{$wa->getUrl('shop/frontend')}">Каталог товаров</a>
-		</div>
-	{/if}
-	{* Теперь вставим встроенные *}
-	{if isset($breadcrumbs)}
-		{foreach $breadcrumbs as $breadcrumb}
-		<div class="crumb">
-			<a href="{$breadcrumb['url']}">{$breadcrumb['name']}</a>
-		</div>	
-		{/foreach}
-	{/if}
-	{* И последнюю, о текущей странице, без ссылки *}
-	{if isset($category)}
-		{$last_bread=$category.name|escape}
-	{elseif isset($product)}
-		{$last_bread=$product.name|escape}
-	{/if}
-	{if isset($last_bread)}
-		<div class="crumb">
-			{$last_bread}
-		</div>
-	{/if}
+	{/foreach}
 </div>

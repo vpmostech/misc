@@ -1,0 +1,32 @@
+{if !isset($crumbs)}
+	{* Главная *}
+	{$crumbs[0] = [
+		"url" => $wa_url,
+		"name" => "Главная"
+	]}
+	{* Всё, что предлагает вебасист (в основном родительские страницы) *}
+	{foreach $breadcrumbs as $b}
+		{$crumbs[] = $b}
+	{/foreach}
+	{* Название самой страницы (если нам не задали другое) *}
+	{if isset($page)}
+		{if isset($pageCrumb)}
+			{$pc = $pageCrumb}
+		{else}
+			{$pc = $page.name}
+		{/if}
+		{$crumbs[] = [
+			"url" => "`$wa_url``$page.full_url`",
+			"name" => $page.name
+		]}
+	{/if}
+{/if}
+<div class="breadcrumbs">
+	{foreach $crumbs as $crumb}
+		<div class="crumb">
+			{if !$crumb@last}<a href="{$crumb.url}">{/if}
+				{$crumb.name}
+			{if !$crumb@last}</a>{/if}
+		</div>
+	{/foreach}
+</div>

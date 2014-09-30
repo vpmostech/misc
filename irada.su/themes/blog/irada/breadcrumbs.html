@@ -1,18 +1,23 @@
+{* Главная *}
+{$crumbs[0] = [
+	"url" => $wa_url,
+	"name" => "Главная"
+]}
+{* О компании *}
+{$crumbs[] = [
+	"url" => "`$wa_url`o-kompanii/",
+	"name" => "О компании"
+]}
+{$crumbs[] = [
+	"url" => "`$wa_url`blog/news/",
+	"name" => "Новости"
+]}
 <div class="breadcrumbs">
-	{* Главная - обязательно *}
-	<div class="crumb">
-		<a href="{$wa_url}">Главная</a>
-	</div>
-	{if isset($blog)}
+	{foreach $crumbs as $crumb}
 		<div class="crumb">
-			{if isset($post)}<a href="{$blog.link}">{/if}
-				{$blog.name|escape}
-			{if isset($post)}</a>{/if}
+			{if !$crumb@last}<a href="{$crumb.url}">{/if}
+				{$crumb.name}
+			{if !$crumb@last}</a>{/if}
 		</div>
-	{/if}
-	{if isset($post)}
-		<div class="crumb">
-			{$post.title|escape}
-		</div>
-	{/if}
+	{/foreach}
 </div>

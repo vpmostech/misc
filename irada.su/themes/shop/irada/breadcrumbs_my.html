@@ -1,0 +1,35 @@
+{* Главная *}
+{$crumbs[0] = [
+	"url" => $wa_url,
+	"name" => "Главная"
+]}
+{* Личный кабинет *}
+{$crumbs[] = [
+	"url" => $wa->getUrl('shop/frontend/my'),
+	"name" => "Личный кабинет"
+]}
+{if isset($my_nav_selected)}
+	{if $my_nav_selected == "profile"}
+		{$crumbs[] = [
+			"url" => $wa->getUrl('/frontend/myProfile'),
+			"name" => "Мои данные"
+		]}
+	{elseif $my_nav_selected == "orders"}
+		{$crumbs[] = [
+			"url" => $wa->getUrl('/frontend/myOrders'),
+			"name" => "Архив заказов"
+		]}	
+		{if isset($order)}
+			{$crumbs[] = [
+				"url" => $wa->getUrl('/frontend/myOrders'),
+				"name" => "Заказ `$order.id_str`"
+			]}
+		{/if}
+	{/if}
+{elseif isset($cart) or isset($checkout_current_step)}
+	{$crumbs[] = [
+		"url" => $wa->getUrl('shop/frontend/cart'),
+		"name" => "Моя корзина"
+	]}
+{/if}
+{include file="breadcrumbs.html"}

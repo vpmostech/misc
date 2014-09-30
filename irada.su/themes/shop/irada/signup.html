@@ -1,4 +1,15 @@
 {include file="`$wa_parent_theme_path`/sidebar_static.html"}
+{$crumbs = [
+	[
+		"url" => $wa_url,
+		"name" => "Главная"
+	],
+	[
+		"url" => $wa->getUrl('shop/signup'),
+		"name" => "Регистрация"
+	]
+]}
+{include file="breadcrumbs.html"}
 <div class="content">
     <div id="page" role="main">
         {if !empty($contact)}

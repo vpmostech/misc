@@ -1,0 +1,27 @@
+{* Главная *}
+{$crumbs[0] = [
+	"url" => $wa_url,
+	"name" => "Главная"
+]}
+{* Каталог товаров *}
+{$crumbs[] = [
+	"url" => $wa->getUrl('shop/frontend'),
+	"name" => "Каталог товаров"
+]}
+{* Всё, что предлагает вебасист (иерархия категорий товара) *}
+{foreach $breadcrumbs as $b}
+	{$crumbs[] = $b}
+{/foreach}
+{* Текущая категория или товар *}
+{if isset($category)}
+	{$crumbs[] = [
+		"url" => "`$wa_url``$category.full_url`",
+		"name" => $category.name
+	]}
+{elseif isset($product)}
+	{$crumbs[] = [
+		"url" => "`$wa_url`product/`$product.url`",
+		"name" => $product.name
+	]}
+{/if}
+{include file="breadcrumbs.html"}
