@@ -576,8 +576,9 @@ input[type="text"] {
 }
 
 #sidebar .sidegroup ul li {
+	float: left;
 	clear: left;
-	width: auto;
+	width: 100%;
 	min-height: unset;
 	margin-top: 10px;
 	margin-bottom: 0;
@@ -594,6 +595,7 @@ input[type="text"] {
 }
 
 #sidebar .sidegroup ul li.current:before {
+	float: left;
 	width: 6px;
 	height: 12px;
 	margin-left: -12px;
