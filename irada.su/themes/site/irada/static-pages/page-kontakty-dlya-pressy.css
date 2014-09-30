@@ -1,0 +1,37 @@
+table.press-info {
+	width: 700px;
+}
+
+table.press-info tr {
+	height: 25px;
+}
+
+table.press-info tr td:first-child {
+	width: 120px;
+	font-size: 11px;
+}
+
+table.press-info tr td:last-child {
+	width: 550px;
+}
+
+table.press-info tr.press-addr td:first-child {
+	background: url('../graphics/order_addr.png') no-repeat center left;
+}
+
+table.press-info tr.press-phone td:last-child {
+	font-weight: bold;
+}
+
+table.press-info tr.press-email td:first-child {
+	background: url('../graphics/order_email.png') no-repeat center left;
+}
+
+table.press-info tr.press-phone td:first-child {
+	background: url('../graphics/order_phone.png') no-repeat 3px center;
+}
+
+p,
+table.press-info tr.press-addr td:last-child {
+	color: black;
+}
