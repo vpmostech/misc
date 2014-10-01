@@ -3,10 +3,10 @@
 		{$links = $site_links[$cat]}
 		<div class="sidegroup">
 			<h3>
-				<a href="#">{$cat}</a>
+				<a href="{$links.url}">{$cat}</a>
 			</h3>
 			<ul>
-				{foreach $links as $title => $link}
+				{foreach $links.subs as $title => $link}
 					<li {if $wa->currentUrl() == $link}class="current"{/if}>
 						<a href="{$link}">{$title}</a>
 					</li>

@@ -9,54 +9,72 @@
 {* Структура ссылок сайта, из которых генерируются подвал и некоторые другие куски *}
 {$site_links = [
 	'Каталог' => [
-		"Одежда" => "`$wa->getUrl('shop/frontend')`category/plate/",
-		"Аксессуары" => "#",
-		"Детям" => "#",
-		"Подарки" => "#",
-		"Новинки" => "#",
-		"Акции" => "#",
-		"Скидки" => "#"
+		"url" => $wa->getUrl('shop/frontend'),
+		"subs" => [
+			"Одежда" => "`$wa->getUrl('shop/frontend')`category/plate/",
+			"Аксессуары" => "#",
+			"Детям" => "#",
+			"Подарки" => "#",
+			"Новинки" => "#",
+			"Акции" => "#",
+			"Скидки" => "#"
+		]
 	],
 	'Оплата и доставка' => [
-		"Оплата" => "`$wa_url`oplata-i-dostavka/dostavka/",
-		"Доставка" => "`$wa_url`oplata-i-dostavka/dostavka/",
-		"Как получить скидку" => "`$wa->getUrl('shop/signup')`?with=clientcard",
-		"Возврат и обмен" => "#"
+		"url" => "`$wa_url`oplata-i-dostavka/dostavka/",
+		"subs" => [
+			"Оплата" => "`$wa_url`oplata-i-dostavka/dostavka/",
+			"Доставка" => "`$wa_url`oplata-i-dostavka/dostavka/",
+			"Как получить скидку" => "`$wa->getUrl('shop/signup')`?with=clientcard",
+			"Возврат и обмен" => "#"
+		]
 	],
 	'Где купить' => [
-		"Интернет-магазин" => $wa->getUrl('shop/frontend'),
-		"Москва" => "`$wa_url`magaziny/?city=Moscow",
-		"Казань" => "`$wa_url`magaziny/?city=Kazan",
-		"Ульяновск" => "`$wa_url`magaziny/?city=Ulyanovsk",
-		"Тюмень" => "`$wa_url`magaziny/?city=Tumen",
-		"Набережные Челны" => "`$wa_url`magaziny/?city=Nabereg"
+		"url" => "`$wa_url`magaziny/",
+		"subs" => [
+			"Интернет-магазин" => $wa->getUrl('shop/frontend'),
+			"Москва" => "`$wa_url`magaziny/?city=Moscow",
+			"Казань" => "`$wa_url`magaziny/?city=Kazan",
+			"Ульяновск" => "`$wa_url`magaziny/?city=Ulyanovsk",
+			"Тюмень" => "`$wa_url`magaziny/?city=Tumen",
+			"Набережные Челны" => "`$wa_url`magaziny/?city=Nabereg"
+		]
 	],
 	'О компании' => [
-		"О нас" => "#",
-		"Новости" => "`$wa_url`blog/news/",
-		"Наша команда" => "`$wa_url`o-kompanii/nasha-komanda/",
-		"Сотрудничество" => "#",
-		"Франчайзинг" => "`$wa_url`o-kompanii/franchayzing/",
-		"Наши друзья" => "`$wa_url`o-kompanii/nashi-druzya/ ",
-		"Фотогалерея" => "`$wa_url`photos/",
-		"Видео" => "#",
-		"Вакансии" => "`$wa_url`o-kompanii/vakansii/",
-		"Контакты" => "#"
+		"url" => "`$wa_url`o-kompanii/",
+		"subs" => [
+			"О нас" => "#",
+			"Новости" => "`$wa_url`blog/news/",
+			"Наша команда" => "`$wa_url`o-kompanii/nasha-komanda/",
+			"Сотрудничество" => "#",
+			"Франчайзинг" => "`$wa_url`o-kompanii/franchayzing/",
+			"Наши друзья" => "`$wa_url`o-kompanii/nashi-druzya/ ",
+			"Фотогалерея" => "`$wa_url`photos/",
+			"Видео" => "#",
+			"Вакансии" => "`$wa_url`o-kompanii/vakansii/",
+			"Контакты" => "#"
+		]
 	],
 	'Пресса' => [
-		"Пресса о нас" => "#",
-		"Пресс - релиз" => "#",
-		"Наши проекты" => "#",
-		"Контакты для прессы" => "#"
+		"url" => "`$wa_url`pressa/",
+		"subs" => [
+			"Пресса о нас" => "#",
+			"Пресс - релиз" => "#",
+			"Наши проекты" => "#",
+			"Контакты для прессы" => "#"
+		]
 	],
 	'Сервис' => [
-		"Личный кабинет" => $wa->getUrl('shop/frontend/my'),
-		"Как сделать заказ" => "`$wa_url`servis/kak-sdelat-zakaz/",
-		"Правила продажи" => "`$wa_url`servis/pravila-prodazhi/",
-		"Таблица размеров" => "`$wa_url`servis/tablitsa-razmerov/",
-		"Ткани и уход за ними" => "`$wa_url`servis/tkani-i-ukhod-za-nimi/",
-		"Публичная оферта" => "`$wa_url`servis/publichnaya-oferta/",
-		"Вопросы &mdash; ответы" => "`$wa_url`servis/voprosy_otvety/",
-		"Карта сайта" => "#"
+		"url" => "`$wa_url`servis/",
+		"subs" => [
+			"Личный кабинет" => $wa->getUrl('shop/frontend/my'),
+			"Как сделать заказ" => "`$wa_url`servis/kak-sdelat-zakaz/",
+			"Правила продажи" => "`$wa_url`servis/pravila-prodazhi/",
+			"Таблица размеров" => "`$wa_url`servis/tablitsa-razmerov/",
+			"Ткани и уход за ними" => "`$wa_url`servis/tkani-i-ukhod-za-nimi/",
+			"Публичная оферта" => "`$wa_url`servis/publichnaya-oferta/",
+			"Вопросы &mdash; ответы" => "`$wa_url`servis/voprosy_otvety/",
+			"Карта сайта" => "#"
+		]
 	]
 ] scope="global"}

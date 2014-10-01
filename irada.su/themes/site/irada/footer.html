@@ -8,7 +8,7 @@
 			<div class="linkscol">
 				<h3>{$cat}</h3>
 				<ul class="links">
-					{foreach $links as $title => $link}
+					{foreach $links.subs as $title => $link}
 						<li><a href="{if isset($demosite)}http://irada.su/{else}{$link}{/if}">{$title}</a></li>
 					{/foreach}
 				</ul>
