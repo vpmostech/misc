@@ -6,6 +6,43 @@
 	{$demosite = true scope="global"}
 {/if}
 
+{* Структура ссылок на категории товаров *}
+{$cat_links = [
+	'Одежда' => [
+		"url" => "#",
+		"subs" => [
+			"Платья" => "`$wa->getUrl('shop/frontend')`category/plate/",
+			"Костюмы" => "`$wa->getUrl('shop/frontend')`",
+			"Сарафаны" => "`$wa->getUrl('shop/frontend')`",
+			"Туники" => "`$wa->getUrl('shop/frontend')`",
+			"Жакеты" => "`$wa->getUrl('shop/frontend')`",
+			"Юбки" => "`$wa->getUrl('shop/frontend')`",
+			"Религиозная одежда" => "`$wa->getUrl('shop/frontend')`",
+			"Спортивная одежда" => "`$wa->getUrl('shop/frontend')`",
+			"Купальники" => "`$wa->getUrl('shop/frontend')`"
+		]
+	],
+	'Аксессуары' => [
+		"url" => "#",
+		"subs" => [
+			"Платки" => "`$wa->getUrl('shop/frontend')`",
+			"Шапочки" => "`$wa->getUrl('shop/frontend')`",
+			"Нарукавники" => "`$wa->getUrl('shop/frontend')`",
+			"Сумки" => "`$wa->getUrl('shop/frontend')`",
+			"Ремни" => "`$wa->getUrl('shop/frontend')`",
+			"Украшения" => "`$wa->getUrl('shop/frontend')`",
+			"Другое" => "`$wa->getUrl('shop/frontend')`"
+		]
+	],
+	'Детям' => [
+		"url" => "#",
+		"subs" => [
+			"Кукла-мусульманка" => "`$wa->getUrl('shop/frontend')`",
+			"Одежда для детей" => "`$wa->getUrl('shop/frontend')`"
+		]
+	]
+] scope="global"}
+
 {* Структура ссылок сайта, из которых генерируются подвал и некоторые другие куски *}
 {$site_links = [
 	'Каталог' => [
