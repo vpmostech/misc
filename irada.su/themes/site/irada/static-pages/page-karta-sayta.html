@@ -1,0 +1,37 @@
+<div class="sitemap">
+    <div class="level0">
+        <a href="#">Главная страница</a>
+    </div>
+	<ul class="level1">
+		<li>
+			<a href="{$wa->getUrl('shop/frontend')}">Каталог товаров</a>
+			<ul class="level2">
+				{foreach $cat_links as $cat => $links2}
+					<li>
+						<a href="{$links2.url}">{$cat}</a>
+						<ul class="level3">
+							{foreach $links2.subs as $link2}
+								<li>
+									<a href="{$link2}">{$link2@key}</a>
+								</li>
+							{/foreach}
+						</ul>
+					</li>
+				{/foreach}
+			</ul>
+		</li>
+		{foreach $site_links as $title1 => $links1}
+			{if $title1 == "Каталог"}{continue}{/if}
+			<li>
+				<a href="{$links1.url}">{$title1}</a>
+				<ul class="level2">
+					{foreach $links1.subs as $title2 => $link2}
+						<li>
+							<a href="{$link2}">{$title2}</a>
+						</li>
+					{/foreach}
+				</ul>
+			</li>
+		{/foreach}
+	</ul>
+</div>

@@ -1,0 +1,54 @@
+.sitemap {
+	width: 700px;
+}
+
+.sitemap a {
+	color: #464646;
+}
+
+.sitemap .level0 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.sitemap ul.level1 {
+	margin-top: 20px;
+	padding-left: 25px;
+	list-style: none inside none;
+}
+
+.sitemap ul.level1 li {
+	margin: 20px 0px;
+}
+
+.sitemap ul.level1 li a {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.sitemap ul.level2 {
+	margin-top: 10px;
+	padding-left: 20px;
+	list-style: none inside none;
+}
+
+.sitemap ul.level2 li {
+	margin: 7px 0 0;
+}
+
+.sitemap ul.level2 li a {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.sitemap ul.level3 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	list-style: none inside none;
+}
+
+.sitemap ul.level3 li a {
+	font-size: 12px;
+	font-weight: normal;
+}
