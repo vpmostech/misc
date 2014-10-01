@@ -6,4 +6,9 @@
 {/if}
 {include file="breadcrumbs.html"}
 <h1>{$page.name|escape}</h1>
-<div class="page-static">{$page.content}</div>
+<div class="page-static">
+	{$page.content}
+	{if isset($customContent)}
+		{include file="static-pages/`$customContent`"}
+	{/if}
+</div>
