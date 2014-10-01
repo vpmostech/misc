@@ -1,3 +1,6 @@
+{if isset($wa_parent_theme_path)}
+	{include file="`$wa_parent_theme_path`/globals.html"}
+{/if}
 <div id="sidebar" class="main">
 	{foreach $cat_links as $cat => $links}
 		<div class="sidegroup">
