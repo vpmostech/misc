@@ -7,9 +7,9 @@
 {include file="breadcrumbs.html"}
 
 {if isset($page.customContent)}
-	{include file="static-pages/`$page.customContent`"}
+	{include file="`$wa_active_theme_path`/static-pages/`$page.customContent`"}
 {else}
-	<h1>{$page_title|escape}</h1>
+	<h1>{$page.name|escape}</h1>
 	<div class="page-static">
 		{$page.content}
 	</div>
