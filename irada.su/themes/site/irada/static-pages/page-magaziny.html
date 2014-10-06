@@ -1,0 +1,47 @@
+<h5 class="shop-title" style="margin-top: 0;">Интернет-магазин IRADA.su</h5>
+<img src="{$wa_theme_url}graphics/eshop-mini.png" alt=""/>
+
+<table class="info eshop-info">
+    <tr class="eshop-phone">
+        <td>Телефон</td>
+        <td>+7 968 968 9355</td>
+    </tr>
+    <tr class="eshop-time">
+        <td>Режим<br />работы</td>
+        <td>с 9.00 до 20.00 (MSK)</td>
+    </tr>
+</table>
+<div class="clearfix"></div>
+<img src="{$wa_theme_url}graphics/country.png" alt="" style="margin-top: 50px;" />
+<div class="city-links">
+	{foreach $shops_info as $city}
+	<a href="#">{$city.name}</a>
+	{/foreach}
+</div>
+<div class="clearfix"></div>
+
+{foreach $shops_info as $city}
+    <h4>{$city.name}</h4>
+	{foreach $city.shops as $shop}
+		<h5 class="shop-title">{$shop.name}</h5>
+		<div class="shop-photo">
+			<img src="{$wa_theme_url}graphics/shops/{$shop.photo}">
+			<a href="#">Показать на карте</a>
+		</div>
+		<table class="info shop-info">
+			<tr class="shop-addr">
+				<td>Адрес</td>
+				<td>{$shop.addr}</td>
+			</tr>
+			<tr class="shop-phone">
+				<td>Телефон</td>
+				<td>{$shop.phone}</td>
+			</tr>
+			<tr class="shop-time">
+				<td>Режим<br />работы</td>
+				<td>{$shop.time}</td>
+			</tr>
+		</table>
+		<div class="clearfix"></div>
+	{/foreach}
+{/foreach}

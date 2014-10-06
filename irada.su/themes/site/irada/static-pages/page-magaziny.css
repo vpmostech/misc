@@ -1,0 +1,101 @@
+.page-static img {
+	float: left;
+}
+
+.shop-title {
+	margin-top: 20px;
+	color: #9f60aa;
+	font-size: 15px;
+	font-weight: bold;
+	text-transform: none;
+}
+
+.city-links {
+	float: left;
+	margin-top: 50px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.city-links a {
+	display: block;
+	clear: left;
+	margin-bottom: 5px;
+}
+
+.shop-photo {
+	float: left;
+}
+
+.shop-photo a {
+	display: block;
+	float: left;
+	clear: left;
+	margin-top: 5px;
+	font-size: 11px;
+}
+
+table.eshop-info {
+	float: left;
+	width: 250px;
+	height: 70px;
+	margin-left: 20px;
+	font-size: 12px;
+}
+
+table.eshop-info tr:first-child td {
+	border-bottom: 1px dashed #b7b7b7;
+}
+
+table.eshop-info tr.eshop-phone td:first-child {
+	background: url('../graphics/order_phone.png') no-repeat 2px center;
+}
+
+table.eshop-info tr.eshop-phone td:last-child {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+table.eshop-info tr.eshop-time td:first-child {
+	background: url('../graphics/eshop-clock.png') no-repeat center left;
+}
+
+table.shop-info {
+	float: left;
+	margin-left: 20px;
+}
+
+table.shop-info tr {
+	height: 25px;
+}
+
+table.shop-info tr td:first-child {
+	width: 70px;
+}
+
+table.shop-info tr td:last-child {
+	padding: 1px 10px;
+}
+
+table.shop-info tr.shop-addr td:first-child {
+	background: url('../graphics/order_addr.png') no-repeat left center;
+}
+
+table.shop-info tr.shop-addr td:last-child {
+	font-size: 14px;
+	color: black;
+}
+
+table.shop-info tr.shop-phone td:first-child {
+	background: url('../graphics/order_phone.png') no-repeat 2px center;
+}
+
+table.shop-info tr.shop-phone td:last-child {
+	font-size: 16px;
+	font-family: 'Myriad-Pro', 'Tahoma';
+	font-weight: bold;
+}
+
+table.shop-info tr.shop-time td:first-child {
+	background: url('../graphics/eshop-clock.png') no-repeat left center;
+}
