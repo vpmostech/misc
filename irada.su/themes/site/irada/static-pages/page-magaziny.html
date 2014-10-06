@@ -15,13 +15,13 @@
 <img src="{$wa_theme_url}graphics/country.png" alt="" style="margin-top: 50px;" />
 <div class="city-links">
 	{foreach $shops_info as $city}
-	<a href="#">{$city.name}</a>
+	<a href="#" data-scroll-target="{$city.tag}">{$city.name}</a>
 	{/foreach}
 </div>
 <div class="clearfix"></div>
 
 {foreach $shops_info as $city}
-    <h4>{$city.name}</h4>
+    <h4 data-tag="{$city.tag}">{$city.name}</h4>
 	{foreach $city.shops as $shop}
 		<h5 class="shop-title">{$shop.name}</h5>
 		<div class="shop-photo">
