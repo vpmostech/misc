@@ -1,3 +1,39 @@
+<script type="text/javascript">
+
+	$(document).ready(function () {
+	
+		$('#sidebar ul').on('click', 'li a', function (event) {
+			var $this = $(this),
+				href = $(this).attr('href').split('?');
+			if (href[0] == window.location.pathname) {
+				$.each(href[1].split('&'), function (ind, val) {
+					var get	= val.split('=');
+					if (get[0] == 'city') {
+						var $target = $('h4[data-tag="' + get[1] + '"]');
+						if ($target.length) {
+							$(document).scrollTo($target, 500);
+							$(event.delegateTarget).find('li').removeClass('current');
+							$this.parent('li').addClass('current');
+							event.preventDefault();
+							return false;
+						}
+					}
+				});
+			}
+			return true;
+		});
+
+		var link = window.location.pathname + window.location.search;
+		$('#sidebar ul li a').each(function () {
+			var $this = $(this);
+			if ($this.attr('href') == link) {
+				$this.addClass('current').click();
+			}
+		});
+
+	});
+
+</script>
 <div id="sidebar">
 	{foreach ['Где купить'] as $cat}
 		{$links = $site_links[$cat]}
