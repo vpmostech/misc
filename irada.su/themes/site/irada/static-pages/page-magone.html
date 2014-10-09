@@ -35,5 +35,7 @@
 		</tr>
 	</table>
 {else}
-	{* Странный магазин *}
+	{* Магазин не найден *}
+	{$shopspage = $wa->site->page($page.parent_id)}
+	{Header("Location: `$wa_url``$shopspage.full_url`")};
 {/if}
