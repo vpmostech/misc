@@ -1,13 +1,13 @@
 {include file="globals.html"}
-{if $page.parent_id == 18}
-	{include file="sidebar_pages2.html"}
-{else}
-	{include file="sidebar_pages.html"}
-{/if}
 
 {if isset($page.customContent)}
 	{include file="`$wa_active_theme_path`/static-pages/`$page.customContent`"}
 {else}
+	{if $page.parent_id == 18}
+		{include file="sidebar_pages2.html"}
+	{else}
+		{include file="sidebar_pages.html"}
+	{/if}
 	{include file="breadcrumbs.html"}
 	<h1>{$page.name|escape}</h1>
 	<div class="page-static">

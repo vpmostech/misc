@@ -1,0 +1,17 @@
+<div id="sidebar">
+	{foreach ['Где купить'] as $cat}
+		{$links = $site_links[$cat]}
+		<div class="sidegroup">
+			<h3>
+				<a href="{$links.url}">{$cat}</a>
+			</h3>
+			<ul>
+				{foreach $links.subs as $title => $link}
+					<li {if $wa->currentUrl() == $link}class="current"{/if}>
+						<a href="{$link}">{$title}</a>
+					</li>
+				{/foreach}
+			</ul>
+		</div>
+	{/foreach}
+</div>
