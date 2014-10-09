@@ -1,0 +1,51 @@
+#yamap-shop {
+	float: left;
+	width: 690px;
+	height: 440px;
+}
+
+table.shopone-info {
+	float: left;
+	width: 700px;
+	margin-top: 40px;
+}
+
+table.shopone-info tr {
+	height: 25px;
+}
+
+table.shopone-info tr td {
+	padding-left: 30px;
+}
+
+table.shopone-info tr td:first-child {
+	width: 55px;
+}
+
+table.shopone-info tr td:last-child {
+	padding: 1px 10px;
+}
+
+table.shopone-info tr.shop-addr td:first-child {
+	background: url('../graphics/order_addr.png') no-repeat left center;
+}
+
+table.shopone-info tr.shop-addr td:last-child {
+	font-size: 14px;
+	color: black;
+}
+
+table.shopone-info tr.shop-phone td:first-child {
+	background: url('../graphics/order_phone.png') no-repeat 2px center;
+}
+
+table.shopone-info tr.shop-phone td:last-child {
+	font-size: 16px;
+	font-family: 'Myriad-Pro', 'Tahoma';
+	font-weight: bold;
+}
+
+table.shopone-info tr.shop-time td:first-child {
+	background: url('../graphics/eshop-clock.png') no-repeat left center;
+}
+

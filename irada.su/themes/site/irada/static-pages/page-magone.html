@@ -1,0 +1,36 @@
+{foreach $shops_info as $city_shops}
+	{foreach $city_shops.shops as $si}
+		{if $si.tag == $wa->get('shop')}
+			{$shop_info = $si}
+			{break}
+		{/if}
+	{/foreach}
+	{if isset($shop_info)}{break}{/if}
+{/foreach}
+
+{if isset($shop_info)}
+	<link href="{$wa_theme_url}static-pages/page-magone.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script src="{$wa_theme_url}static-pages/page-magone.js?v{$wa_theme_version}" type="text/javascript"></script>
+
+	<h1 data-shop-coords="{$shop_info.coords}">{$shop_info.name}</h1>
+
+	<div id="yamap-shop"></div>
+
+	<table class="info shopone-info">
+		<tr class="shop-addr">
+			<td>Адрес</td>
+			<td>{$shop_info.addr}</td>
+		</tr>
+		<tr class="shop-phone">
+			<td>Телефон</td>
+			<td>{$shop_info.phone}</td>
+		</tr>
+		<tr class="shop-time">
+			<td>Режим<br />работы</td>
+			<td>{$shop_info.time}</td>
+		</tr>
+	</table>
+{else}
+	{* Странный магазин *}
+{/if}
