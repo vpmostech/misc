@@ -96,11 +96,12 @@
 						{$p.name}
 					</div>
 					<div class="color">
-						Коралл
+						
 					</div>
 					<div class="clearfix"></div>
 					<div class="cat1">
-						Платье
+						{$prCat = $wa->shop->category($p.category_id)}
+						{$prCat.name}
 					</div>
 				</div>
 				{if $p.rating > 0}
