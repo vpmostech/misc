@@ -35,11 +35,11 @@
 	{wa_pagination total=$pages_count attrs=['class' => "menu-h"] prev="{$img_tag_start}{$imgDir}{'/product_page_prev.png'}{$img_tag_end}" next="{$img_tag_start}{$imgDir}{'/product_page_next.png'}{$img_tag_end}"}
 	<ul class="goods-per-page">
 		<li>Показывать по</li>
-		{$gpps = ['5', '100', '200']}
+		{$gpps = ['9', '12', '24', '36']}
 		{if isset($smarty.cookies.products_per_page)}
 			{$gpp_sel = $smarty.cookies.products_per_page}
 		{else}
-			{$gpp_sel = $gpps[0]}
+			{$gpp_sel = $gpps[1]}
 		{/if}
 		{foreach $gpps as $gpp}
 		<li {if $gpp == $gpp_sel}class="selected"{/if}>
@@ -101,7 +101,7 @@
 					<div class="clearfix"></div>
 					<div class="cat1">
 						{$prCat = $wa->shop->category($p.category_id)}
-						{$prCat.name}
+						{$prCat.params.edin}
 					</div>
 				</div>
 				{if $p.rating > 0}
@@ -131,11 +131,11 @@
 		{wa_pagination total=$pages_count attrs=['class' => "menu-h"] prev="{$img_tag_start}{$imgDir}{'/product_page_prev.png'}{$img_tag_end}" next="{$img_tag_start}{$imgDir}{'/product_page_next.png'}{$img_tag_end}"}
 		<ul class="goods-per-page">
 			<li>Показывать по</li>
-			{$gpps = ['5', '100', '200']}
+			{$gpps = ['9', '12', '24', '36']}
 			{if isset($smarty.cookies.products_per_page)}
 				{$gpp_sel = $smarty.cookies.products_per_page}
 			{else}
-				{$gpp_sel = $gpps[0]}
+				{$gpp_sel = $gpps[1]}
 			{/if}
 			{foreach $gpps as $gpp}
 			<li {if $gpp == $gpp_sel}class="selected"{/if}>
