@@ -53,6 +53,7 @@ h4.custom-stuff {
 }
 
 .team .employee .position {
+	height: 33px;
 	margin-top: 10px;
 }
 

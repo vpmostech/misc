@@ -927,6 +927,10 @@ input[name="shipping_id"] {
 	color: #b869a7;
 }
 
+.step-shipping label .descr {
+	font-size: 10px;
+}
+
 .step-payment {
 	float: left;
 }

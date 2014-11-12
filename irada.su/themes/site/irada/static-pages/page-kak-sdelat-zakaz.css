@@ -48,3 +48,10 @@ table.how tr.order_email td:first-child {
 table.how tr.order_phone td:first-child {
 	background: url('../graphics/order_phone.png') no-repeat center left;
 }
+
+.instruction {
+	margin-top: 50px;
+	padding-right: 30px;
+	text-align: justify;
+	font-size: 15px;
+}

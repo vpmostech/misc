@@ -32,13 +32,16 @@
 					<input type="radio" name="shipping_id" value="{$m.id}" {if $m.external || !empty($m.error)}disabled{/if} {if $m.id == $shipping.id}checked{/if} />
 					<span class="title">{$m.name|escape}</span> 
 					<span class="price">
-						{if $m.rate !== null}
+						{if $m.rate != ""}
 							{$m.rate} руб.
 						{elseif $m.external}
 							{$external_methods[] = $m.id}
 							Цена требует уточнения. {*<i class="icon16 loading"></i>*}
+						{else}
+							Цена требует уточнения.
 						{/if}
 					</span>
+					<span class="descr">{$m.description}</span>
 					<input type="hidden" name="rate_id[{$m.id}]" value="{key($m.rates)}">
 				</label>
 			
