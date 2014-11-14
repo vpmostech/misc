@@ -79,3 +79,8 @@ table.friend-info tr.friend-site td:last-child a {
 	margin-top: 15px;
 	color: #363636;
 }
+
+.friends .friend .descr img {
+	margin-top: 10px;
+	margin-right: 20px;
+}
