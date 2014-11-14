@@ -55,3 +55,29 @@ table.how tr.order_phone td:first-child {
 	text-align: justify;
 	font-size: 15px;
 }
+
+ol {
+	list-style: none outside none;
+}
+
+ol li {
+	margin-bottom: 10px;
+}
+
+ol li .num {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #e8d8df;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	color: #9e7999;
+	line-height: 30px;
+	text-align: center;
+	background: linear-gradient(#f8ebed, #edd7e9);
+}
+
+ol li .text {
+	display: inline-block;
+}
