@@ -62,7 +62,7 @@
 		"subs" => [
 			"Оплата" => "`$wa_url`oplata-i-dostavka/dostavka/",
 			"Доставка" => "`$wa_url`oplata-i-dostavka/dostavka/",
-			"Как получить скидку" => "`$wa_url`servis/karta-sayta/",
+			"Как получить скидку" => "`$wa->getUrl('shop/signup')`?with=clientcard",
 			"Возврат и обмен" => "#"
 		]
 	],
@@ -105,6 +105,8 @@
 			"Личный кабинет" => $wa->getUrl('shop/frontend/my'),
 			"Как сделать заказ" => "`$wa_url`servis/kak-sdelat-zakaz/",
 			"Правила продажи" => "`$wa_url`servis/pravila-prodazhi/",
+			"Карта постоянного покупателя" => "`$wa->getUrl('shop/signup')`?with=clientcard",
+			"Подарочный сертификат" => "`$wa_url`podarochnye-sertifikaty/",
 			"Таблица размеров" => "`$wa_url`servis/tablitsa-razmerov/",
 			"Ткани и уход за ними" => "`$wa_url`servis/tkani-i-ukhod-za-nimi/",
 			"Публичная оферта" => "`$wa_url`servis/publichnaya-oferta/",
