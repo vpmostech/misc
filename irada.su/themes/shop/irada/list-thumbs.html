@@ -35,7 +35,7 @@
 	{wa_pagination total=$pages_count attrs=['class' => "menu-h"] prev="{$img_tag_start}{$imgDir}{'/product_page_prev.png'}{$img_tag_end}" next="{$img_tag_start}{$imgDir}{'/product_page_next.png'}{$img_tag_end}"}
 	<ul class="goods-per-page">
 		<li>Показывать по</li>
-		{$gpps = ['9', '12', '24', '36']}
+		{$gpps = ['8', '12', '24', '36']}
 		{if isset($smarty.cookies.products_per_page)}
 			{$gpp_sel = $smarty.cookies.products_per_page}
 		{else}
@@ -131,7 +131,7 @@
 		{wa_pagination total=$pages_count attrs=['class' => "menu-h"] prev="{$img_tag_start}{$imgDir}{'/product_page_prev.png'}{$img_tag_end}" next="{$img_tag_start}{$imgDir}{'/product_page_next.png'}{$img_tag_end}"}
 		<ul class="goods-per-page">
 			<li>Показывать по</li>
-			{$gpps = ['9', '12', '24', '36']}
+			{$gpps = ['8', '12', '24', '36']}
 			{if isset($smarty.cookies.products_per_page)}
 				{$gpp_sel = $smarty.cookies.products_per_page}
 			{else}
