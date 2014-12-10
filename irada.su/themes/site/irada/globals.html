@@ -9,24 +9,23 @@
 {* Структура ссылок на категории товаров *}
 {$cat_links = [
 	'Одежда' => [
-		"url" => "#",
+		"url" => "`$wa->getUrl('shop/frontend')`category/odezhda/",
 		"subs" => [
 			"Платья" => "`$wa->getUrl('shop/frontend')`category/plate/",
-			"Костюмы" => "`$wa->getUrl('shop/frontend')`",
-			"Сарафаны" => "`$wa->getUrl('shop/frontend')`",
+			"Костюмы" => "`$wa->getUrl('shop/frontend')`category/kostyumy/",
+			"Сарафаны" => "`$wa->getUrl('shop/frontend')`category/sarafany/",
 			"Туники" => "`$wa->getUrl('shop/frontend')`",
-			"Жакеты" => "`$wa->getUrl('shop/frontend')`",
-			"Юбки" => "`$wa->getUrl('shop/frontend')`",
-			"Религиозная одежда" => "`$wa->getUrl('shop/frontend')`",
+			"Жакеты" => "`$wa->getUrl('shop/frontend')`category/zhakety/",
+			"Юбки" => "`$wa->getUrl('shop/frontend')`category/yubki/",
+			"Религиозная одежда" => "`$wa->getUrl('shop/frontend')`category/religioznaya-odezhda/",
 			"Спортивная одежда" => "`$wa->getUrl('shop/frontend')`",
 			"Купальники" => "`$wa->getUrl('shop/frontend')`"
 		]
 	],
 	'Аксессуары' => [
-		"url" => "#",
+		"url" => "`$wa->getUrl('shop/frontend')`category/aksessuary/",
 		"subs" => [
-			"Платки" => "`$wa->getUrl('shop/frontend')`",
-			"Шапочки" => "`$wa->getUrl('shop/frontend')`",
+			"Головные уборы" => "`$wa->getUrl('shop/frontend')`category/golovnye-ubory/",
 			"Нарукавники" => "`$wa->getUrl('shop/frontend')`",
 			"Сумки" => "`$wa->getUrl('shop/frontend')`",
 			"Ремни" => "`$wa->getUrl('shop/frontend')`",
@@ -35,9 +34,9 @@
 		]
 	],
 	'Детям' => [
-		"url" => "#",
+		"url" => "`$wa->getUrl('shop/frontend')`category/detyam/ ",
 		"subs" => [
-			"Кукла-мусульманка" => "`$wa->getUrl('shop/frontend')`",
+			"Кукла-мусульманка" => "`$wa->getUrl('shop/frontend')`category/kukla--musulmanka/",
 			"Одежда для детей" => "`$wa->getUrl('shop/frontend')`"
 		]
 	]
