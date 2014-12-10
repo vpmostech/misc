@@ -1172,9 +1172,8 @@ table.order tr.summary-start td {
 }
 
 .register-info p {
-	float: left;
-	width: 500px;
 	margin-left: 35px;
+	padding-right: 20px;
 	text-align: justify;
 }
 
