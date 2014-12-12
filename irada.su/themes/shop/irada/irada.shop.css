@@ -218,6 +218,10 @@ ul.product-list li .rating .star.shine {
 	background: url('graphics/rate_on.png') center no-repeat;
 }
 
+ul.product-list li .cat1 {
+	height: 15px;
+}
+
 [class^="filter-"] {
 	display: none; /* Пока он не будут функциональны */
 	width: 190px;
