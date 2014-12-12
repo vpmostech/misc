@@ -387,6 +387,22 @@ input[type="text"] {
 	color: #bac0c4;
 }
 
+#header .callback_phone {
+	display: none;
+	float: left;
+	width: 120px;
+	margin-left: -20px;
+}
+
+#header .callback_send {
+	display: none;
+	float: left;
+	width: 50px;
+	height: 22px;
+	margin-left: 10px;
+	padding: 0;
+}
+
 #header .center .contacts .phone .callback {
 	float: right;
 	margin-right: 13px;

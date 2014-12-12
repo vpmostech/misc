@@ -21,6 +21,31 @@ $(document).ready(function () {
 		return false;
 	});
 
+	// Заказать обратный звонок
+	$('#header .callback').on('click', function () {
+		var $this = $(this),
+			$inputs = $this.siblings('input');
+
+		$this.hide('blind', { direction: 'up' });
+		$inputs.show('blind', { direction: 'down' });
+	});
+	$('#header .callback_send').on('click', function () {
+		var $this = $(this),
+			$phone = $this.siblings('.callback_phone')
+			phone = $phone.val();
+
+		$phone.toggleClass('error', !phone.length);
+		if (!phone.length) {
+			return;
+		}
+
+		$.post($this.attr('data-action'), { phone: phone })
+		.always(function() {
+			$this.siblings('.callback').show('blind', { direction: 'up' });
+			$this.add($phone).hide('blind', { direction: 'down' });
+		});
+	});
+
 	// Локализация календаря
 	$.datepicker.regional['ru'] = {
 		closeText: 'Закрыть',
