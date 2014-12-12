@@ -32,6 +32,8 @@ h4.custom-stuff {
 
 .team .employee img {
 	float: left;
+	max-width: 106px;
+	max-height: 146px;
 	margin-right: 25px;
 }
 
