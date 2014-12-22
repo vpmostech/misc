@@ -149,8 +149,10 @@
 					<form id="product_question" action="{$wa_url}question.php">
 						<div class="name">Ваше имя</div>
 						<input type="text" name="name" />
-						<div class="name">Ваше контакт</div>
+						<div class="name">Ваш контакт</div>
 						<input type="text" name="contact" />
+						<div class="name">Куда сообщить ответ</div>
+						<input type="text" name="reply" />
 						<input type="hidden" name="url" value="{$wa->currentUrl()}"/>
 						<div class="name">Ваш вопрос</div>
 						<textarea name="payload"></textarea>
