@@ -3,7 +3,7 @@
 {if isset($page.customContent)}
 	{include file="`$wa_active_theme_path`/static-pages/`$page.customContent`"}
 {else}
-	{if $page.parent_id == 18}
+	{if $page.id == 18 || $page.parent_id == 18}
 		{include file="sidebar_pages2.html"}
 	{else}
 		{include file="sidebar_pages.html"}

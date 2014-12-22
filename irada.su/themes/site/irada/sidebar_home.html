@@ -18,13 +18,13 @@
 	{/foreach}
 	<div class="sidegroup">
 		<h3>
-			<a href="#">Сувениры</a>
+			<a href="{$wa->getUrl('shop/frontend')}category/suveniry/">Сувениры</a>
 		</h3>
 	</div>
 	<div class="sidegroup">
 		<h3>
-			<a href="{if isset($demosite)}http://irada.su/razdel/rasprodaja/{else}http://irada.su/razdel/rasprodaja/{/if}" style="float: left; clear: left; margin-bottom: 5px; color: #73337a;">Распродажа</a>
-			<a href="{if isset($demosite)}http://irada.su/razdel/rasprodaja/{else}#{/if}" style="float: left; clear: left; color: #73337a;">Акции</a>
+			<a href="{if isset($demosite)}http://irada.su/razdel/rasprodaja/{else}{$wa->getUrl('shop/frontend')}category/skidki/{/if}" style="float: left; clear: left; margin-bottom: 5px; color: #73337a;">Скидки</a>
+			<a href="{if isset($demosite)}http://irada.su/razdel/rasprodaja/{else}{$wa->getUrl('shop/frontend')}category/aktsii/{/if}" style="float: left; clear: left; color: #73337a;">Акции</a>
 		</h3>
 	</div>
 
