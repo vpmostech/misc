@@ -1,0 +1,54 @@
+.video-one {
+	position: relative;
+	float: left;
+	width: 220px;
+	height: 275px;
+	margin-right: 15px;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.video-one > div {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.video-one .date {
+	height: 25px;
+	padding-left: 20px;
+	background: url('../graphics/date.png') no-repeat left -2px;
+}
+
+.video-one .thumb {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 120px;
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+}
+
+.video-one .thumb .play {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	width: 56px;
+	height: 27px;
+	background: url('../graphics/play.png') no-repeat center;
+}
+
+.video-one .title {
+	height: 17px;
+	margin-top: 15px;
+	color: #9f60aa;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.video-one .descr {
+	float: left;
+	width: 100%;
+	margin-top: 15px;
+}
