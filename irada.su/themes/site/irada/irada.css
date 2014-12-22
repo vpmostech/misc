@@ -1033,3 +1033,18 @@ table.info tr:last-child td
 table.info tr td:first-child {
 	border-right: 1px dashed #b7b7b7;
 }
+
+.register-info {
+	float: left;
+	width: 755px;
+}
+
+.register-info img {
+	float: left;
+}
+
+.register-info p {
+	margin-left: 35px;
+	padding-right: 20px;
+	text-align: justify;
+}
