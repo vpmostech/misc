@@ -24,9 +24,8 @@
 <div class="breadcrumbs">
 	{foreach $crumbs as $crumb}
 		<div class="crumb">
-			{if !$crumb@last}<a href="{$crumb.url}">{/if}
-				{$crumb.name}
-			{if !$crumb@last}</a>{/if}
+			{if !$crumb@last}<a href="{$crumb.url}">{/if}{$crumb.name}{if !$crumb@last}</a>{/if}
 		</div>
+		{if !$crumb@last}{*<div class="crumb-next">&raquo;</div>*}{/if}
 	{/foreach}
 </div>

@@ -124,7 +124,7 @@ a {
 
 .breadcrumbs .crumb {
 	float: left;
-	margin-right: 5px;
+	margin-right: 3px;
 }
 
 .breadcrumbs .crumb a {
@@ -132,7 +132,7 @@ a {
 }
 
 .breadcrumbs .crumb:after {
-	content: " >>";
+	content: "»";
 }
 
 .breadcrumbs .crumb:last-child:after {
