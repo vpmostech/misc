@@ -18,7 +18,6 @@
 	<div class="paydelivery">
 		<div class="payment">
 			<h3>Способы<br />оплаты</h3>
-			<!--<div class="methods">-->
 				{$methods=[
 					"visa" => "visa.png",
 					"mastercard" => "mastercard.png",
@@ -36,13 +35,15 @@
 				*}
 				{/foreach}
 				<div class="pays">
-					<img src="{$imgDir}/payment_all.png" />
+					<img src="{$imgDir}/payment_all.png" usemap="#map_pays" />
 				</div>
-			<!--</div>-->
+				<map name="map_pays">
+					<area coords="320,0,360,32" href="//perevod-korona.com/Pages/About.aspx" target="_blank">
+					<area coords="375,0,430,32" href="//westernunion.ru" target="_blank">
+				</map>
 		</div>
 		<div class="delivery" style="">
 			<h3>Способы<br />доставки</h3>
-			<!--<div class="methods">-->
 			{*
 				<div class="method">
 					Курьером
@@ -55,9 +56,13 @@
 				</div>
 			*}
 			<div class="dels">
-					<img src="{$imgDir}/delivery_all.png" />
+				<img src="{$imgDir}/delivery_all.png" usemap="#map_dels" />
 			</div>
-			<!--</div>-->
+			<map name="map_dels">
+				<area coords="0,0,30,32" href="{$wa_url}oplata-i-dostavka/dostavka/" target="_blank">
+				<area coords="45,0,105,32" href="//russianpost.ru" target="_blank">
+				<area coords="120,0,235,32" href="//emspost.ru" target="_blank">
+			</map>
 		</div>
 	</div>
 	<div class="bottom fullwidth">
