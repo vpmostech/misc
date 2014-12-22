@@ -96,6 +96,8 @@
 .album-date {
 	float: left;
 	margin-top: 10px;
+	padding-left: 20px;
+	background: url('graphics/date.png') no-repeat left -2px;
 }
 
 .mfp-bg {

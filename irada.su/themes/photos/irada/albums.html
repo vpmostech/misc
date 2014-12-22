@@ -57,7 +57,7 @@
 					{/foreach}
 				</div>
 			</a>
-			<div class="album-date">{call name=date_string date=$album.create_datetime format_type=1}</div>
+			<div class="album-date">{ifset($album.mydate)}</div>
 		</div>
 	{/foreach}
 </div>
