@@ -178,6 +178,9 @@ ul.product-list li .badge-wrapper [class^="sign-"],
 	background-position: center;
 	background-repeat: no-repeat;
 	background-color: transparent;
+}
+
+#product-core-image [class^="sign-"] {
 	z-index: 100;
 }
 
