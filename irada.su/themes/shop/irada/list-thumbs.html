@@ -84,9 +84,16 @@
 			<a href="{$p.frontend_url}" title="{$p.name}">
 				<div class="image">
 					<div class="badge-wrapper">
+						{if isset($pr.categories[19])}
+							<div class="sign-action"></div>
+						{elseif isset($pr.categories[20])}
+							<div class="sign-new"></div>
+						{elseif isset($pr.categories[18])}
+							<div class="sign-sale"></div>
+						{/if}
 						{$badge_html = $wa->shop->badgeHtml($p.badge)} {* "Новинка" и всё такое *}
 						{if $badge_html}
-							<div class="corner top right">{$badge_html}</div>
+							<div class="corner top right">{*$badge_html*}</div>
 						{/if}
 						{$wa->shop->productImgHtml($p, '0x285', ['itemprop' => 'image', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}
 					</div>

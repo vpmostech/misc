@@ -17,6 +17,7 @@
 <article itemscope itemtype="http://schema.org/Product">
     <!-- product info & gallery -->
     <div class="product-info" id="overview">
+		{$pr=$wa->shop->product($product.id)}
 
 		{if $product.images}
             <section class="product-gallery">
@@ -36,8 +37,15 @@
 				</div>
                 <!-- main image -->
                 <div class="image" id="product-core-image">
+					{if isset($pr.categories[19])}
+						<div class="sign-action"></div>
+					{elseif isset($pr.categories[20])}
+						<div class="sign-new"></div>
+					{elseif isset($pr.categories[18])}
+						<div class="sign-sale"></div>
+					{/if}
                     <div class="corner top right">
-                        {$wa->shop->badgeHtml($product.badge)}
+                        {*$wa->shop->badgeHtml($product.badge)*}
                     </div>
                     <a class="image-main" href="{$wa->shop->productImgUrl($product, '1500')}">
                         {$wa->shop->productImgHtml($product, '300x0', ['itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape, 'title' => $product.name|escape])}
@@ -47,7 +55,6 @@
             </section>
         {/if}
 
-		{$pr=$wa->shop->product($product.id)}
 		<div class="product-data">
 			{if $product.sku_type}
 				{$sku = reset($product.skus)}

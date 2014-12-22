@@ -165,6 +165,35 @@ ul.product-list li .image {
 }
 
 ul.product-list li .badge-wrapper {
+	position: relative;
+}
+
+ul.product-list li .badge-wrapper [class^="sign-"],
+#product-core-image [class^="sign-"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 48px;
+	height: 47px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	z-index: 100;
+}
+
+ul.product-list li .badge-wrapper .sign-action,
+#product-core-image .sign-action {
+	background-image: url('graphics/sign_action.png');
+}
+
+ul.product-list li .badge-wrapper .sign-new,
+#product-core-image .sign-new {
+	background-image: url('graphics/sign_new.png');
+}
+
+ul.product-list li .badge-wrapper .sign-sale,
+#product-core-image .sign-sale {
+	background-image: url('graphics/sign_sale.png');
 }
 
 ul.product-list li .image img {
