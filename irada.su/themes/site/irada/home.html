@@ -70,6 +70,38 @@
 	</div>
 </div>
 <div class="spacer" style="height: 30px;"></div>
+{function name=monthname_of short=0}
+{* num *}
+	{$monthnames = [
+			'1' => 'января',
+			'2' => 'февраля',
+			'3' => 'марта',
+			'4' => 'апреля',
+			'5' => 'мая',
+			'6' => 'июня',
+			'7' => 'июля',
+			'8' => 'августа',
+			'9' => 'сентября',
+			'10' => 'октября',
+			'11' => 'ноября',
+			'12' => 'декабря'
+	]}
+	{if isset($monthnames[$num])}
+		{if $short == 0}
+			{$monthnames[$num]}
+		{else}
+			{$monthnames[$num]|truncate:3:""}
+		{/if}
+	{/if}
+{/function}
+{function name=date_string}
+{* date, format_type(1=>'ДД имямесяца ГГГГ г.') *}
+	{$d = date_parse($date)}
+	{if $format_type == 1}
+		{$d['day']} {monthname_of num=$d['month']} {$d['year']} г.
+	{/if}
+{/function}
+
 <div class="news">
 	<div class="line"></div>
 	<h3>Новости</h3>
@@ -104,7 +136,7 @@
 				{* > Подсветка синтаксиса *}
 				<a href="{$new.link}">{$imgHtml}</a>
 				<div class="textpart">
-					<div class="date">{$newDate}</div>
+					<div class="date">{call name=date_string date=$newDate format_type=1}</div>
 					<div class="clearfix"></div>
 					<div class="title">{$new.title}</div>
 					<div class="clearfix"></div>

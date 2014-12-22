@@ -199,8 +199,10 @@
 
 .new .date {
 	float: left;
+	padding-left: 20px;
 	font-size: 12px;
 	color: #abadb0;
+	background: url('graphics/date.png') no-repeat left -2px;
 }
 
 .new .title {
