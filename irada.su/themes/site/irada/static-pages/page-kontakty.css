@@ -1,0 +1,34 @@
+table.contacts {
+	width: 700px;
+}
+
+table.contacts tr:first-child td {
+	height: 25px;
+	border-bottom: 1px dashed #b7b7b7;
+}
+
+table.contacts tr td:first-child {
+	width: 120px;
+	font-size: 11px;
+}
+
+table.contacts tr td:last-child {
+	width: 550px;
+}
+
+table.contacts tr.contacts-phone td:last-child {
+	font-weight: bold;
+}
+
+table.contacts tr.contacts-email td:first-child {
+	background: url('../graphics/order_email.png') no-repeat center left;
+}
+
+table.contacts tr.contacts-phone td:first-child {
+	background: url('../graphics/order_phone.png') no-repeat 3px center;
+}
+
+p,
+table.contacts tr.contacts-addr td:last-child {
+	color: black;
+}
