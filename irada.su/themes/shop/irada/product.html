@@ -77,7 +77,7 @@
 			</div>
 			<div class="clearfix"></div>
 			<div class="price">{$sku.price} руб.</div>
-			<div class="compund">Состав: {$product.features[sostav]}</div>
+			<div class="compund">Состав: {$product.features['sostav']}</div>
 			<form id="cart-form{if $wa->get('cart')}-dialog{/if}" action="{$wa->getUrl('/frontendCart/add')}" method="post">
 				<input type="hidden" name="product_id" value="{$product.id}">
 				{if $product.sku_type}
