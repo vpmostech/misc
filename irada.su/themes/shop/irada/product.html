@@ -205,7 +205,6 @@
 					{*$wa->captcha()*}
 					<input type="submit" class="save" value="[`Add review`]" />
 					
-					<em class="hint">Ctrl+Enter</em>
 					<input type="hidden" name="parent_id" value="0">
 					<input type="hidden" name="product_id" value="{if isset($product.id)}{$product.id}{else}0{/if}">
 					<input type="hidden" name="auth_provider" value="{$current_auth_source|default:shopProductReviewsModel::AUTH_GUEST}">

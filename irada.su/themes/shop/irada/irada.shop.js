@@ -155,14 +155,14 @@ $(document).ready(function () {
 	
 	var $imageMain = $('.image-main');
 	$imageMain.find('#product-image').on('load', function () {
-		var w = $(this).width(),
-			h = $(this).height();
-			dh = 40; // const
+		var w = $(this).width() + 70,
+			h = $(this).height() + 100;
+
 		$imageMain.jqzoom({
 			zoomWidth: w ? w : 300,
-			zoomHeight: (h ? h : 300) - dh,
-			xOffset: 0,
-			yOffset: dh,
+			zoomHeight: (h ? h : 300),
+			xOffset: 10,
+			yOffset: 0,
 			preloadText: 'Загрузка изображения...',	
 			title: false,
 		});
