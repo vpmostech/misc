@@ -1,0 +1,21 @@
+h4 {
+	color: #7030a0;
+}
+
+.static-page ul {
+	list-style: disc outside none;
+}
+
+.prices {
+	width: 96%;
+	border-collapse: collapse;
+}
+
+.prices thead tr:first-child {
+	font-weight: bold;
+	text-align: center;
+}
+
+.prices td {
+	border: 1px solid #5c5d60;
+}
