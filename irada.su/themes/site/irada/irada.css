@@ -1045,6 +1045,7 @@ table.info tr td:first-child {
 
 .register-info img {
 	float: left;
+	margin-right: 30px;
 }
 
 .register-info p {

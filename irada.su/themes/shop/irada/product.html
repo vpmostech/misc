@@ -176,7 +176,6 @@
 	<h2>Отзывы</h2>
 	{$userID = $wa->userId()}
 	<a id="addReview" href="{if empty($userID)}{$wa->getUrl('shop/frontend/my')}{else}#{/if}" class="button button-light">Оставить отзыв</a>
-	<a href="#" class="rules greylink">Правила оформления отзыва</a>
 	<div class="cleafix"></div>
 
 	<script type="text/javascript" src="{$wa_theme_url}reviews.js"></script>

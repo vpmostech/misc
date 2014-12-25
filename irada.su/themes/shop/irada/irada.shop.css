@@ -1088,12 +1088,39 @@ table.orders {
 }
 
 table.orders thead {
-	font-weight: bold;
 	color: black;
 }
 
-table.orders tr td:first-child {
-	padding-left: 3px;
+table.orders thead tr td {
+	border-left: 1px solid white;
+	background: linear-gradient(#f9eaed, #ecd7ea);
+}
+
+table.orders thead tr td:first-child {
+	border-left: none;
+}
+
+table.orders tr td {
+	padding: 5px 10px;
+	color: black;
+}
+table.orders tr td.statuses {
+	text-align: center;
+}
+
+.order-status {
+	padding: 5px;
+	font-weight: bold;
+	border-radius: 3px;
+	background: linear-gradient(#c8d24f, #8bb341);
+}
+
+.order-status.status-new {
+	background: linear-gradient(#c8d24f, #8bb341);
+}
+
+.order-status.status-processing {
+	background: linear-gradient(#c8d24f, #8bb341);
 }
 
 table.order {

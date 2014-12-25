@@ -18,6 +18,21 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		{literal}
+		$('[name="profile[phone]"]').attr('placeholder', '+7(XXX)XXX-XX-XX');
+		$('#userprofile').on('submit', function () {
+			$(this).find('input').removeClass('error');
+
+			var $phoneInput = $(this).find('[name="profile[phone]"]');
+			
+			if (!/^[\w]{10,}$/.test($phoneInput.val())) {
+				$phoneInput.addClass('error');
+				return false;
+			}
+		});
+		{/literal}
+	</script>
 </form>
 
 {$wa->globals('isMyAccount', true)}

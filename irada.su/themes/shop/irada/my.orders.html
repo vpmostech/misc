@@ -1,7 +1,7 @@
 {include file="`$wa_parent_theme_path`/sidebar_my.html"}
 {include file="breadcrumbs_my.html"}
 
-<h1>[`My orders`]</h1>
+<h1>Архив заказов</h1>
 
 <table class="table orders">
 	<thead>
@@ -22,8 +22,8 @@
 					{$o.id_str}
 				</a>
 			</td>
-			<td class="nowrap">
-				<span class="nowrap order-status" style="{$o.state->getStyle(1)}">
+			<td class="nowrap statuses">
+				<span class="nowrap order-status status-{$o.state->id}">
 					{$o.state->getName()}
 				</span>
 			</td>
@@ -36,7 +36,9 @@
 			</td>
 			<td>
 				{if $o.shipping_name}
-					{$o.shipping_name|escape}
+					{$pos = strpos($o.shipping_name, "(Наземная")}
+					{$shipping_name = substr($o.shipping_name, 0, $pos-1)}
+					{$shipping_name}
 				{else}
 					&nbsp;
 				{/if}
