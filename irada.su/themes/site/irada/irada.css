@@ -205,6 +205,10 @@ input[type="text"] {
 	text-align: justify;
 }
 
+.page-static ul {
+	float: left;
+}
+
 .ui-spinner {
 	margin-top: -4px;
 }
