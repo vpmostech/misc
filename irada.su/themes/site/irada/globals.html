@@ -5,6 +5,7 @@
 {if !$wa->user()->isAuth() or $wa->user('id', 'default') != '1'}
 	{$demosite = true scope="global"}
 {/if}
+{$demosite = false}
 
 {* Структура ссылок на категории товаров *}
 {$cat_links = [
