@@ -73,7 +73,7 @@
 
 	{* Рекламный баннер *}
 	{if !empty($category)}
-		<a href="{if isset($demosite)}http://irada.su/{else}#{/if}" alt="">
+		<a href="{if isset($demosite)}http://irada.su/{else}{$wa_url}blog/news/{/if}" alt="">
 			<div class="ad_banner"></div>
 		</a>
 	{/if}
