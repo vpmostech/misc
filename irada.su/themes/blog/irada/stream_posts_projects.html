@@ -1,0 +1,26 @@
+<div class="posts">
+	{foreach $posts as $p}
+		{$post = $wa->blog->post($p.id)}
+		<div class="post-thumb">
+			{if $post.status != "published"}{continue}{/if}
+			<div class="post-img"></div>
+			<div class="post-short">
+				{$d = date_parse($post.datetime)}
+				<img class="date-icon" src="{$wa_theme_url}graphics/date.png" style="margin-right: 5px; margin-bottom: 0;" />
+				<div class="post-date">{$d.day}.{$d.month}.{$d.year}</div>
+				<a class="nostyle" href="{$post.link}">
+					<h3>{$post.title}</h3>
+				</a>
+				<p class="post-text">
+					{if strlen($post.text_before_cut) > 0}
+						{$post.text_before_cut}
+						<a href="{$post.link}" class="readmore">Читать далее...</a>
+					{else}
+						{$post.text}
+					{/if}
+				</p>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	{/foreach}
+</div>

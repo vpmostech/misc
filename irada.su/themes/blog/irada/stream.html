@@ -14,6 +14,11 @@
 	<div class="posts posts-news">
 		{include file="stream_posts_partners.html"}
 	</div>
+{elseif $blog.id == "4"}
+	<h1>{$blog.name}</h1>
+	<div class="posts posts-news">
+		{include file="stream_posts_projects.html"}
+	</div>
 {else}
 	<h1>{$blog.name}</h1>
 	<div class="posts posts-news">

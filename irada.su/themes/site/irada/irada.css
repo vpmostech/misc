@@ -113,6 +113,15 @@ a {
 	color: #b76da2;
 }
 
+a.nostyle,
+a.nostyle:link,
+a.nostyle:hover,
+a.nostyle:visited
+{
+	color: inherit;
+	text-decoration: none;
+}
+
 .breadcrumbs {
 	float: left;
 	width: 755px;
