@@ -121,9 +121,6 @@
 				{if strpos($newText, "<img") === 0}
 					{$imgHtml = substr($newText, 0, strpos($newText, ">") + 1)}
 					{$restHtml = substr($newText, strpos($newText, ">") + 1)}
-				{elseif (strpos($newText, "<p>") === 0)}
-					{$imgHtml = substr($newText, 4, strpos($newText, ">", 5) + 1 - 4)}
-					{$restHtml = substr($newText, strpos($newText, ">", 3) + 1)}
 				{else}
 					{$imgHtml = ""}
 					{$restHtml = $newText}
